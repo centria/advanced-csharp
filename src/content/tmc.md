@@ -1,15 +1,15 @@
 ---
 title: 'TMC Instructions'
-nav_order: 504
-hidden: true
+nav_order: 9999
+hidden: false
 ---
 
 # Prerequisits for the course
 
+
 To do the exercises for this course, you need to install a few software to your computer.
 
 ## .NET
-
 You need to have `.NET` (also called `Dotnet`) installed. You can install it from here: [https://dotnet.microsoft.com/download](https://dotnet.microsoft.com/download)
 
 ## Visual Studio Code
@@ -22,22 +22,28 @@ Once you have installed the Visual Studio Code, you need to install `Test My Cod
 
 You also need the `C#` plugin: [https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
+
 # How to do the exercises
 
 ## Registering to the course
 
 Once you have everything installed, you need to download the exercises to your computer. To do that, you need to have a `MOOC.fi account`. You can read the instructions from here: [https://www.mooc.fi/en/installation/vscode/#mooc.fi-create-account](https://www.mooc.fi/en/installation/vscode/#mooc.fi-create-account). Follow the instructions to `login`.
 
-When you have the account, follow the instructions for:
+<Note>Register with your university (or school) email, if you have one!</Note>
 
-- Selecting your organization: _Centria University of Applied Sciences_
-- Selecting your course: _Basics of Programming in C#_
+When you have the account, follow the instructions for:
+- Selecting your organization: *Centria University of Applied Sciences*
+- Selecting your course: *Basics of Programming in C#*
+
+<Note>
+If you are doing this course via open university, select Basics of Programming in C# Open University!
+</Note>
 
 ## Doing the exercises
 
 You can find the exercises for each part at the end of each chapter. In some chapters, there might be no exercises.
 
-You can follow these instructions (to a point) on how to submit exercises:
+You can follow these instructions (to a point) on how to submit exercises: 
 [https://www.mooc.fi/en/installation/vscode/#first-programming-exercise](https://www.mooc.fi/en/installation/vscode/#first-programming-exercise)
 
 <Note>
@@ -56,33 +62,43 @@ A selection of options will pop up. The selections contain all the open exercise
 
 ![Folder selection](https://github.com/centria/basic-csharp/raw/master/src/images/select-folder.png)
 
-- Select the exercise you are doing
-- A new terminal opens at the bottom of Visual Studio Code.
+* Select the exercise you are doing
+* A new terminal opens at the bottom of Visual Studio Code.
 
-- write the command `cd/Exercise000` , but instead of the zeros, use the actual exercise number. Press `Enter`.
+* write the command `cd/Exercise000` , but instead of the zeros, use the actual exercise number. Press `Enter`.
 
 ![Selecting source folder](https://github.com/centria/basic-csharp/raw/master/src/images/exercise003.png)
 
-- In the example, I am doing exercise 003 of the part, so my command is `cd/Exercise003`
-- Now you are in the actual exercise folder, and can run the program.
-- Run the program with the command `dotnet run`.
+* In the example, I am doing exercise 003 of the part, so my command is `cd/Exercise003`
+* Now you are in the actual exercise folder, and can run the program.
+* Run the program with the command `dotnet run`. 
 
 ![Dotnet run](https://github.com/centria/basic-csharp/raw/master/src/images/dotnet-run.png)
 
-- If your program works as it should, you can see the output in the console. The next example is from Part 6, exercise 003:
+* If your program works as it should, you can see the output in the console. The next example is from Part 6, exercise 003:
 
 ![Dotnet run](https://github.com/centria/basic-csharp/raw/master/src/images/dotnet-print.png)
 
 <Note>The dollar sign in the pictures is NOT part of the command! </Note>
 
+### Alternative way
+
+In Visual Studio Code,
+* Click on the exerice folder with right mouse button, and choose `Open in integrated terminal`.
+* Run the program with the command `dotnet run`.
+
 ## Testing your exercises
 
 Follow the instructions here: [https://www.mooc.fi/en/installation/vscode/#test-source-code](https://www.mooc.fi/en/installation/vscode/#test-source-code)
 
-## Submitting your exercises:
+## Submitting your exercises
 
 Follow the instructions here: [https://www.mooc.fi/en/installation/vscode/#submit-solution](https://www.mooc.fi/en/installation/vscode/#submit-solution)
 
-## Checking your points:
+## Checking your points
 
 Follow the instructions here: [https://www.mooc.fi/en/installation/vscode/#check-your-points](https://www.mooc.fi/en/installation/vscode/#check-your-points)
+
+## Errors in the material?
+
+Did you find an error? A typo perhaps? Please make a pull request at [GitHub](https://github.com/centria/basic-csharp/tree/master/src/content) and help us make the material better!

@@ -1,27 +1,33 @@
 ---
 title: 'License'
-nav_order: 105
+nav_order: 999
 hidden: true
 ---
 
-MIT License
+The course structure and materials are based on the [**Introductory programming course in Java**](https://ohjelmointi-19.mooc.fi) by [**Agile Education Research Group**](https://www.helsinki.fi/en/researchgroups/data-driven-education) from the [**University of Helsinki**](https://www.helsinki.fi/en/). 
 
-Copyright (c) 2021 Centria University of Applied Sciences
+This material has been adapted from the said material by [**Heikki Ahonen**](https://github.com/heikkihei); the adaptation is licensed using [**CC BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed). More information about the original material and its license can be found [**here**](https://ohjelmointi-19.mooc.fi/credits/).
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+### Acknowledgements
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This material and its exercises have been a group effort. Thanks goes to at least the following people (in alphabetical order):
+* [Joni Aromaa](https://github.com/aromaa), University of Helsinki
+* [Mohammad Farid](https://github.com/farid555), Centria
+* [Petri Kivipuro](https://github.com/PetriKivipuro), Centria
+* [Antti Leinonen](https://github.com/Redande/), University of Helsinki
+* [Janne Nylund](https://github.com/janne-nylund), Centria
+* [Mathilda Nynäs](https://github.com/Majon1), Centria
+* [Merja Pyrhönen](https://github.com/meikku), Centria
+* Markus Räisänen, Business College Helsinki
+* [Tuukka Ullakko](https://github.com/TuukkaUllakko), Centria
+* Mirja Uusitalo, Centria
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This page template was originally created by:
+* [Vũ Nguyễn](https://github.com/ndkv9), Centria
+
+## Errors in the material?
+
+Did you find an error? A typo perhaps? Please make a pull request at [GitHub](https://github.com/centria/basic-csharp/tree/master/src/content) and help us make the material better!
+
+
+

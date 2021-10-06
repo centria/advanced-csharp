@@ -31,7 +31,8 @@ const Layout = ({ children, tableOfContents, location }) => {
             <a href='https://web.centria.fi/'> Centria</a>
           </p>
           <p>
-            More information about <Link to='/license'>License</Link>
+            More information about{' '}
+            <Link to='/license'>License</Link>
           </p>
         </Footer>
       </SiteWrapper>

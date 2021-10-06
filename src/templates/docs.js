@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import Layout from '../components/Layout'
@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
 import { Exercise, Note } from '../components/UIComponents'
-import { Link } from 'gatsby'
 import { Image, AspectImage, Embed } from 'theme-ui'
 
 const DocsTemplate = ({ data, location }) => {

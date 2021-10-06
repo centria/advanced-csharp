@@ -4,7 +4,7 @@ nav_order: 3
 hidden: false
 ---
 
-Printing to the screen has been done with the statement **Console.WriteLin()**, and reading numbers with the statement **Console.ReadLine()**. Conditional statements have used **if**, repeat statements **while** and **for**. We notice that printing and reading somewhat differ from **if**, **while**, and **for**; the printing and reading commands are followed by parentheses, and sometimes there also are parameters given to the command between the parentheses. These statements "ending with parentheses" are strictly speaking not commands, but rather methods.
+Printing to the screen has been done with the statement **Console.WriteLine()**, and reading numbers with the statement **Console.ReadLine()**. Conditional statements have used **if**, repeat statements **while** and **for**. We notice that printing and reading somewhat differ from **if**, **while**, and **for**; the printing and reading commands are followed by parentheses, and sometimes there also are parameters given to the command between the parentheses. These statements "ending with parentheses" are strictly speaking not commands, but rather methods.
 
 Technically speaking, **a method** is a named set of statements - a part of the program that can be called from elsewhere in the program code by using the method's name. For instance the line of code
 
@@ -293,7 +293,7 @@ The parameter **numbe** ris copied for the method to use -- in other words, a ne
 The definition of a method indicates whether that method returns a value. If it does, the method definition is to express to type of the return value. Otherwise the keyword **void** is used in the definition. The methods we've created thus far have been defined with the keyword **void** so they have returned no values.
 
 ```cpp
-public static **void** IncrementByThree()
+public static void IncrementByThree()
 {
   ...
 }
@@ -335,7 +335,8 @@ All the variable types seen so far can be returned from a method.
 | --------------------------------------- | -------------------------------------------- |
 | Method returns nothing                  | public static void ReturnsNothing()          |
 | Method returns **int** type variable    | public static int ReturnsInt()               |
-| Method returns **double** type variable | public static int ReturnsDouble()            |
+| Method returns **string** type variable | public static string ReturnsString()         |
+| Method returns **double** type variable | public static double ReturnsDouble()         |
 | Method returns **bool** type variable   | public static bool ReturnsBool()             |
 | Method returns **varible type**         | public static "variable type" NameOfMethod() |
 
@@ -375,7 +376,9 @@ public static void PrintEmptyLines(int parameter)
     return;
   }
   for (int i = 0; i < parameter; i++)
+  {
     Console.WriteLine("");
+  }
 }
 ```
 
@@ -712,4 +715,384 @@ The output of the method call **MultiplicationTable(3)**, for instance, looks li
 7 8 9
 ```
 
-**You can now do the exercises for methods**
+# Exercises
+
+<Exercise title={'009 Print phrase'}>
+
+create a method called PrintPhrase which prints the phrase "In a hole in the ground there lived a method" and a newline (use WriteLine and not just Write).
+
+```cpp
+public static void Main(string[] args)
+{
+  // Call your method here:
+  PrintPhrase();
+
+}
+
+// Write your method here:
+public static void PrintPhrase() 
+{
+
+}
+```
+
+```console
+In a hole in the ground there lived a method
+```
+
+</Exercise>
+
+<Exercise title={'010 How many times'}>
+
+Expand the previous program so that the main program asks the user for the number of times the phrase will be printed (i.e. how many times the method will be called).
+
+```cpp
+public static void Main(string[] args)
+{
+  // ask the user for the number of times that the phrase will be printed
+  // use the while command to call the method a suitable number of times
+
+}
+
+// Write your method here:
+public static void PrintPhrase() 
+{
+
+}
+```
+
+```console
+How many times?
+> 3
+In a hole in the ground there lived a method
+In a hole in the ground there lived a method
+In a hole in the ground there lived a method
+```
+
+</Exercise>
+
+<Note>From here on out, when introducing methods, we might not explicitly mention they must be located in the correct place. Methods cannot be defined e.g. inside other methods.</Note>
+
+<Exercise title={'011 Print until number'}>
+
+Create the following method in the exercise template: `public static void PrintUntilNumber(int number)`. It should print the numbers from one to the number passed as a parameter. Two examples of the method's usage are given below.
+
+```cpp
+public static void Main(string[] args) 
+{
+  PrintUntilNumber(5);
+}
+```
+
+```console
+1
+2
+3
+4
+5
+```
+
+```cpp
+public static void Main(string[] args) 
+{
+  PrintUntilNumber(3);
+}
+```
+
+```console
+1
+2
+3
+```
+
+</Exercise>
+
+<Exercise title={'012 From number to one'}>
+
+Create the following method in the exercise template: `public static void PrintFromNumberToOne(int number)`. It should print the numbers from the number passed as a parameter down to one. Two examples of the method's usage are given below.
+
+```cpp
+public static void Main(string[] args) 
+{
+  PrintFromNumberToOne(5);
+}
+```
+
+```console
+5
+4
+3
+2
+1
+```
+
+```cpp
+public static void Main(string[] args) 
+{
+  PrintFromNumberToOne(2);
+}
+```
+
+```console
+2
+1
+```
+
+</Exercise>
+
+<Exercise title={'013 Division'}>
+
+Write a method `public static void Division(int numerator, int denominator)` that prints the result of the division of the numerator by the denominator. Keep in mind that the result of the division of the integers is an integer -- in this case we want the result to be a floating point number (double).
+
+</Exercise>
+
+<Exercise title={'014 Divisible in range'}>
+
+Write a method `public static void DivisibleByThreeInRange(int beginning, int end)` that prints all the numbers divisible by three in the given range. The numbers are to be printed in order from the smallest to the greatest.
+
+```cpp
+public static void Main(string[] args) 
+{
+  DivisibleByThreeInRange(3, 6);
+}
+```
+
+```console
+3
+6
+```
+
+```cpp
+public static void Main(string[] args) 
+{
+  DivisibleByThreeInRange(2, 10);
+}
+```
+
+```console
+3
+6
+9
+```
+
+</Exercise>
+
+<Exercise title={'015 Number uno'}>
+
+Write a method `public static int NumberUno()` that returns the value 1.
+
+</Exercise>
+
+<Exercise title={'016 Word'}>
+
+Write a method `public static string Word()`. The method must return a string of your choice.
+
+</Exercise>
+
+<Exercise title={'017 Sum'}>
+
+Expand the method `Sum`  in the exercise template so that it calculates and returns the sum of the numbers that are given as the parameters.
+create the method using the following structure:
+
+```cpp
+public static int Sum(int number1, int number2, int number3, int number4) 
+{
+  // write your code here
+  // remember to include return (at the end)!
+}
+
+public static void Main(string[] args) 
+{
+    int answer = Sum(4, 3, 6, 1);
+    Console.WriteLine("Sum: " + answer);
+}
+```
+Output of the example:
+
+```console
+Sum: 14
+```
+
+</Exercise>
+
+<Exercise title={'018 Smallest'}>
+
+Define a two-parameter method `Smalles` that returns the smaller of the two numbers passed to it as parameters.
+
+```cpp
+public static int Smallest(int number1, int number2) 
+{
+  // write your code here
+  // do not print anything inside the method
+
+  // there must be a return command at the end
+}
+
+public static void Main(string[] args) 
+{
+  int answer =  Smallest(2, 7);
+  Console.WriteLine("Smallest: " + answer);
+}
+```
+
+The output of the program:
+
+```console
+Smallest: 2
+```
+
+</Exercise>
+
+<Exercise title={'019 Greatest'}>
+
+Define a three-parameter method `Greatest` that returns the greatest of the three numbers passed to it as parameters.
+
+```cpp
+public static int Greatest(int number1, int number2, int number3) 
+{
+  // write your code here
+  // do not print anything inside the method
+
+  // there must be a return command at the end
+}
+
+public static void Main(string[] args) 
+{
+  int answer =  Greatest(2, 7, 3);
+  Console.WriteLine("Greatest: " + answer);
+}
+```
+
+The output of the program:
+
+```console
+Greatest: 7
+```
+
+</Exercise>
+
+<Exercise title={'020 Stars'}>
+
+* Section 1
+
+Define a method called `PrintStars` that prints the given number of stars and a line break.
+
+Write the method in the following template:
+
+```cpp
+public static void PrintStars(int number)
+{
+  // you can print one star with the command
+  // Console.Write("*");
+  // call the print command n times
+  // in the end print a line break with the comand
+  // Console.WriteLine("");
+}
+
+public static void Main(string[] args) 
+{
+  PrintStars(5);
+  PrintStars(3);
+  PrintStars(9);
+}
+```
+
+The output of the program:
+```console
+***** 
+*** 
+*********
+```
+
+* Section 2
+
+Define a method called `PrintSquare(int size)` that prints a suitable square with the help of the printStars method. So the method call `PrintSquare(4)` results in the following output:
+
+```console
+****
+****
+****
+****
+```
+
+* Section 3
+
+Write a method called `PrintRectangle(int width, int height)` that prints the correct rectangle by using the PrintStars method. So the method call `PrintRectangle(17, 3)` should produce the following output:
+
+```console
+***************** 
+***************** 
+*****************
+```
+
+* Section 4
+
+Create a method called `PrintTriangle(int size)` that prints a triangle by using the PrintStars method. So the call `PrintTriangle(4)` should print the following:
+
+```console
+*
+**
+***
+****
+```
+
+</Exercise>
+
+<Exercise title={'021 Christmas tree'}>
+
+* Section 1
+
+Define a method called `PrintSpaces(int number)` that produces the number of spaces specified by number. The method does not print the line break.
+
+You will also have to either copy the `PrintStars` method from your previous answer or reimplement it in this exercise template.
+
+* Section 2
+
+Create a method called `PrintRightTriangle(int size)` that uses PrintSpaces and PrintStars to print the correct triangle. So the method call `PrintRightTriangle(4)` should print the following:
+
+
+```cpp  
+// NOTICE THE AMOUNT OF WHITESPACE    
+   *  
+  **  
+ ***  
+****  
+```  
+
+<Note> The comments in this and next examples are not part of the print, but only to emphasize the difference to previous work.</Note>
+
+* Section 3
+
+Define a method called `ChristmasTree(int height)` that prints the correct Christmas tree. The Christmas tree consists of a triangle with the specified height and the base. The base is two stars high and three stars wide, and is placed at the center of the triangle's bottom. The tree is to be constructed by using the methods PrintSpaces and PrintStars.
+
+For example, the call ChristmasTree(4) should work as following:
+
+```cpp
+// NOTICE THE AMOUNT OF WHITESPACE
+   * 
+  *** 
+ *****
+******* 
+  *** 
+  ***
+```
+The call ChristmasTree(10) should work like this:
+
+```cpp
+// NOTICE THE AMOUNT OF WHITESPACE
+         * 
+        *** 
+       ***** 
+      ******* 
+     ********* 
+    *********** 
+   ************* 
+  *************** 
+ ***************** 
+******************* 
+        *** 
+        ***
+```
+<Note> Heights shorter that 3 don't have to work correctly! </Note>
+
+</Exercise>

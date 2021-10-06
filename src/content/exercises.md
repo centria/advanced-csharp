@@ -1,19 +1,37 @@
 ---
-title: 'Exercises'
+title: 'Exercises and Exam'
 nav_order: 99
 hidden: false
 ---
 
-## Where to begin
+The course is divided into six parts, all of which contain exercises. To pass the course, the student must pass at least 50 % of the course exercises and the exam at the end of the course.
 
-Before you do this course, it is advised to do the [**course for command line and version control first**](https://centria.github.io/console/). This gives you tools to learn how to create your own Git repository and how to use it. This is required for returning the exercises for this course.
+## Deadlines
 
-## Doing the exercises
+Every part will have its own deadline. The deadlines are automatic.
 
-[**The exercises for this course are behind this link**](https://github.com/centria/coding-exercises). Do read each material section before trying to do the exercises.
+| Part | Deadline       |
+| :----| :------------: |
+| 1    |   22.09.2021   |
+| 2    |   29.09.2021   |
+| 3    |   06.10.2021   |
+| 4    |   13.10.2021   |
+| 5    |   20.10.2021   |
+| 6    |   27.10.2021   |
 
-## Requirements
 
-To do the exercises, you need [**Dotnet Core**](https://dotnet.microsoft.com/download) and a decent editor, such as [**Visual Studio Code**](https://code.visualstudio.com/), as well as a [**GitHub account**](https://github.com/).
+<Note>
+If you are doing this course via Open University, your deadline for all the parts is 1.5.2022!
+</Note>
 
-You can use any editor, but the instructions are written with VSC in mind.
+## Advancing on the course
+
+At the beginning of the course, only the exercises for Part 1 are available. To advance to next part, the student must get at least 50 % of a part's points.
+
+## Submitting the exercises
+
+Exercise submission instructions <Link style={{color: "#ef5b5b"}} to='/tmc'>can be found from the TMC instructions.</Link> 
+
+## The exam
+
+The exam will be held in Centria's Itslearning platform. More information closer to the exam will be published here.

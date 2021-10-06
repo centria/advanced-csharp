@@ -10,7 +10,7 @@ We've so far been practicing the fundamentals of the language, such as variables
 
 A programmer often becomes blind to their code. Let's familiarize ourselves with this effect with the aid of the short video below. Count how many times the white-shirted players pass the ball between each other. The video contains instructions in English.
 
-[![Link to video: https://www.youtube.com/watch?v=Ahg6qcgoay4](https://img.youtube.com/vi/Ahg6qcgoay4/0.jpg)](http://www.youtube.com/watch?v=Ahg6qcgoay4)
+[![Link to video: https://www.youtube.com/watch?v=Ahg6qcgoay4](https://img.youtube.com/vi/Ahg6qcgoay4/mqdefault.jpg)](http://www.youtube.com/watch?v=Ahg6qcgoay4)
 
 There's something else that also happens in the video that may go unnoticed at first. This effect is known as perceptual blindness, and is explained by the fact that as we focus on a specific task, our brains tend to filter out information that is irrelevant to that task. However, we don't always know what information is, in fact, essential and what is not - an example of this being when we study. Concentrating on a specific part of a study exercise can lead to relevant information being filtered out.
 
@@ -180,6 +180,7 @@ else
 
 When a program is executed multiple times with appropriate inputs the hidden error is often found. Coming up with relevant inputs is a skill in its own right. It's essential to test the so-called corner cases, i.e., circumstances where the program execution could be exceptional. An example scenario would be one where the user does not enter a single acceptable value or enters zeros or very large values.
 
-**There are no exercises. Move along.**
+
 
 Answer: The last variable in the code is called **value**, when it should be called **values**. We are calling for a variable which was defined inside the loop, rather than the one we want.
+

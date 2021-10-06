@@ -16,7 +16,7 @@ int sum = first + second; // variable "sum" is set with the value of the sum fro
 Console.WriteLine(sum); // prints 6
 ```
 
-## Calcuation order with brackets.
+## Calculation order with brackets
 
 You can change the order of calculation with brackets, if you wish.
 
@@ -73,7 +73,8 @@ Console.WriteLine("The magic number is " + truth + ".");
 The magic number is 42.
 ```
 
-In our example, we combined a string, value of our variable, and another string. Notice, that the first string ends in whitespace, so there is space between the word "is" and the value. The dot in the end does not have whitespace, so it is right next to the number.
+In our example, we combined a string, value of our variable, and another string. 
+<Note>The first string ends in whitespace, so there is space between the word "is" and the value. The dot in the end does not have whitespace, so it is right next to the number.</Note>
 
 ```cpp
 Console.WriteLine("The magic number is " + 42);
@@ -161,7 +162,7 @@ double average = (first + second + third) / 3.0; //divide by the amount of numbe
 Console.WriteLine(average);  // prints 20.333333333333332
 ```
 
-Notice, that the divider for the average is **3.0**, which is a double. Even though we declare average as a double, if all the operands are integers, the value for average would evaluate as 20.
+<Note> The divider for the average is 3.0, which is a double. Even though we declare average as a double, if all the operands are integers, the value for average would evaluate as 20.</Note>
 
 ## Common misconceptions with variables
 
@@ -241,4 +242,157 @@ row 9: assign the value for variable third arvo to be printed, the value of vari
 row 9: print value 28
 ```
 
-**You can now do the exercises for calculations with numbers**
+# Exercises
+
+<Exercise title={'016 Seconds in days'}>
+
+Create a program, which asks user for amount of days, and prints the total amount of seconds for that amount of days, gives the answer and quits.
+
+Example print:
+
+```console
+How many days?
+> 2
+172800
+```
+
+```console
+How many days?
+> 7
+604800
+```
+
+</Exercise>
+
+<Exercise title={'017 Input two integers'}>
+
+Create a program, which asks the user for two `integers`, and calculates their sum.  
+
+Remember, that the input is a string, so you have to convert it to integer!
+
+Example output:
+
+```console
+Give the first number!
+> 8
+Give the second number!
+> 3
+The sum is 11
+```
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> -1
+The sum is 2
+```
+
+</Exercise>
+
+<Exercise title={'018 Input three integers'}>
+
+Expand a little on the previous exercise. Now create a program, which asks for three `integers`, and calculates their sum.
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> -1
+Give the third number!
+> 2
+The sum is 4
+```
+
+</Exercise>
+
+<Exercise title={'019 Sum of two integers'}>
+
+Create a program, which asks the user for two `integers` and counts their sum. This time, also print the equation to the user, too.
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> 1
+3 + 1 = 4
+```
+
+```console
+Give the first number!
+> 5
+Give the second number!
+> -1
+3 + -1 = 2
+```
+
+</Exercise>
+
+<Exercise title={'020 Multiply two integers'}>
+
+Create a program, which asks the user for two `integers` and multiplies them with each other.
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> 2
+3 * 2 = 6
+```
+
+```console
+Give the first number!
+> 50
+Give the second number!
+> -2
+50  * -2 = -100
+```
+
+</Exercise>
+
+<Exercise title={'021 Average of two integers'}>
+
+Create a program, which asks the user for two `integers` and calculates their average as a `double`.
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> 2
+The average is 2.5
+```
+
+</Exercise>
+
+<Exercise title={'022 Average of three integers'}>
+
+Create a program, which asks the user for three `integers` and calculates their average as a `double`.
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> 2
+Give the third number!
+> 1
+The average is 2.0
+```
+
+</Exercise>
+
+<Exercise title={'023 Tiny calculator'}>
+
+Let's create a program, that does all the basic calculations from user input! Ask for two `integers` and do and print the calculations with them.
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> 2
+3 + 2 = 5
+3 - 2 = 1
+3 * 2 = 6
+3 / 2 = 1.5
+```
+
+</Exercise>
