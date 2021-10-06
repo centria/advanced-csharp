@@ -21,12 +21,19 @@ So far we have let ourselves off easy: we have not done any projects ourselves, 
         └── ProgramTest.cs
 ```
 
- This is not a very reasonable way to create or maintain projects. When the projects start to grow, the structure is soon hard to follow, and even harder to maintain. The following is adapted [**from this .NET Documentation**](https://docs.microsoft.com/en-us/dotnet/core/tutorials/testing-with-cli).
+ This is not a very reasonable way to create or maintain projects. We need to also learn how to create projects ourselves. 
 
-[//]: # (Should not derive from there, as it might be copyrighted.)
 
+## Creating our first program
+
+MISSING CONTENT
 
 ## Organizing and testing using the NewTypes Pets Sample
+
+The following is adapted [**from this .NET Documentation**](https://docs.microsoft.com/en-us/dotnet/core/tutorials/testing-with-cli).
+
+
+[//]: # (Should not derive from there, as it might be copyrighted.)
 
 ### Building the sample
 
@@ -117,9 +124,9 @@ Our **NewTypes.csproj** contains the following:
 
 ### Testing the sample
 
-The NewTypes project is in place, and you've organized it by keeping the pets-related types in a folder. Let's put in some tests. In our exercises, we've used [**NUnit tests**](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit). Unit testing allows you to automatically check the behavior of your pet types to confirm that they're operating properly.
+The NewTypes project is in place, and you've organized it by keeping the pets-related types in a folder. Let's put in some tests. In our exercises, we've used [**xUnit tests**]https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test). Unit testing allows you to automatically check the behavior of your pet types to confirm that they're operating properly.
 
-We'll create our tests now a bit manually. Navigate back to the root folder and create a **test** folder with a **NewTypesTests** folder within it. At a command prompt from the **NewTypesTests** folder, execute **dotnet new nunit**. This produces two files: NewTypesTests.csproj and UnitTest1.cs.
+We'll create our tests now a bit manually. Navigate back to the root folder and create a **test** folder with a **NewTypeTest** folder within it. At a command prompt from the **NewTypeTest** folder, execute **dotnet new xunit**. This produces two files: NewTypeTest.csproj and UnitTest1.cs.
 
 The test project cannot currently test the types in NewTypes and requires a project reference to the NewTypes project. To add a project reference, use the dotnet add reference command:
 
@@ -127,7 +134,7 @@ The test project cannot currently test the types in NewTypes and requires a proj
 dotnet add reference ../../src/NewTypes/NewTypes.csproj
 ```
 
-If you get an error, or if you just want to do it manually, you can also add this to the **NewTypesTest.csproj** yourself:
+If you get an error, or if you just want to do it manually, you can also add this to the **NewTypeTest.csproj** yourself:
 
 ```xml
 <ItemGroup>
@@ -137,21 +144,28 @@ If you get an error, or if you just want to do it manually, you can also add thi
 
 NOTICE! On some devices, the slashes between folders need to be **\\** rather than **/**. If you get an error after adding the Project Reference, try the other version of slash (just like below); 
 
-Now our **NewTypesTest.csproj** should look something like this:
+Now our **NewTypeTest.csproj** should look something like this:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="nunit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="1.3.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -161,38 +175,62 @@ Now our **NewTypesTest.csproj** should look something like this:
 </Project>
 ```
 
-The **NewTypesTest.csproj** file contains the following:
+The **NewTypeTest.csproj** file contains the following:
 
-* Package reference to nunit, the NUnit testing framework
-* Package reference to NUnit3TestAdapter, so we can test with VSC
+* Package reference to xunit, the xUnit testing framework
+* Package reference to xunit.runner.visualstudio, so we can test with VSC
 * Package reference to Microsoft.NET.Test.Sdk, the .NET testing infrastructure
 * Project reference to **NewTypes**, the code to test
+
+There are also unnecessary parts for our basic testing. Remove the *assets* for `xunit.runner.visualstudio`, as well as the whole `coverlet.collector`. Your file should look like this, once you're done:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\NewTypes\NewTypes.csproj" />
+  </ItemGroup>
+
+</Project>
+```
 
 Change the name of **UnitTest1.cs** to **PetTests.cs** and replace the code in the file with the following:
 
 ```cpp
 using System;
-using NUnit.Framework;
+using Xunit;
 using Pets;
 
 public class PetTests
 {
-  [Test]
+  [Fact]
   public void DogTalkToOwnerReturnsWoof()
   {
     string expected = "Woof!";
     string actual = new Dog().TalkToOwner();
 
-    Assert.AreNotEqual(expected, actual);
+    Assert.NotEqual(expected, actual);
   }
 
-  [Test]
+  [Fact]
   public void CatTalkToOwnerReturnsMeow()
   {
     string expected = "Meow!";
     string actual = new Cat().TalkToOwner();
 
-    Assert.AreNotEqual(expected, actual);
+    Assert.NotEqual(expected, actual);
   }
 }
 ```
@@ -213,42 +251,36 @@ The following shows the complete project structure:
       |__Program.cs
       |__NewTypes.csproj
 |__/test
-   |__NewTypesTests
+   |__NewTypeTest
       |__PetTests.cs
-      |__NewTypesTests.csproj
+      |__NewTypeTest.csproj
 ```
 
-Run the **dotnet test** command in the **NewTypesTests** folder.
+Run the **dotnet test** command in the **NewTypeTest** folder.
 
 As expected, testing fails, and the console displays the following output:
 
 ```console
 Starting test execution, please wait...
-
 A total of 1 test files matched the specified pattern.
-
-  X CatTalkToOwnerReturnsMeow [64ms]
+[xUnit.net 00:00:00.25]     PetTests.CatTalkToOwnerReturnsMeow [FAIL]
+[xUnit.net 00:00:00.25]     PetTests.DogTalkToOwnerReturnsWoof [FAIL]
+  Failed PetTests.CatTalkToOwnerReturnsMeow [3 ms]
   Error Message:
-     Expected: not equal to "Meow!"
-  But was:  "Meow!"
-
+   Assert.NotEqual() Failure
+Expected: Not "Meow!"
+Actual:   "Meow!"
   Stack Trace:
-     at PetTests.CatTalkToOwnerReturnsMeow() in /mnt/c/Users/HeikkiHei/Documents/coding-exercises/project_example/NewTypes/test/NewTypesTest/PetTests.cs:line 22
-
-
-  X DogTalkToOwnerReturnsWoof [1ms]
+     at PetTests.CatTalkToOwnerReturnsMeow() in C:\Users\HeikkiHei\Documents\repos\coding-exercises\testproject\test\NewTypeTest\PetTests.cs:line 22
+  Failed PetTests.DogTalkToOwnerReturnsWoof [< 1 ms]
   Error Message:
-     Expected: not equal to "Woof!"
-  But was:  "Woof!"
-
+   Assert.NotEqual() Failure
+Expected: Not "Woof!"
+Actual:   "Woof!"
   Stack Trace:
-     at PetTests.DogTalkToOwnerReturnsWoof() in /mnt/c/Users/HeikkiHei/Documents/coding-exercises/project_example/NewTypes/test/NewTypesTest/PetTests.cs:line 13
+     at PetTests.DogTalkToOwnerReturnsWoof() in C:\Users\HeikkiHei\Documents\repos\coding-exercises\testproject\test\NewTypeTest\PetTests.cs:line 13
 
-
-Test Run Failed.
-Total tests: 2
-     Failed: 2
- Total time: 1.2262 Seconds
+Failed!  - Failed:     2, Passed:     0, Skipped:     0, Total:     2, Duration: 4 ms - NewTypeTest.dll (net5.0)
 ```
 
 Change the assertions of your tests from **Assert.AreNotEqual** to **Assert.AreEqual** and rerun the tests with **dotnet test**:
@@ -266,7 +298,7 @@ Total tests: 2
 
 Now we have created a well organized project. We are able to run our tests and the project itself. You might have noticed, that we ran the commands **dotnet run** and **dotnet test** in different folders. That's because when we run the commands, we actually check the **.csproj** file what we are running. 
 
-The commands cannot now be run from the same folder as such, but require some parameters. For example, if we are at the **NewTypesTest** folder, we can run **dotnet test**, plain and simple, as the file **NewTypesTest.csproj** is in that folder. 
+The commands cannot now be run from the same folder as such, but require some parameters. For example, if we are at the **NewTypeTest** folder, we can run **dotnet test**, plain and simple, as the file **NewTypeTest.csproj** is in that folder. 
 
 ```console
 /NewTypes
@@ -278,9 +310,9 @@ The commands cannot now be run from the same folder as such, but require some pa
       |__Program.cs
       |__NewTypes.csproj
 |__/test
-   |__NewTypesTests <-- WE ARE HERE
+   |__NewTypeTest <-- WE ARE HERE
       |__PetTests.cs
-      |__NewTypesTests.csproj
+      |__NewTypeTest.csproj
 ```
 
 To run **dotnet run** from the same folder, we have to tell where the **NewTypes.csproj** is located. To do this, we also have to give the option **-p**, as in project, for the command:
@@ -302,16 +334,16 @@ On the other hand, we could be in the **NewTypes** folder and be able to run the
       |__Program.cs
       |__NewTypes.csproj
 |__/test
-   |__NewTypesTests
+   |__NewTypeTest
       |__PetTests.cs
-      |__NewTypesTests.csproj
+      |__NewTypeTest.csproj
 ```
 
  The dotnet test requires some information.  We do not have the option of project now, just the path to project file:
 
 ```console
 dotnet run
-dotnet test ../../test/NewTypesTest/NewTypesTest.csproj
+dotnet test ../../test/NewTypeTest/NewTypeTest.csproj
 ```
 
 This works in any folder of the project, as long as you remember to give the options correcty:
@@ -326,16 +358,13 @@ This works in any folder of the project, as long as you remember to give the opt
       |__Program.cs
       |__NewTypes.csproj
 |__/test
-   |__NewTypesTests
+   |__NewTypeTest
       |__PetTests.cs
-      |__NewTypesTests.csproj
+      |__NewTypeTest.csproj
 ```
 
 
 ```console
 dotnet run -p src/NewTypes/NewTypes.csproj
-dotnet test test/NewTypesTest/NewTypesTest.csproj
+dotnet test test/NewTypeTest/NewTypeTest.csproj
 ```
-
-
-**NOTICE!** The exercises will be in this structure from part 7 onwards!

@@ -1,5 +1,5 @@
 ---
-title: "Part 07 - Own projects"
+title: "Part 7 - Own projects"
 nav_order: 2
 hidden: false
 ---
