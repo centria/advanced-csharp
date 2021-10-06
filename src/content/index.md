@@ -4,6 +4,8 @@ nav_order: 1
 hidden: false
 ---
 
+# THIS PAGE IS HEAVILY UNDER CONSTRUCTION AND WILL BE PUBLISHED 1.11.2021.
+
 Welcome to the Advanced Programming with C# course! The course begins 1.11.2021 and ends 19.12.2021. 
 
 ## If you just want to learn
