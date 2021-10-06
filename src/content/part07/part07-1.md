@@ -116,7 +116,7 @@ Our **NewTypes.csproj** contains the following:
   
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
 </Project>
@@ -235,9 +235,9 @@ public class PetTests
 }
 ```
 
-```console
+<Note>
 Although you expect that the expected and actual values are equal, an initial assertion with the Assert.AreNotEqual check specifies that these values are not equal. Always initially create a test to fail in order to check the logic of the test. After you confirm that the test fails, adjust the assertion to allow the test to pass. We'll get to testing just in a bit.
-```
+</Note>
 
 The following shows the complete project structure:
 
