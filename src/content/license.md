@@ -18,9 +18,7 @@ This material and its exercises have been a group effort. Thanks goes to at leas
 * [Janne Nylund](https://github.com/janne-nylund), Centria
 * [Mathilda Nynäs](https://github.com/Majon1), Centria
 * [Merja Pyrhönen](https://github.com/meikku), Centria
-* Markus Räisänen, Business College Helsinki
 * [Tuukka Ullakko](https://github.com/TuukkaUllakko), Centria
-* Mirja Uusitalo, Centria
 
 This page template was originally created by:
 * [Vũ Nguyễn](https://github.com/ndkv9), Centria
