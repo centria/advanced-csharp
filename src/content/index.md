@@ -8,6 +8,8 @@ hidden: false
 
 Welcome to the Advanced Programming with C# course! The course begins 1.11.2021 and ends 19.12.2021. 
 
+This is the second part of the two part course. You can find the first part, Basics of Programming with C#, from here: [https://centria.github.io/basic-csharp/](https://centria.github.io/basic-csharp/)
+
 ## If you just want to learn
 
 To attend the course, you do not have to be a student in Centria University of Applied science. All the material and exercises are available online. If you want to get ECTS credits for the course, you have to register to Centria Open University.
