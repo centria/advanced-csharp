@@ -236,7 +236,7 @@ public class PetTests
 ```
 
 <Note>
-Although you expect that the expected and actual values are equal, an initial assertion with the Assert.AreNotEqual check specifies that these values are not equal. Always initially create a test to fail in order to check the logic of the test. After you confirm that the test fails, adjust the assertion to allow the test to pass. We'll get to testing just in a bit.
+Although you expect that the expected and actual values are equal, an initial assertion with the Assert.NotEqual check specifies that these values are not equal. Always initially create a test to fail in order to check the logic of the test. After you confirm that the test fails, adjust the assertion to allow the test to pass. We'll get to testing just in a bit.
 </Note>
 
 The following shows the complete project structure:
@@ -283,17 +283,13 @@ Actual:   "Woof!"
 Failed!  - Failed:     2, Passed:     0, Skipped:     0, Total:     2, Duration: 4 ms - NewTypeTest.dll (net5.0)
 ```
 
-Change the assertions of your tests from **Assert.AreNotEqual** to **Assert.AreEqual** and rerun the tests with **dotnet test**:
+Change the assertions of your tests from **Assert.NotEqual** to **Assert.Equal** and rerun the tests with **dotnet test**:
 
 ```console
 Starting test execution, please wait...
-
 A total of 1 test files matched the specified pattern.
 
-Test Run Successful.
-Total tests: 2
-     Passed: 2
- Total time: 1.0976 Seconds
+Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 1 ms - NewTypeTest.dll (net5.0)
 ```
 
 Now we have created a well organized project. We are able to run our tests and the project itself. You might have noticed, that we ran the commands **dotnet run** and **dotnet test** in different folders. That's because when we run the commands, we actually check the **.csproj** file what we are running. 
