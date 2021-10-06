@@ -67,5 +67,5 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
   ],
-  pathPrefix: '/template',
+  pathPrefix: '/advanced-csharp',
 }
