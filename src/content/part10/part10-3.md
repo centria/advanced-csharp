@@ -9,7 +9,7 @@ hidden: false
 If we know the possible values ​​of a variable in advance, we can use a class of type **enum**, i.e., enumerated type to represent the values. Enumerated types are their own type in addition to being normal classes and interfaces. An enumerated type is defined by the keyword **enum**. For example, the following Suit enum class defines four constant values: Diamond, Spade, Club and Heart.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public enum Suit
   {
@@ -28,7 +28,7 @@ An Enum is (usually) written in its own file, much like a class or interface.
 The following is a Card class where the suit is represented by an enum:
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class Card
   {
@@ -52,7 +52,7 @@ namespace sandbox
 The card is used in the following way:
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
 

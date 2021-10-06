@@ -16,7 +16,7 @@ In the example below, a Dictionary object has been created to search for cities 
 using System;
 using System.Collections.Generic;
 
-namespace sandbox
+namespace Exercise001
 {
   class Program
   {
@@ -57,7 +57,7 @@ Console.WriteLine(postalCodes["67100"]);
 ```console
 Unhandled exception. System.Collections.Generic.KeyNotFoundException: The given key '67100' was not present in the dictionary.
    at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at sandbox.Program.Main(String[] args) in /mnt/c/Users/HeikkiHei/Documents/coding-exercises/sandbox/Program.cs:line 17
+   at Exercise001.Program.Main(String[] args) in /mnt/c/Users/HeikkiHei/Documents/coding-exercises/Exercise001/Program.cs:line 17
 ```
 
 Two type parameters are required when creating a dictionary - the type of the key and the type of the value added. If the keys of the dictionary are of type string, and the values of type integer, the dictionary is created with the following statement 
@@ -404,7 +404,7 @@ The implementation is much neater when the helper method is used.
 using System;
 using System.Collections.Generic;
 
-namespace sandbox
+namespace Exercise001
 {
   public class Library
   {

@@ -14,7 +14,7 @@ We have already learned some strategies to read text files. If your memories of 
 Next, let's take a look at writing data to files. The [**StreamWriter **](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.8) class offers the functionality to write to files. The constructor of the StreamWriter class receives as its parameter a string that represents the location of the target file.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   using System.IO;
@@ -38,7 +38,7 @@ In the example above we write to the file "file.txt" the string "Hello file!", f
 The constructor of the **StreamWriter** class might throw an exception that must be either handled or thrown so that it is the responsibility of the calling method. Here is what a method that receives as its parameters a file name and the text contents to write into it could look like.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   using System.IO;
@@ -82,7 +82,7 @@ Of course, having our file open all the time would be one option, but quite unre
 This time we are using [**StreamWriter(String, Boolean)**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=netframework-4.8#System_IO_StreamWriter__ctor_System_String_System_Boolean_), where the Boolean value determinates, if we want to append the information to a file, rather than overwrite every time. Let's update our Storer class:
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   using System.IO;

@@ -42,7 +42,7 @@ Unhandled exception. System.FormatException: Input string was not in a correct f
    at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
    at System.Number.ParseInt32(ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
    at System.Convert.ToInt32(String value)
-   at sandbox.Program.Main(String[] args) in [. . .]]/Program.cs:line 12
+   at Exercise001.Program.Main(String[] args) in [. . .]]/Program.cs:line 12
 ```
 
 The above program throws an error if the user input is not a valid number. The exception will cause the program execution to stop.
@@ -158,7 +158,7 @@ File name: '[. . .]/fileDoesNotExist.txt'
    at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks)
    at System.IO.File.InternalReadAllText(String path, Encoding encoding)
    at System.IO.File.ReadAllText(String path)
-   at sandbox.Program.Main(String[] args) in [. . .]/Program.cs:line 12
+   at Exercise001.Program.Main(String[] args) in [. . .]/Program.cs:line 12
 ```
 
 We get quite a stack trace, but most importanty, we get **FileNotFoundException**. Let's catch that.
@@ -290,7 +290,7 @@ One exception which the user does not have to prepare for is **ArgumentException
 Lets create class Grade. It gets a integer representing a grade as a constructor parameter.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class Grade
   {
@@ -307,7 +307,7 @@ namespace sandbox
 We want that the grade fills certain criteria. The grade has to be an integer between 0 and 5. If it is something else, we want to throw an exception. Let's add a conditional statement to the constructor, which checks if the grade fills the criteria. If it does not, we throw the **ArgumentException** with **throw new ArgumentException("Grade must be between 0 and 5.");**.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   public class Grade
@@ -363,8 +363,8 @@ We have already used the property **Message**. In it is stored the message that 
 
 ```console
 Unhandled exception. System.ArgumentException: Grade must be between 0 and 5.
-   at sandbox.Grade..ctor(Int32 grade) in [. . .]]/Grade.cs:line 14
-   at sandbox.Program.Main(String[] args) in []. . .]/Program.cs:line 14
+   at Exercise001.Grade..ctor(Int32 grade) in [. . .]]/Grade.cs:line 14
+   at Exercise001.Program.Main(String[] args) in []. . .]/Program.cs:line 14
 ```
 
 We read a stack trace from the bottom up. At the bottom is the first call, so the execution of the program has begun from the **Main()** method for the **Program** class. Line 14 of the Main method was used to create the new Grade object, with illegal parameters. Line 14 of the Grade class is the constructor, and it has now thrown and **ArgumentException**. The details of an exception are very useful when trying to pinpoint where an error happens.

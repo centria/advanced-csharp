@@ -14,7 +14,7 @@ Let's take a look at this with the help of a **Member** class that represents a 
 
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   // IComparable is in System
   using System;

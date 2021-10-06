@@ -24,7 +24,7 @@ We use the **:** (or colon) notation to inherit a class. The class that receives
 Let's take a look at a car manufacturing system that manages car parts. A basic component of part management is the class **Part**, which defines the identifier, the manufacturer, and the description.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class Part
   {
@@ -48,7 +48,7 @@ One part of the car is the engine. As is the case with all parts, the engine, to
 The traditional way to implement the class **Engine**, without using inheritance, would be this.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class Engine
   {
@@ -73,7 +73,7 @@ We notice a significant amount of overlap between the contents of Engine and Par
 Let's recreate the class Engine, and this time use inheritance in our implementation. We'll create the class **Engine** which inherits the class **Part**: an engine is a special case of a part.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class Engine : Part
   {
@@ -134,7 +134,7 @@ When the constructor (of the derived class) is called, the variables defined in 
 We demonstrate in the example below how to call **this** and **base**. The class **Baseclass** includes an object variable and two constructors. One of them calls the other constructor with the **this** keyword. The class DerivedClass includes a parameterized constructor, but it has no object variables. The constructor of DerivedClass calls the parameterized constructor of the base class.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class BaseClass
   {
@@ -158,7 +158,7 @@ namespace sandbox
 ```
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class DerivedClass : BaseClass
   {
@@ -205,7 +205,7 @@ override: Derived Class
 An object's type decides what the methods provided by the object are. Let's create a couple of examples for this.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class Person
   {
@@ -227,7 +227,7 @@ namespace sandbox
 ```
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class Student : Person
   {
@@ -300,7 +300,7 @@ Let's examine polymorphism with another example.
 You could represent a point in two-dimensional coordinate system with the following class:
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   public class Point
@@ -338,7 +338,7 @@ The **Location** method is not meant for external use, which is why it is define
 A colored point is otherwise identical to a point, but it contains also a color that expressed as a string. Due to the similarity, we can create a new class by extending the class Point.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class ColorPoint : Point
   {
@@ -388,7 +388,7 @@ static void Main(string[] args)
 We also want to include a three-dimensional point in our program. Since it has no color information, let's derive it from the class **Point**.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   public class Point3D : Point
@@ -449,7 +449,7 @@ static void Main(string[] args)
 We notice that the **ToString** method in **Point3D** is exactly the same as the ToString of **Point**. Could we save some effort and not override ToString? The answer happens to be yes! The Point3D class is refined into this:
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   public class Point3D : Point
@@ -578,7 +578,7 @@ An abstract class combines interfaces and inheritance. You cannot create instanc
 To define an abstract class or an abstract method the keyword abstract is used. An abstract class is defined with the phrase **public abstract class *NameOfClass***; an abstract method is defined by **public abstract returnType NameOfMethod**. Let's take a look at the following abstract class called **Operation**, which offers a structure for operations and executing them.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public abstract class Operation
   {
@@ -598,7 +598,7 @@ namespace sandbox
 The abstract class **Operation** works as a basis for implementing different actions. For instance, you can implement the plus operation by extending the **Operation** class in the following manner.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   public class PlusOperation : Operation
@@ -623,7 +623,7 @@ namespace sandbox
 Since all the classes that inherit from Operation have also the type **Operation**, we can create a user interface by using Operation type variables. Next we'll show the class **UserInterface** that contains a list of operations. It's possible to add operations to the UI dynamically.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   using System.Collections.Generic;

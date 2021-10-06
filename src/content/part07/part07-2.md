@@ -59,7 +59,7 @@ using System.IO;
 using System.Collections.Generic;
 
 
-namespace sandbox
+namespace Exercise001
 {
   class Program
   {

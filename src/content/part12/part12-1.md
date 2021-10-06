@@ -67,7 +67,7 @@ namespace OuterNamespace
 ```
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   class Program
   {

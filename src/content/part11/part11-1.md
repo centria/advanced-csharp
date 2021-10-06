@@ -9,7 +9,7 @@ hidden: false
 Encryption algorithms, machine learning and making computer games less predictable all require randomness. We can model randomness using random numbers. C# offers ready-made **System.Random** class for creating random numbers. An instance of the Random class can be used as follows:
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   
@@ -77,7 +77,7 @@ The **NextDouble** method of the Random class creates random doubles. Let's assu
 Let's create a weather forecast using these probabilities.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
 
@@ -114,7 +114,7 @@ namespace sandbox
 Let's now add a main which uses the WeatherMan class.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   using System.Collections.Generic;

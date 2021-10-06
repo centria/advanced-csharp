@@ -9,7 +9,7 @@ hidden: false
 We can use interfaces to define behavior that's required from a class, i.e., its methods. They're defined the same way that regular C# classes are, but **"public interface I..."** is used instead of **"public class ... "** at the beginning of the class. Interfaces define behavior through method names and their return values. However, they don't always include the actual implementations of the methods. A visibility attribute on interfaces is not marked explicitly as they're always public. Let's examine a **IReadable** interface that describes readability.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public interface IReadable
   {
@@ -25,7 +25,7 @@ The IReadable interface declares a Read() method, which returns a string-type ob
 The classes that implement the interface decide how the methods defined in the interface are implemented. A class implements the interface by adding the keyword implements after the class name followed by the name of the interface being implemented. Let's create a class called **TextMessage** that implements the IReadable interface.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class TextMessage : IReadable
   {
@@ -55,7 +55,7 @@ The interface defines only the names, parameters, and return values ​​of the
 In addition to the TextMessage class, let's add another class that implements the **IReadable** interface. The **EBook** class is an electronic implementation of a book that containing the title and pages of a book. The ebook is read page by page, and calling the **public String read()** method always returns the next page as a string.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System.Collections.Generic;
   public class EBook : Readable

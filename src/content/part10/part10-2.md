@@ -93,7 +93,7 @@ C#'s ready-made **StringBuilder** from **System.Text** class provides a way to c
 In the example below, only one string is created.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   using System.Text;
@@ -128,7 +128,7 @@ You could verify the format of the student number, for instance, by going throug
 Checking correctness with the help of regular expressions is done by first defining a suitable regular expression. We can then use the **IsMatch** method of the Regex class, which checks whether the string contains the regular expression given as the regex constructor parameter. For the student number, the appropriate regular expression is "^01\[0-9\]\{7\}\$", and checking the student number entered by a user is done as follows:
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   using System;
   using System.Text.RegularExpressions;

@@ -76,7 +76,7 @@ public override bool Equals(object compared)
 The Book-class in it's entirety.
 
 ```cpp
-namespace sandbox
+namespace Exercise001
 {
   public class Book
   {
@@ -140,7 +140,7 @@ else
 ```
 
 ```console
-Book.cs(3,16): warning CS0659: 'Book' overrides Object.Equals(object o) but does not override Object.GetHashCode() [/mnt/c/Users/HeikkiHei/Documents/coding-exercises/sandbox/sandbox.csproj]
+Book.cs(3,16): warning CS0659: 'Book' overrides Object.Equals(object o) but does not override Object.GetHashCode() [/mnt/c/Users/HeikkiHei/Documents/coding-exercises/Exercise001/Exercise001.csproj]
 
 The books were the same
 ```

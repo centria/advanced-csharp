@@ -108,7 +108,7 @@ We can implement, for instance, an exercise point tracking program in a similar 
 using System;
 using System.Collections.Generic;
 
-namespace sandbox
+namespace Exercise001
 {
   public class TaskTracker
   {
