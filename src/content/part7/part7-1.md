@@ -10,10 +10,15 @@ hidden: false
 So far we have let ourselves off easy: we have not done any projects ourselves, but we've been given templates in the exercises.
 
 ```console
-/exercise_01
-|__ProgramTests.cs
-|__exercise_01.csproj
-|__Program.cs
+.
+├── src
+│   └── Exercise001
+│       ├── Exercise.csproj
+│       ├── Program.cs
+└── test
+    └── Exercise001Test
+        ├── Exercise001Tests.csproj
+        └── ProgramTest.cs
 ```
 
  This is not a very reasonable way to create or maintain projects. When the projects start to grow, the structure is soon hard to follow, and even harder to maintain. The following is adapted [**from this .NET Documentation**](https://docs.microsoft.com/en-us/dotnet/core/tutorials/testing-with-cli).
@@ -25,7 +30,7 @@ So far we have let ourselves off easy: we have not done any projects ourselves, 
 
 ### Building the sample
 
-For the following steps, create your own files and folders if you wish to test creating the example. The example is also added to the exercise repository, if you just want to test the functionality. 
+For the following steps, create your own files and folders if you wish to test creating the example.
 
 The animal types are logically organized into a folder structure that permits the addition of more types later, and tests are also logically placed in folders permitting the addition of more tests later.
 
