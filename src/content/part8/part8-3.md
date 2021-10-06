@@ -8,7 +8,7 @@ hidden: false
 
 A dictionary has at most one value per each key. In the following example, we store the phone numbers of people into the dictionary.
 
-```cs
+```cpp
 static void Main(string[] args)
 {
   Dictionary<string, string> phoneNumbers = new Dictionary<string, string>();
@@ -30,7 +30,7 @@ NOTICE! The way we handled the dictionary is now a bit different. Rather than us
 
 If we were to search for a value with a key that does not exist, however, we get an error:
 
-```cs
+```cpp
 static void Main(string[] args)
 {
   Dictionary<string, string> phoneNumbers = new Dictionary<string, string>();
@@ -54,7 +54,7 @@ What if we wanted to assign multiple values ​​to a single key, such as multi
 
 Since keys and values ​​in a dictionary can be any variable, it is also possible to use lists as values in a dictionary. You can add more values ​​to a single key by attaching a list to the key. Let's change the way the numbers are stored in the following way:
 
-```cs
+```cpp
 Dictionary<string, List<string>> phoneNumbers = new Dictionary<string, List<string>>();
 
 // Add Pekka to the Dictionary with a new List for numbers
@@ -71,7 +71,7 @@ phoneNumbers["Pekka"].ForEach(Console.WriteLine);
 
 This exactly the same as
 
-```cs
+```cpp
 Dictionary<string, List<string>> phoneNumbers = new Dictionary<string, List<string>>();
 
 // Add Pekka to the Dictionary with a new List for numbers
@@ -97,14 +97,14 @@ Pekka's numbers:
 
 We define the type of the phone number as Dictionary\<string, List\<string\>\>. This refers to a dictionary that uses a string as a key and a list containing strings as its value. As such, the values added to the dictionary are concrete lists.
 
-```cs
+```cpp
 // Add Pekka to the Dictionary with a new List for numbers
 phoneNumbers.Add("Pekka", new List<string>());
 ```
 
 We can implement, for instance, an exercise point tracking program in a similar way. The example below outlines the **TaskTracker** class, which involves user-specific tracking of points from tasks. The user is represented as a string and the points as integers.
 
-```cs
+```cpp
 using System;
 using System.Collections.Generic;
 
@@ -149,7 +149,7 @@ namespace sandbox
 }
 ```
 
-```cs
+```cpp
 TaskTracker tracker = new TaskTracker();
 tracker.Add("Ada", 3);
 tracker.Add("Ada", 4);

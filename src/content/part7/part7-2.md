@@ -53,7 +53,7 @@ If your code doesn't work and you don't know where the error is, these steps wil
 
 Manually testing the program is often laborious. It's possible to automate the passing of input by, for example, creating a [**StringReader**](https://docs.microsoft.com/en-us/dotnet/api/system.io.stringreader?view=netframework-4.8) and giving that content to [**Console.SetIn**](https://docs.microsoft.com/en-us/dotnet/api/system.console.setin?view=netframework-4.8). You'll find an example below of how to test a program automatically. The program first enters five strings, followed by the previously seen string. After that, we try to enter a new string. The string "six" should not appear in the word set.
 
-```cs
+```cpp
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -127,7 +127,7 @@ Ready-made unit test libraries are commonly used in writing tests, which provide
 
 Let's take a look at writing unit tests with the help of an example. Let's assume that we have the following Calculator class at our use, and want to write automated tests for it.
 
-```cs
+```cpp
 public class Calculator
 {
 
@@ -156,7 +156,7 @@ Unit test writing begins by creating a test class, which is created under the Te
 
 The test class **CalculatorTest** is initially quite forgiving:
 
-```cs
+```cpp
 using NUnit.Framework;
 
 namespace CalculatorTest
@@ -188,7 +188,7 @@ Let's go through the file:
 
 Tests are methods of the test class where each test tests an individual unit. Let's begin testing the class -- we start off by creating a test method that confirms that the newly created calculator's value is intially 0.
 
-```cs
+```cpp
 using NUnit.Framework;
 using Calculators;
 
@@ -231,7 +231,7 @@ In the **CalculatorInitialValueZero** method a calculator object is first create
 
 Let's add functionality for summing and substacting to the test class.
 
-```cs
+```cpp
 using NUnit.Framework;
 using Calculators;
 
@@ -300,7 +300,7 @@ Total tests: 3
 
  With the previous tests two passed, but one of them resulted in an error. Let's fix the mistake left in the Calculator class.
 
-```cs
+```cpp
 // ...
 public void Substract(int number)
 {

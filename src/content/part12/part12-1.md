@@ -14,25 +14,25 @@ Namespaces have two main functions in C# programming. First, they are used to or
 
 The most common namespace so far, is the **System** namespace. In our programs, we call it as follows:
 
-```cs
+```cpp
 using System;
 ```
 
 With this **using directive** we tell our program, it should have access to the System namespace, and it can use classes, methods, and even nested namespaces, from System. For example, when we print in our code something to the console:
 
-```cs
+```cpp
 Console.WriteLine("text to be printed");
 ```
 
 We are actually calling:
 
-```cs
+```cpp
 System.Console.WriteLine("text to be printed");
 ```
 
 With the **using System**, we don't have to write the long form of the classes (Console) and methods (WriteLine) called, so we can keep our code cleaner and shorter. Or how do you feel, creating for example a list every time with...
 
-```cs
+```cpp
 System.Collections.Generic.List<string> list = new System.Colletions.Generic.List<string>();
 ```
 
@@ -40,7 +40,7 @@ System.Collections.Generic.List<string> list = new System.Colletions.Generic.Lis
 
 The keyword **namespace** can be used to declare a scope for classes and methods within your project. This is crucial in especially large projects, but can be used to organize projects of any size. Let's look at an example:
 
-```cs
+```cpp
 namespace OuterNamespace
 {
   using System;
@@ -66,7 +66,7 @@ namespace OuterNamespace
 }
 ```
 
-```cs
+```cpp
 namespace sandbox
 {
   class Program
@@ -101,7 +101,7 @@ What just happened?
 
 Let's move our Main to the same namespace as the classes:
 
-```cs
+```cpp
 namespace OuterNamespace
 {
 
@@ -134,7 +134,7 @@ Namespaces and Types have **fully qualified names**, or **unique title**, which 
 
 So, with the **.** (dot) we indicate a hierachy of items. Let's look at another example:
 
-```cs
+```cpp
 namespace Outmost     // Outmost
 {
   class ExampleClass      // Outmost.ExampleClass

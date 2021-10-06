@@ -8,19 +8,19 @@ hidden: false
 
 We've encountered situations where reference-type variables have other types besides their own one. For example, all objects are of type Object, i.e., any given object can be represented as a Object-type variable in addition to its own type.
 
-```cs
+```cpp
 string text = "text";
 Object textString = "another string";
 ```
 
-```cs
+```cpp
 string text = "text";
 Object textString = text;
 ```
 
 In the examples above, a string variable is represented as both a String type and an Object type. Also, a String-type variable is assigned to an Object-type variable. However, assignment in the other direction, i.e., setting an Object-type variable to a String type, will not work. This is because Object-type variables are not of type String.
 
-```cs
+```cpp
 Object textString = "another string";
 string text = textString; // WON'T WORK!
 ```
@@ -39,7 +39,7 @@ The inheritance hierarchy can also be thought of as a list of the different type
 
 Knowledge of the fact that objects can be of many different types -- of type Object, for instance -- makes programming simpler. If we only need methods defined in the Object class, such as **ToString**, **Equals** and **GetHashCode** in a method, we can simply use Object as the type of the method parameter. In that case, you can pass the method *any* object as a parameter. Let's take a look at this with the **PrintManyTimes** method. The method gets an Object-type variable and the number of print operations as its parameters.
 
-```cs
+```cpp
 public void PrintManyTimes(Object obj, int times)
 {
   int i = 0;
@@ -54,7 +54,7 @@ public void PrintManyTimes(Object obj, int times)
 
 The method can be given any type of object as a parameter. Within the PrintManyTimes method, the object only has access to the methods defined in the Object class because the object is known in the method to be of type Object. The object may, in fact, be of another type.
 
-```cs
+```cpp
 Printer printer = new Printer();
 
 string str = " o ";
@@ -78,7 +78,7 @@ System.Collections.Generic.List`1[System.String]
 
 Let's continue to look at the API description of the String class. The inheritance hierarchy in the description is followed by a list of interfaces implemented by the class.
 
-```cs
+```cpp
 [System.Runtime.InteropServices.ComVisible(true)]
 [System.Serializable]
 public sealed class String : ICloneable, IComparable, IComparable<string>, IConvertible, IEquatable<string>, System.Collections.Generic.IEnumerable<char>
@@ -86,7 +86,7 @@ public sealed class String : ICloneable, IComparable, IComparable<string>, IConv
 
 The **String** class implements multiple interfaces, such as **IComparable**, **IConvertible** and **ICloneable**.
 
-```cs
+```cpp
 ICloneable cloneableString = "string";
 IComparable comparableString = "string";
 IConvertible convertibleString = "string";
@@ -100,7 +100,7 @@ As stated earlier, a class can only inherit a single class directly, but can inh
 
 The answer is simple, we just list them separated with a comma. For example a class from our exercises:
 
-```cs
+```cpp
 public class Cat : Animal, INoiseCapable
 {
   // All the code a Cat needs

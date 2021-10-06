@@ -7,7 +7,7 @@ hidden: false
 
 # Projects
 
-So far we have let ourselves off easy: all our project files have been in a single folder and in a single namespace.
+So far we have let ourselves off easy: we have not done any projects ourselves, but we've been given templates in the exercises.
 
 ```console
 /exercise_01
@@ -44,7 +44,7 @@ The sample contains two types, **Dog** and **Cat**. For the NewTypes project, yo
 
 **Dog.cs** could look something like this:
 
-```cs
+```cpp
 using System;
 
 namespace Pets
@@ -61,7 +61,7 @@ namespace Pets
 
 And **Cat.cs** something like this: 
 
-```cs
+```cpp
 using System;
 
 namespace Pets
@@ -78,7 +78,7 @@ namespace Pets
 
 Our **Program.cs** looks like this:
 
-```cs
+```cpp
 using System;
 using Pets;
 
@@ -165,7 +165,7 @@ The **NewTypesTest.csproj** file contains the following:
 
 Change the name of **UnitTest1.cs** to **PetTests.cs** and replace the code in the file with the following:
 
-```cs
+```cpp
 using System;
 using NUnit.Framework;
 using Pets;

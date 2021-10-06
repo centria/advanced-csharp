@@ -13,7 +13,7 @@ We have already learned some strategies to read text files. If your memories of 
 
 Next, let's take a look at writing data to files. The [**StreamWriter **](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.8) class offers the functionality to write to files. The constructor of the StreamWriter class receives as its parameter a string that represents the location of the target file.
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -37,7 +37,7 @@ In the example above we write to the file "file.txt" the string "Hello file!", f
 
 The constructor of the **StreamWriter** class might throw an exception that must be either handled or thrown so that it is the responsibility of the calling method. Here is what a method that receives as its parameters a file name and the text contents to write into it could look like.
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -66,7 +66,7 @@ In the **WriteToFile** method above we begin by creating a **StreamWriter** obje
 
 Let's create a **Main** method that calls the WriteToFile of a Storer object.
 
-```cs
+```cpp
 Storer storer = new Storer();
 storer.WriteToFile("diary.txt", "Dear diary, today was a good day.");
 ```
@@ -81,7 +81,7 @@ Of course, having our file open all the time would be one option, but quite unre
 
 This time we are using [**StreamWriter(String, Boolean)**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=netframework-4.8#System_IO_StreamWriter__ctor_System_String_System_Boolean_), where the Boolean value determinates, if we want to append the information to a file, rather than overwrite every time. Let's update our Storer class:
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -109,7 +109,7 @@ namespace sandbox
 
 With this change, we can call the method more than once, and the diary will update with all the information:
 
-```cs
+```cpp
 Storer storer = new Storer();
 storer.WriteToFile("diary.txt", "Dear diary, today was a good day.");
 storer.WriteToFile("diary.txt", "Dear diary, today was a bad day.");
@@ -119,7 +119,7 @@ storer.WriteToFile("diary.txt", "Dear diary, today was a bad day.");
 
 Sometimes we want to make changes to the files we have saved already. The easiest way is just to write over the data we already have in our files. But what if we only want to replace certain, already known parts of the text? Let's look at that a bit closer.
 
-```cs
+```cpp
 string str = File.ReadAllText("diary.txt");
 str = str.Replace("Dear diary, today was a bad day.", "Dear diary, today was an exceptional day.");
 File.WriteAllText("diary.txt", str);
@@ -139,7 +139,7 @@ On the third line, we use the method **WriteAllText** from the File class, and w
 Let's say we have a larger file, or we would want to go through our file with a loop. In the next example, we do the same task, but with StreamWriter and a for-loop.
 
 
-```cs
+```cpp
 public static void Main(string[] args)
 {
   string diary = "diary.txt";

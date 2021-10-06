@@ -13,7 +13,7 @@ The **CompareTo** method required by the IComparable interface gets as its param
 Let's take a look at this with the help of a **Member** class that represents a child or youth who belongs to a club. Each club member has a name and height. The club members should go to eat in order of height, so the Member class should implement the IComparable interface. The IComparable interface takes as its type parameter the class that is the subject of the comparison. We'll use the same Member class as the type parameter.
 
 
-```cs
+```cpp
 namespace sandbox
 {
   // IComparable is in System
@@ -79,7 +79,7 @@ The CompareTo method required by the interface returns an integer that informs u
 
 Since returning a negative number from the **CompareTo()** is enough if the this object is smaller than the parameter object, and zero when the lengths are the same, the CompareTo method described above can also be implemented as follows.
 
-```cs
+```cpp
 public int CompareTo(Member member)
 {
   return this.height - member.height;
@@ -90,7 +90,7 @@ Since the Member class now implements the IComparable interface, it is possible 
 
 Sorting club members is straightforward now.
 
-```cs
+```cpp
 // List of Members
 List<Member> member = new List<Member>();
 // Add three regular members
@@ -128,7 +128,7 @@ A class can implement multiple interfaces. Multiple interfaces are implemented b
 
 Say we have the following **IIdentifiable** interface.
 
-```cs
+```cpp
 public interface IIdentifiable {
     string getId();
 }
@@ -136,7 +136,7 @@ public interface IIdentifiable {
 
 We want to create a Person who is both identifiable and sortable. This can be achieved by implementing both of the interfaces. An example is provided below.
 
-```cs
+```cpp
 public class Person : IIdentifiable, IComparable<Person> {
     public string name { get; }
     public string socialSecurityNumber { get; }
@@ -158,7 +158,7 @@ public class Person : IIdentifiable, IComparable<Person> {
 
 Let us examine a situation, where we had bit of an erronous way of comparing items, i.e. by their name:
 
-```cs
+```cpp
 public class Person : IIdentifiable, IComparable<Person> {
     public string name { get; }
     public string socialSecurityNumber { get; }
@@ -181,7 +181,7 @@ public class Person : IIdentifiable, IComparable<Person> {
 This is not of course reasonable, as there are people with the same name. The logic is still quite repairable, as we could have a secondary comparison. If we want to stick as the name being the first sorting point and the socialSecurityNumber as secondary, we could do the following:
 
 
-```cs
+```cpp
 public class Person : IIdentifiable, IComparable<Person> {
     public string name { get; }
     public string socialSecurityNumber { get; }

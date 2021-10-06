@@ -12,7 +12,7 @@ In our material and exercises, we have used the keyword **using** only to bring 
 
 Namespaces are made available to our code with the **using directive**. For example,
 
-```cs
+```cpp
 using System;
 ```
 
@@ -20,7 +20,7 @@ is a directive. With the directive, we allow our code to access members of other
 
 When we use the directive, we get access to that specific namespace, but not the nested namespaces, nor the namespaces above. For that reason, we often have multiple namespaces brought from the same upper namespace, such as
 
-```cs
+```cpp
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ Where ever you put your directive, defines which members of that file can access
 
 Aliases are used to make identification of namespaces and types easier. For example, in a larger project we might have multiple subparts with similar method names, and in our code we need to make sure, we are calling the correct methods. Aliases are created with the **using directive**.
 
-```cs
+```cpp
 namespace MasterProject
 {
   // Define an alias for the nested namespace.
@@ -69,7 +69,7 @@ namespace MasterProject
 
 There are restrictions to creating aliases. For example,
 
-```cs
+```cpp
 // creating alias, works
 using c = System.Collections;
 // using alias does not work
@@ -89,7 +89,7 @@ The using statement is meant for objects which inherit the [**IDisposable interf
 
 For example, the using statement has been used in our exercise test since the beginning. Let's take a look:
 
-```cs
+```cpp
 [Test]
 public void TestExercise01()
 {

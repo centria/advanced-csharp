@@ -23,7 +23,7 @@ We use the **:** (or colon) notation to inherit a class. The class that receives
 
 Let's take a look at a car manufacturing system that manages car parts. A basic component of part management is the class **Part**, which defines the identifier, the manufacturer, and the description.
 
-```cs
+```cpp
 namespace sandbox
 {
   public class Part
@@ -47,7 +47,7 @@ One part of the car is the engine. As is the case with all parts, the engine, to
 
 The traditional way to implement the class **Engine**, without using inheritance, would be this.
 
-```cs
+```cpp
 namespace sandbox
 {
   public class Engine
@@ -72,7 +72,7 @@ We notice a significant amount of overlap between the contents of Engine and Par
 
 Let's recreate the class Engine, and this time use inheritance in our implementation. We'll create the class **Engine** which inherits the class **Part**: an engine is a special case of a part.
 
-```cs
+```cpp
 namespace sandbox
 {
   public class Engine : Part
@@ -97,7 +97,7 @@ The constructor of the Engine class is worth some interest. On its declaration l
 
 Since the class Engine extends the class Part, it has at its disposal all the methods that the class Part offers. You can create instances of the class Engine the same way you can of any other class.
 
-```cs
+```cpp
 static void Main(string[] args)
 {
   Engine engine = new Engine("combustion", "hz", "volkswagen", "VW GOLF 1L 86-91");
@@ -133,7 +133,7 @@ When the constructor (of the derived class) is called, the variables defined in 
 
 We demonstrate in the example below how to call **this** and **base**. The class **Baseclass** includes an object variable and two constructors. One of them calls the other constructor with the **this** keyword. The class DerivedClass includes a parameterized constructor, but it has no object variables. The constructor of DerivedClass calls the parameterized constructor of the base class.
 
-```cs
+```cpp
 namespace sandbox
 {
   public class BaseClass
@@ -157,7 +157,7 @@ namespace sandbox
 }
 ```
 
-```cs
+```cpp
 namespace sandbox
 {
   public class DerivedClass : BaseClass
@@ -169,7 +169,7 @@ namespace sandbox
 }
 ```
 
-```cs
+```cpp
 BaseClass bas = new BaseClass();
 DerivedClass der = new DerivedClass();
 
@@ -186,7 +186,7 @@ Derived Class
 
 You can call the methods defined in the base class by prefixing the call with base, just as you can call the methods defined in this class by prefixing the call with this. For example, when overriding the ToString method, you can call the base class's definition of that method in the following manner:
 
-```cs
+```cpp
 public override string ToString()
 {
   return "override: " + base.ToString();
@@ -204,7 +204,7 @@ override: Derived Class
 
 An object's type decides what the methods provided by the object are. Let's create a couple of examples for this.
 
-```cs
+```cpp
 namespace sandbox
 {
   public class Person
@@ -226,7 +226,7 @@ namespace sandbox
 }
 ```
 
-```cs
+```cpp
 namespace sandbox
 {
   public class Student : Person
@@ -246,7 +246,7 @@ namespace sandbox
 ```
  If a reference to a **Student** type object is stored in a **Person type variable**, only the methods defined in the Person class (and its base class and interfaces) are available:
 
-```cs
+```cpp
 Person ollie = new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028");
 
 Console.WriteLine(ollie.credits);       // DOESN'T WORK!
@@ -260,7 +260,7 @@ So an object has at its disposal the methods that relate to its type, and also t
 
 Let's give the Student their own ToString:
 
-```cs
+```cpp
 public override string ToString()
 {
   return base.ToString() + " credits: " + this.credits;
@@ -272,7 +272,7 @@ The class Person had already overriden the ToString method it inherited from the
 In the following example, we'll have students that we refer to by variables of different types. Which version of the ToString method will be executed: the one defined in Objecct, Person, or Student?
 
 
-```cs
+```cpp
 Student ollie = new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028");
 Console.WriteLine(ollie);
 Person olliePerson = new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028");
@@ -299,7 +299,7 @@ Let's examine polymorphism with another example.
 
 You could represent a point in two-dimensional coordinate system with the following class:
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -337,7 +337,7 @@ The **Location** method is not meant for external use, which is why it is define
 
 A colored point is otherwise identical to a point, but it contains also a color that expressed as a string. Due to the similarity, we can create a new class by extending the class Point.
 
-```cs
+```cpp
 namespace sandbox
 {
   public class ColorPoint : Point
@@ -362,7 +362,7 @@ The class defines an object variable in which we store the color. The coordinate
 
 Next we'll add a few points to a list. Some of them are "normal" while others are color points. At the end of the example we'll print the points on the list. For each point, the ToString to be executed is determined by the actual type of the point, even though the list knows all the points by the Point type.
 
-```cs
+```cpp
 static void Main(string[] args)
 {
   List<Point> points = new List<Point>();
@@ -387,7 +387,7 @@ static void Main(string[] args)
 
 We also want to include a three-dimensional point in our program. Since it has no color information, let's derive it from the class **Point**.
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -421,7 +421,7 @@ namespace sandbox
 
 NOTICE! In our methods **Location** and **ManhattanDistanceFromOrigin** we use the keyword **new**, because we are overriding the methods from the base class. Without the keyword, we would get a warning.
 
-```cs
+```cpp
 static void Main(string[] args)
 {
   List<Point> points = new List<Point>();
@@ -448,7 +448,7 @@ static void Main(string[] args)
 
 We notice that the **ToString** method in **Point3D** is exactly the same as the ToString of **Point**. Could we save some effort and not override ToString? The answer happens to be yes! The Point3D class is refined into this:
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -501,7 +501,7 @@ When using inheritance, you should take care to ensure that the [**Single Respon
 
 Let's consider a postal service and some related classes. **Customer** includes the information related to a customer, and the class **Order** that inherits from the Customer class and includes the information about the ordered item. The class Order also has a method called **PostalAddress** which represents the postal address that the order is shipped to.
 
-```cs
+```cpp
 public class Customer
 {
   public string name { get; set; }
@@ -515,7 +515,7 @@ public class Customer
 }
 ``` 
 
-```cs
+```cpp
 public class Order : Customer
 {
 
@@ -543,7 +543,7 @@ In the case that an address changes, we would have to change every order object 
 
 Let's modify the Order class so that it includes a reference to a Customer object.
 
-```cs
+```cpp
 public class Order
 {
 
@@ -577,7 +577,7 @@ An abstract class combines interfaces and inheritance. You cannot create instanc
 
 To define an abstract class or an abstract method the keyword abstract is used. An abstract class is defined with the phrase **public abstract class *NameOfClass***; an abstract method is defined by **public abstract returnType NameOfMethod**. Let's take a look at the following abstract class called **Operation**, which offers a structure for operations and executing them.
 
-```cs
+```cpp
 namespace sandbox
 {
   public abstract class Operation
@@ -597,7 +597,7 @@ namespace sandbox
 
 The abstract class **Operation** works as a basis for implementing different actions. For instance, you can implement the plus operation by extending the **Operation** class in the following manner.
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -622,7 +622,7 @@ namespace sandbox
 
 Since all the classes that inherit from Operation have also the type **Operation**, we can create a user interface by using Operation type variables. Next we'll show the class **UserInterface** that contains a list of operations. It's possible to add operations to the UI dynamically.
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -683,7 +683,7 @@ namespace sandbox
 }
 ```
 
-```cs
+```cpp
 UserInterface userInterface = new UserInterface();
 userInterface.AddOperation(new PlusOperation());
 

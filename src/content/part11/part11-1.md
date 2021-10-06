@@ -8,7 +8,7 @@ hidden: false
 
 Encryption algorithms, machine learning and making computer games less predictable all require randomness. We can model randomness using random numbers. C# offers ready-made **System.Random** class for creating random numbers. An instance of the Random class can be used as follows:
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -50,7 +50,7 @@ The program output is not always the same. One possible output is the following:
 We can use the **Next** method to create diverse randomness. For example, we might need a program to give us a temperature between \[-30,50\]. We can do this by first creating random a number between 0 and 80 and then subtracting 30 from it.
 
 
-```cs
+```cpp
 Random weatherMan = new Random();
 int temperature = weatherMan.Next(81) - 30;
 Console.WriteLine(temperature);
@@ -58,7 +58,7 @@ Console.WriteLine(temperature);
 
 A more reasonable way to do this, how ever, is to use **Random.Next(lowerLimit, upperLimit)**, like follows:
 
-```cs
+```cpp
 Random weatherMan = new Random();
 int temperature = weatherMan.Next(-30, 51);
 Console.WriteLine(temperature);
@@ -76,7 +76,7 @@ The **NextDouble** method of the Random class creates random doubles. Let's assu
 
 Let's create a weather forecast using these probabilities.
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -113,7 +113,7 @@ namespace sandbox
 
 Let's now add a main which uses the WeatherMan class.
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;

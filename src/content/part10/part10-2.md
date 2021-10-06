@@ -12,7 +12,7 @@ We'll now take a look at some useful programming techniques and classes.
 
 Let's look at the following program
 
-```cs
+```cpp
 string numbers = "";
 for (int i = 1; i < 5; i++)
 {
@@ -29,7 +29,7 @@ The program structure is straightforward. A string containing the number 1234 is
 
 The program works, but there is a small problem invisible to the user. Calling **numbers + i** creates actually a new string. Let's inspect the program line-by-line with the repetition block unpacked.
 
-```cs
+```cpp
 string numbers = ""; // creating a new string: ""
 int i = 1;
 numbers = numbers + i; // creating a new string: "1"
@@ -48,7 +48,7 @@ In the previous example, five strings were created in total.
 
 Let's look at the same program where a new line is added after each number.
 
-```cs
+```cpp
 string numbers = "";
 for (int i = 1; i < 5; i++)
 {
@@ -66,7 +66,7 @@ Console.WriteLine(numbers);
 
 Each **+-operation** forms a new string. On the line numbers + i + "\n"; a string is first created, after which another string is created joining a new line onto the previous string. Let's write this out as well.
 
-```cs
+```cpp
 int i = 1;
 // first creating the string "1" and then the string "1\n"
 numbers = numbers + i + "\n";
@@ -92,7 +92,7 @@ C#'s ready-made **StringBuilder** from **System.Text** class provides a way to c
 
 In the example below, only one string is created.
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -127,7 +127,7 @@ You could verify the format of the student number, for instance, by going throug
 
 Checking correctness with the help of regular expressions is done by first defining a suitable regular expression. We can then use the **IsMatch** method of the Regex class, which checks whether the string contains the regular expression given as the regex constructor parameter. For the student number, the appropriate regular expression is "^01\[0-9\]\{7\}\$", and checking the student number entered by a user is done as follows:
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -160,7 +160,7 @@ You might notice the regular expression starting with a circumflex and ending in
 
 A vertical line indicates that parts of a regular expressions are optional. For example, **00\|111\|0000** defines the strings 00,111 and 0000. The respond method returns true if the string matches any one of the specified group of alternatives.
 
-```cs
+```cpp
 Regex regex = new Regex("00|111|0000");
 string str = "00";
 
@@ -180,7 +180,7 @@ The string contained one of the three alternatives
 
 The regular expression 00\|111\|0000 is actually searching for a substring from a string. This would work as well:
 
-```cs
+```cpp
 Regex regex = new Regex("00|111|0000");
 string str = "1111111";
 
@@ -208,7 +208,7 @@ What is often desired is that a particular sub-string is repeated in a string. T
 
 * The quantifier **\*** repeats 0 ... times, for example;
 
-```cs
+```cpp
 Regex regex = new Regex("^trolo(lo)*$");
 string str = "trolololololo";
 
@@ -229,7 +229,7 @@ Correct form.
 
 * The quantifier **\+** repeats 1... times, for example;
 
-```cs
+```cpp
 Regex regex = new Regex("^trolo(lo)+$");
 string str = "trolololololo";
 
@@ -249,7 +249,7 @@ Correct form.
 
 * The quantifier **?** repeats 0 or 1 times, for example;
 
-```cs
+```cpp
 Regex regex = new Regex("^trolo(lo)+$");
 string str = "trololo";
 
@@ -269,7 +269,7 @@ Correct form.
 
 * The quantifier **{a}** repeats a times, for example:
 
-```cs
+```cpp
 Regex regex = new Regex("^trolo(lo){3}$");
 string str = "trololololo";
 
@@ -290,7 +290,7 @@ Correct form.
 * The quantifier **{a,b}** repeats a ... b times, for example:
 
 
-```cs
+```cpp
 Regex regex = new Regex("^trolo(lo){3,6}$");
 string str = "trololololololololo";
 
@@ -310,7 +310,7 @@ Incorrect form.
 
 * The quantifier **{a,}** repeats a ... times, for example:
 
-```cs
+```cpp
 Regex regex = new Regex("^trolo(lo){3,}$");
 string str = "trololololololololo";
 
@@ -332,7 +332,7 @@ Correct form.
 You can use more than one quantifier in a single regular expression. For example, the regular expression ^5{3}(1\|0)*5{3}$ defines strings that begin and end with three fives. An unlimited number of ones and zeros are allowed in between.
 
 
-```cs
+```cpp
 Regex regex = new Regex("^5{3}(1|0)*5{3}$");
 string str = "5551101000011010555";
 
@@ -354,7 +354,7 @@ Correct form.
 
 A character class can be used to specify a set of characters in a compact way. Characters are enclosed in square brackets, and a range is indicated with a dash. For example, \[145\] means \(1\|4\|5\) and \[2-36-9\] means \(2\|3\|6\|7\|8\|9\). Similarly, the entry \[a-c\]\* defines a regular expression that requires the string to contain only a, b and c.
 
-```cs
+```cpp
 Regex regex = new Regex("[145][2-36-9][a-c]*$");
 string str = "49acbc";
 

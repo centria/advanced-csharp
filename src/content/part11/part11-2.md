@@ -14,7 +14,7 @@ Some exceptions we have to always prepare for, such as errors when reading from 
 
 We use **try {} catch (Exception e) {}** block structure to handle exceptions. Keyword **try** starts a block containing the code which *might* throw an exception. What happens if an exception is thrown in the **try** block is defined in the block starting with the keyword **catch**. The keyword **catch** is followed by the type of the exception handled by that block, for example "all exceptions" **catch (Exception e)**.
 
-```cs
+```cpp
 try 
 {
   // code which possibly throws an exception
@@ -30,7 +30,7 @@ As mentioned above, we do not have to prepare for runtime exceptions such as the
 
 We have used the **Convert.ToInt32** method before. The method throws **FormatException** if the string it has been given cannot be parsed into an integer.
 
-```cs
+```cpp
 Console.WriteLine("Give a number:");
 int number = Convert.ToInt32(Console.ReadLine());
 ```
@@ -49,7 +49,7 @@ The above program throws an error if the user input is not a valid number. The e
 
 Let's handle the exception. We wrap the call which might throw an exception into a try block, and the code executed if the exception is thrown into a catch block.
 
-```cs
+```cpp
 Console.WriteLine("Give a number:");
 int number = 0;
 try
@@ -72,7 +72,7 @@ As you can see, we also used a property from the **Exception**. All the exceptio
 
 The code in the catch block is executed immediately if the code in the try block throws an exception. We can demonstrate this by adding a print statement below the line calling the Convert.ToInt32 method in the try block.
 
-```cs
+```cpp
 Console.WriteLine("Give a number:");
 int number = 0;
 try
@@ -102,7 +102,7 @@ User input, string "potato", is given to the Convert.ToInt32 method as a paramet
 
 Let's make our integer parser a bit more useful. We'll turn it into a method which prompts the user for a number until they give a valid number. The execution stops only when the user gives a valid number.
 
-```cs
+```cpp
 public static void Main(string[] args)
   {
     ReadNumber();
@@ -140,7 +140,7 @@ Give a number: 12
 
 A common usage of try-catch is with reading and writing files. For now, we have trusted our coding, and the filepaths we write to be correct. But what happens if the file does not exist? Let's take a look. Below is an example, we've already used.
 
-```cs
+```cpp
 string text = File.ReadAllText("fileDoesNotExist.txt");
 Console.WriteLine(text);
 ```
@@ -163,7 +163,7 @@ File name: '[. . .]/fileDoesNotExist.txt'
 
 We get quite a stack trace, but most importanty, we get **FileNotFoundException**. Let's catch that.
 
-```cs
+```cpp
 try
 {
   string text = File.ReadAllText("fileDoesNotExist.txt");
@@ -181,7 +181,7 @@ Could not find file '[. . .]/fileDoesNotExist.txt'.
 
 Now we have a much more manageable error, but also our program did not crash. Let's try once more with a file that exists. I am using a "text.txt" file and printing its content.
 
-```cs
+```cpp
 try
 {
   string text = File.ReadAllText("text.txt");
@@ -209,7 +209,7 @@ Methods and constructors can throw exceptions. There are roughly two categories 
 
 The code below reads the file given to it as a parameter line by line. Reading a file can throw an exception -- for example the file might not exist or the program does not have read rights to the file. This kind of exception has to be handled. We handle the exception by wrapping the code into a try-catch block. In this example we do not really care about the exception, but we do print a message to the user about it.
 
-```cs
+```cpp
 public static void Main(string[] args)
 {
   ReadLines("text.txt").ForEach(Console.WriteLine);
@@ -234,7 +234,7 @@ public static List<string> ReadLines(string fileName)
 
 A programmer can also leave the exception unhandled and shift the responsibility for handling it to whomever calls the method. We can shift the responsibility of handling an exception forward by throwing the exception out of a method. Notice on throwing an exception forward **throw new *ExceptionType*** is added in the method.
 
-```cs
+```cpp
 public static void Main(string[] args)
 {
   try
@@ -273,7 +273,7 @@ In the previous topic, we already threw our first exception. Let's look into tha
 
 The throw command throws an exception. For example a **FormatException** can be done with command throw new FormatException(). The following code always throws an exception.
 
-```cs
+```cpp
 public static void Main(string[] args)
 {
   throw new FormatException();
@@ -289,7 +289,7 @@ One exception which the user does not have to prepare for is **ArgumentException
 
 Lets create class Grade. It gets a integer representing a grade as a constructor parameter.
 
-```cs
+```cpp
 namespace sandbox
 {
   public class Grade
@@ -306,7 +306,7 @@ namespace sandbox
 
 We want that the grade fills certain criteria. The grade has to be an integer between 0 and 5. If it is something else, we want to throw an exception. Let's add a conditional statement to the constructor, which checks if the grade fills the criteria. If it does not, we throw the **ArgumentException** with **throw new ArgumentException("Grade must be between 0 and 5.");**.
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -328,7 +328,7 @@ namespace sandbox
 
 Let's try this in action
 
-```cs
+```cpp
 Grade grade = new Grade(3);
 Console.WriteLine(grade.grade);
 
@@ -351,7 +351,7 @@ Some exceptions are not checked for during compilation. They can be thrown durin
 
 A catch block defines which exception to prepare for with catch \(*Exception e*\). The details of the exception are saved to the **e** variable.
 
-```cs
+```cpp
 try {
     // program code which might throw an exception
 } catch (Exception e) {

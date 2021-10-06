@@ -14,7 +14,7 @@ The [**Equals method**](https://docs.microsoft.com/en-us/dotnet/api/system.objec
 
 This can be illustrated with the following example. The Book class does not have its own implementation of the Equals method, so it falls back on the default implementation provided by C#.
 
-```cs
+```cpp
 Book bookObject = new Book("Book object", 2000, "...");
 Book anotherBookObject = bookObject;
 
@@ -48,7 +48,7 @@ The internal structure of the book objects (i.e., the values of their instance v
 
 If we want to compare our own classes using the Equals method, then it must be defined inside the class. The method created accepts an Object-type reference as a parameter, which can be any object. The comparison first looks at the references. This is followed by checking the parameter object's type with the instanceof operation - if the object type does not match the type of our class, the object cannot be the same. We then create a version of the object that is of the same type as our class, after which the object variables are compared against each other.
 
-```cs
+```cpp
 public override bool Equals(object compared)
 {
   // if the variables are located in the same position, they are equal
@@ -75,7 +75,7 @@ public override bool Equals(object compared)
 
 The Book-class in it's entirety.
 
-```cs
+```cpp
 namespace sandbox
 {
   public class Book
@@ -125,7 +125,7 @@ namespace sandbox
 
 Now the book comparison returns **true** if the instance variables of the books are the same.
 
-```cs
+```cpp
 Book bookObject = new Book("Book object", 2000, "...");
 Book anotherBookObject = new Book("Book object", 2000, "...");
 
@@ -149,7 +149,7 @@ We also get the very familiar warning. Finally in this section, we will do somet
 
 The List also uses the Equals method in its internal implementation. If we don't define the Equals method in our objects, the contains method of the List does not work properly. If you try out the code below with two Book classes, one with the Equals method defined, and another without it, you'll see the difference.
 
-```cs
+```cpp
 List<Book> books = new List<Book>();
 Book bookObject = new Book("Book Object", 2000, "...");
 books.Add(bookObject);
@@ -177,7 +177,7 @@ Hash codes are used in Dictionariss, for instance. Dictionary's internal behavio
 
 So far, we've only used string objects as Dictionary keys, which have conveniently had ready-made GetHashCode methods implemented. Let's create an example where this is not the case: we'll continue with the books and keep track of the books that are on loan. We'll implement the book keeping with a Dictionary. The key is the book and the value attached to the book is a string that tells the borrower's name:
 
-```cs
+```cpp
 Dictionary<Book, string> borrowers = new Dictionary<Book, string>();
 
 Book bookObject = new Book("Book Object", 2000, "...");
@@ -203,7 +203,7 @@ For the Dictionary to work in the way we want it to, that is, to return the borr
 
 We've previously used string objects as Dictionary keys, so we can deduce that the string class has a well-functioning GetHashCode implementation of its own. We'll Delegate, i.e., transfer the computational responsibility to the string object.
 
-```cs
+```cpp
 public override int GetHashCode()
 {
   return this.name.GetHashCode();
@@ -212,7 +212,7 @@ public override int GetHashCode()
 
 The above solution is quite good. However, if name is null, we see a NullReferenceException error. Let'fix this by defining a condition: if the value of the name variable is null, we'll return the year of publication as the hash value.
 
-```cs
+```cpp
 public override int GetHashCode()
 {
   if (this.name == null)
@@ -225,7 +225,7 @@ public override int GetHashCode()
 
 Now, all of the books that share a name are bundleded into one group. Let's improve it further so that the year of publiciation is also taken into account in the hash value calculation that's based on the book title.
 
-```cs
+```cpp
 public override int GetHashCode()
 {
   if (this.name == null)
@@ -238,7 +238,7 @@ public override int GetHashCode()
 
 It's now possible to use the book as the hash map's key. This way the problem we faced earlier gets solved and the book borrowers are found:
 
-```cs
+```cpp
 Dictionary<Book, string> borrowers = new Dictionary<Book, string>();
 
 Book bookObject = new Book("Book Object", 2000, "...");

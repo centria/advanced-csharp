@@ -8,7 +8,7 @@ hidden: false
 
 If we know the possible values ​​of a variable in advance, we can use a class of type **enum**, i.e., enumerated type to represent the values. Enumerated types are their own type in addition to being normal classes and interfaces. An enumerated type is defined by the keyword **enum**. For example, the following Suit enum class defines four constant values: Diamond, Spade, Club and Heart.
 
-```cs
+```cpp
 namespace sandbox
 {
   public enum Suit
@@ -27,7 +27,7 @@ An Enum is (usually) written in its own file, much like a class or interface.
 
 The following is a Card class where the suit is represented by an enum:
 
-```cs
+```cpp
 namespace sandbox
 {
   public class Card
@@ -51,7 +51,7 @@ namespace sandbox
 
 The card is used in the following way:
 
-```cs
+```cpp
 namespace sandbox
 {
   using System;
@@ -86,7 +86,7 @@ Each enum field gets a unique number code, and they can be compared using the eq
 
 The numeric identifier of an enum field value can be found by casting them into integers. The method actually returns an order (or indexing) number - if the enum value is presented first, its order number is 0. If its second, the order number is 1, and so on. For example
 
-```cs
+```cpp
 Console.WriteLine((int)Suit.Spade);
 Console.WriteLine((int)Suit.Diamond);
 ```

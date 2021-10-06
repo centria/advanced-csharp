@@ -60,7 +60,7 @@ You can now test out your project, with **dotnet run**. You should get an progra
 
 Hooray, the program opens! It does not do anything quite yet. Let's look into our files, and then start adding some functionality.
 
-```cs
+```cpp
 // Program.cs
 using System;
 using System.Collections.Generic;
@@ -93,7 +93,7 @@ There are some parts of the code we have not handled yet, and won't handle in th
 
 We do have to care about [**[STAThread]**](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0/ms182351(v=vs.80)?redirectedfrom=MSDN). *"This attribute must be present on the entry point of any application that uses Windows Forms; if it is omitted, the Windows components might not work correctly. If the attribute is not present, the application uses the multithreaded apartment model, which is not supported for Windows Forms."*
 
-```cs
+```cpp
 // Form1.cs
 using System;
 using System.Collections.Generic;
@@ -119,7 +119,7 @@ namespace src
 
 Nothing much happens in this file, except we call the method **InitializeComponent();**. You might notice, that the call is done as the class would call its own method, and that is quite true. This class is called a **partial class**, and it inherits **Form**. This means, that it implements some of the parts of Form, but not all. It is calling for a method from another partial class. This time, it is partial of **Form1** itself. Let's have a look.
 
-```cs
+```cpp
 // Form1.Designer.cs
 namespace src
 {
@@ -164,7 +164,7 @@ namespace src
 
 Once again, we see quite much of the comments created by the designer, but also a different comment, starting with a **#**. Those are for collapsing code out of view if certain options are enabled, but for us, yet another part not to worry about. Let's clean up the file:
 
-```cs
+```cpp
 namespace src
 {
   partial class Form1
@@ -194,25 +194,25 @@ namespace src
 Much more readable. Now we can see we have two mehtods, **Dispose** and **InitializeComponent**, and we recognize the latter was called by the other partial. Let's look at that first.
 
 The method contains several lines, which each have a specific function for creating our program window:
-```cs
+```cpp
 this.components = new System.ComponentModel.Container();
 ```
 
 * Is used for storing elements which do not have a visual representation during the runtime, but might be needed otherwise, such as a timer running in the background.
 
-```cs
+```cpp
 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 ```
 
 * Is used to define, which kind of method is used for scaling. By default, the scaling is Font, but could be also Dpi, Inherit or None.
 
-```cs
+```cpp
 this.ClientSize = new System.Drawing.Size(800, 450);
 ```
 
 * Is quite self-explanatory, defining the size of the window we draw.
 
-```cs
+```cpp
 this.Text = "Form1";
 ```
 
@@ -224,7 +224,7 @@ Our other method, **protected override void Dispose(bool disposing)**, is automa
 
 As always, we start with a classic "Hello World" in our code. Let's add some content to our window.
 
-```cs
+```cpp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -252,7 +252,7 @@ namespace src
 
 As our other form is a partial for this one, we want to create the priave TextBox here. We could, just as well, create it in the next file, and bring the correct namespace with it. Let's keep it here, though, for at least now.
 
-```cs
+```cpp
 namespace src
 {
   partial class Form1
@@ -293,31 +293,31 @@ namespace src
 
 That's a lot of code for a simple string.
 
-```cs
+```cpp
 this.textBox1 = new System.Windows.Forms.TextBox();
 ```
 
 * We initialize a standard textbox object by getting it from the correct namespace. As you might notice, we do not have any **using directives** in this part of the form, but we could just as well have them here.
 
-```cs
+```cpp
 this.textBox1.Text = "Hello World";
 ```
 
 * Creates the text content inside the textbox.
 
-```cs
+```cpp
 this.textBox1.ReadOnly = true;
 ```
 
 * Prevents the users from editing the textbox. You can take this line away and see what happens.
 
-```cs
+```cpp
 this.textBox1.Location = new System.Drawing.Point((this.Width - this.textBox1.Width) / 2, (this.Height - this.textBox1.Height) / 2);
 ```
 
 * Not required, but nice to have. We center an item by giving it a new **Point** as **Location**. Location is the top-left corner of the item.
 
-```cs
+```cpp
 this.Controls.Add(this.textBox1);
 ```
 
@@ -329,7 +329,7 @@ this.Controls.Add(this.textBox1);
 
 Quite a lot of work has gone into getting a simple one-liner into our GUI. Let's create ourselves a button next:
 
-```cs
+```cpp
 // Form1.cs
 
 // plenty of usings
@@ -350,7 +350,7 @@ namespace src
 }
 ```
 
-```cs
+```cpp
 namespace src
 {
   partial class Form1
@@ -399,25 +399,25 @@ namespace src
 
 Let's see what our button's code does:
 
-```cs
+```cpp
 this.button1 = new System.Windows.Forms.Button();
 ```
 
 * Initialize a new button object
 
-```cs
+```cpp
 this.button1.Text = "Click me!";
 ```
 
 * Give the button a text
 
-```cs
+```cpp
 this.button1.Click += new System.EventHandler(ShowMessage);
 ```
 
 * Button's functionality. On a Click, We Call an EventHandler, which takes as a parameter a method.
 
-```cs
+```cpp
 Controls.Add(this.button1);
 ```
 
@@ -425,7 +425,7 @@ Controls.Add(this.button1);
 
 ![Winform3](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform3.png)
 
-```cs
+```cpp
 private void ShowMessage(object sender, System.EventArgs e)
 {
   this.textBox1.Text = "Button Clicked!";
@@ -440,7 +440,7 @@ private void ShowMessage(object sender, System.EventArgs e)
 
 As we can see, now that we did not give our button any specific location, it will start in the top-left corner. What happens, if we create 2 buttons?
 
-```cs
+```cpp
 // Very ugly copy-paste code
 this.button1 = new System.Windows.Forms.Button();
 this.button1.Text = "Click me!";
@@ -457,7 +457,7 @@ Controls.Add(this.button2);
 
 We can see that only the first button is drawn. If we want to have the other button in another location, we have to define the new location. Let's also make some other adjustements to the code:
 
-```cs
+```cpp
 this.button2 = new System.Windows.Forms.Button();
 this.button2.Text = "Click me instead!";
 this.button2.AutoSize = true;
@@ -467,14 +467,14 @@ this.button2.Click += new System.EventHandler(ShowMessage);
 Controls.Add(this.button2);
 ```
 
-```cs
+```cpp
 this.button2.AutoSize = true;
 this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
 ```
 
 * With these we allow our button to grow in size, and make the whole text visible.
 
-```cs
+```cpp
 this.button2.Location = new System.Drawing.Point(this.button1.Width+5, 0);
 ```
 
@@ -492,7 +492,7 @@ An event is a message sent by an object to signal the occurrence of an action. T
 
 The following example shows an event handler method named **ShowMessage** that matches the signature for the EventHandler delegate. The method subscribes to the **Button.Click** event.
 
-```cs
+```cpp
 private void ShowMessage(object sender, System.EventArgs e)
 {
   this.textBox1.Text = "Button Clicked!";
@@ -501,7 +501,7 @@ private void ShowMessage(object sender, System.EventArgs e)
 
 An event handler can also have options. For example, our two buttons can have same handler but different functionality:
 
-```cs
+```cpp
 private void ShowMessage(object sender, System.EventArgs e)
 {
   string buttonName = (sender as System.Windows.Forms.Button).Text;
@@ -540,7 +540,7 @@ Our project structure looks something like this:
 
 We shall not have the whole code here, but you can find it from the link above. Let's take a look at some of the highlights:
 
-```cs
+```cpp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -566,7 +566,7 @@ namespace GuiCalculator
 * Our Main class is still very nice and clean, as it should. Even though our program is larger, the Main has been kept simple.
 
 
-```cs
+```cpp
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -605,7 +605,7 @@ namespace GuiCalculator
 }
 ```
 
-```cs
+```cpp
 private void InitializeComponent()
 {
   this.components = new System.ComponentModel.Container();
@@ -668,7 +668,7 @@ private void InitializeComponent()
 
 You can read the rest of the button codes from the repository. They are all quite alike. Most interesting are our event handlers:
 
-```cs
+```cpp
 private void AddToString(object sender, System.EventArgs e)
 {
   string number = (sender as System.Windows.Forms.Button).Text;
@@ -693,7 +693,7 @@ private void AddToString(object sender, System.EventArgs e)
 * If the TextBox.Text is 0, replace with the input number
 * Else add to the end
 
-```cs
+```cpp
 private void CalculateResult(object sender, System.EventArgs e)
 {
   string operation = (sender as System.Windows.Forms.Button).Text;
@@ -738,19 +738,19 @@ private void CalculateResult(object sender, System.EventArgs e)
 
 * This is more tricy. It goes through all our operations buttons.
 
-```cs
+```cpp
 string operation = (sender as System.Windows.Forms.Button).Text;
 ```
 
 * We save our operation name into a string, by parsing the name from the **Button.Text**. The **sender** is recognized from the method parameter.
 
-```cs
+```cpp
 double currentValue = System.Convert.ToDouble(results.Text, System.Globalization.CultureInfo.InvariantCulture);
 ```
 
 * We parse the variable **currentValue** from the **results.Text**, into a double.
 
-```cs
+```cpp
   if (operation == "C")
   {
     this.accumulator = 0;
@@ -759,7 +759,7 @@ double currentValue = System.Convert.ToDouble(results.Text, System.Globalization
 
 * If we want to reset our calculation, we press "C". It sets the accumulated total to 0.
 
-```cs
+```cpp
 else if (lastOperation == "+")
 {
   accumulator += currentValue;
@@ -783,7 +783,7 @@ else if (lastOperation == "+")
 
 We will see the **results** show us
 
-```cs
+```cpp
 12
 0
 15
@@ -793,7 +793,7 @@ We will see the **results** show us
 
 So the previous result is only shown when the next operation is pressed. Remember, that even the total is an operator.
 
-```cs
+```cpp
 lastOperation = operation;
 
 if (operation == "=")

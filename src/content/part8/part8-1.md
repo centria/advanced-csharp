@@ -12,7 +12,7 @@ Data in dictionaries is stored as **key-value pairs**, where values can be added
 
 In the example below, a Dictionary object has been created to search for cities by their postal codes, after which four postal code-city pairs have been added to the Dictionary object. At the end of it, the postal code "00710" is retrieved from the dictionary. Both the postal code and the city are represented as strings.
 
-```cs
+```cpp
 using System;
 using System.Collections.Generic;
 
@@ -44,7 +44,7 @@ The internal state of the dictionary created above looks like this. Each key ref
 
 If the dictionary does not contain the key used for search, we get a **KeyNotFoundException**.
 
-```cs
+```cpp
 Dictionary<string, string> postalCodes = new Dictionary<string, string>();
 postalCodes.Add("00710", "Helsinki");
 postalCodes.Add("90014", "Oulu");
@@ -62,7 +62,7 @@ Unhandled exception. System.Collections.Generic.KeyNotFoundException: The given 
 
 Two type parameters are required when creating a dictionary - the type of the key and the type of the value added. If the keys of the dictionary are of type string, and the values of type integer, the dictionary is created with the following statement 
 
-```cs
+```cpp
 Dictionary<string, integer> dict = new Dictionary<string, integer>();
 ```
 
@@ -72,7 +72,7 @@ Adding to the dictionary is done through the **Add(*key*, *value*)** method that
 
 The dictionary has a maximum of one value per key. If a new key-value pair is added to the dictionary, but the key has already been associated with some other value stored in the dictionary, we will get an ArgumentException:
 
-```cs
+```cpp
 Dictionary<string, string> postalCodes = new Dictionary<string, string>();
 postalCodes.Add("67100", "Kokkola");
 postalCodes.Add("67100", "Karleby");
@@ -86,7 +86,7 @@ Unhandled exception. System.ArgumentException: An item with the same key has alr
 
 For this, we can prepare ourselves, by checking if a value already exists in the dictionary, and only if it does not, we add the new value:
 
-```cs
+```cpp
 Dictionary<string, string> postalCodes = new Dictionary<string, string>();
 postalCodes.Add("00710", "Helsinki");
 postalCodes.Add("90014", "Oulu");
@@ -103,7 +103,7 @@ if (!postalCodes.ContainsKey("67100"))
 
 This way our program does not crash, when we try to change the value for "67100". To see what our dictionary contains, we can use a foreach-loop for **KeyValuePair** objects:
 
-```cs
+```cpp
 foreach (KeyValuePair<string, string> kvp in postalCodes)
 {
   Console.WriteLine("Key = {0}, Value = {1}",
@@ -128,7 +128,7 @@ As you can see, we can also give a **null** as a value. We cannot, however, give
 
 Let's take a look at how a spreadsheet works using a library example. You can search for books by book title. If a book is found with the given search term, the library returns a reference to the book. Let's begin by creating an example class Book that has its name, content and the year of publication as instance variables.
 
-```cs
+```cpp
 public class Book
 {
   public string name { get; set; }
@@ -152,13 +152,13 @@ public class Book
 
 Let's create a dictionary that uses the book's name as a key, i.e., a string-type object, and the book we've just created as the value.
 
-```cs
+```cpp
 Dictionary<string, Book> directory = new Dictionary<string, Book>();
 ```
 
 The dictionary above uses **string** as a key. Let's expand the example so that two books are added to the dictionary, "Sense and Sensibility" and "Pride and Predujice".
 
-```cs
+```cpp
 Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
 Book prideAndPredujice = new Book("Pride and Prejudice", 1813, "....");
 
@@ -169,7 +169,7 @@ directory.Add(prideAndPredujice.name, prideAndPredujice);
 
 Books can be retrieved from the directory by book name. A search for "Persuasion" will not produce any results, in which case the dictionary gives an error. The book "Pride and Prejudice" is found, however. Let's play it safe, and put both inside an if:
 
-```cs
+```cpp
 if (directory.ContainsKey("Persuation"))
 {
   Console.WriteLine(directory["Persuasion"]);
@@ -201,7 +201,7 @@ Consider the library example that was introduced above. The whole program could 
 
 In the example below, the books have been stored in a list and searching for them is done by going through the list.
 
-```cs
+```cpp
 List<Book> books = new List<Book>();
 Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
 Book prideAndPrejudice = new Book("Pride and Prejudice", 1813, "....");
@@ -240,7 +240,7 @@ Now the program works quite the same as our Dictionary version, right?
 
 Functionally, yes. Let's however, consider the performance of the program. C#'s DateTime() has property **Ticks**, which represents the given date and time of a DateTime instance. A Tick is one hundred nanoseconds.
 
-```cs
+```cpp
 List<Book> books = new List<Book>();
 
 // Add 10 million books to the list
@@ -287,7 +287,7 @@ With 10 million (and 2) books, it takes almost half a second to find two books. 
 
 Let's consider the same program using a dictionary.
 
-```cs
+```cpp
 
 Dictionary<string, Book> directory = new Dictionary<string, Book>();
 
@@ -336,7 +336,7 @@ The example considered above on storing books is problematic in that the book's 
 
 We make use of the tools provided by the string-class to handle strings. The **ToLower()** method creates a new string with all letters converted to lowercase. The **Trim()** method, on the other hand, creates a new string where empty characters such as spaces at the beginning and end have been removed.
 
-```cs
+```cpp
 string text = "Pride and Prejudice     ";
 text = text.ToLower(); // text currently "pride and prejudice     "
 text = text.Trim(); // text now "pride and prejudice"
@@ -348,7 +348,7 @@ Let's create a Library class that encapsulates a dictionary containing books, an
 
 Let's first outline the method for adding. The book is added to the dictionary with the book name as the key and the book itself as the value. Since we want to allow for minor misspellings, such as capitalized or lower-cased strings, or ones with spaces at the beginning and/or end, the key - the title of the book - is converted to lowercase, and spaces at the beginning and end are removed.
 
-```cs
+```cpp
 public class Library
 {
   private Dictionary<string, Book> directory;
@@ -385,7 +385,7 @@ The **ContainsKey** method of the directory is being used above to check for the
 
 We can already see that code dealing with string sanitizion is needed in every method that handles a book, which makes it a good candiate for a separate helper method. The method is implemented as a class method since it doesn't handle object variables.
 
-```cs
+```cpp
 public static string SanitizedString(string input)
 {
   if (input == null)
@@ -400,7 +400,7 @@ public static string SanitizedString(string input)
 
 The implementation is much neater when the helper method is used.
 
-```cs
+```cpp
 using System;
 using System.Collections.Generic;
 
@@ -473,7 +473,7 @@ namespace sandbox
 
 Let's see this in action
 
-```cs
+```cpp
 Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
 Book prideAndPredujice = new Book("Pride and Prejudice", 1813, "....");
 
@@ -508,7 +508,7 @@ We can go through the values ​​of a dictionary by using a for-each loop on t
 
 Below, a search is performed for all the books whose names contain the given string.
 
-```cs
+```cpp
 public List<Book> GetBooksByPart(string titlePart)
 {
   List<Book> books = new List<Book>();
@@ -532,7 +532,7 @@ This way, however, we lose the speed advantage that comes with the dictionary. T
 
 The preceding functionality could also be implemented by going through the dictionary's values. The set of values can be retrieved with the dictionary's Values​​() property. This set of values can also be iterated ober ​​with a for-each loop.
 
-```cs
+```cpp
 public List<Book> GetBooksByPart(string titlePart)
 {
   List<Book> books = new List<Book>();
