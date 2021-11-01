@@ -26,7 +26,48 @@ So far we have let ourselves off easy: we have not done any projects ourselves, 
 
 ## Creating our first program
 
-MISSING CONTENT
+We have tried our hands with the very basic `dotnet` command, mainly the `dotnet run` to try how our exercises work locally. The command in question is part of the `dotnet` program we installed as a prerequisite for the basic course. The program has, of course, other commands available. We are going to use `dotnet new` to create our own program at this point.
+
+<Note>
+The instructions are written with Visual Studio Code in mind, as we use that for our exercises.
+The following is an adaptation from [here](https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code?pivots=dotnet-5-0)
+</Note>
+
+1. Start Visual Studio Code
+2. Select *File > Open Folder* from the main menu
+3. In the *Open Folder* dialog, create a HelloWorld folder and select it
+
+The folder name becomes the project name and the namespace name by default. You'll add code later in the tutorial that assumes the project namespace is `HelloWorld`.
+
+4. Open the **Terminal**  in Visual Studio Code, and make sure you are in the correct folder (the one just created).
+5. In the terminal, enter the following command:
+
+```console
+dotnet new console
+```
+
+The template creates a simple "Hello World" application. It calls the *Console.WriteLine(String)* method to display "Hello World!" in the console window.
+
+The template code defines a class, Program, with a single method, Main, that takes a String array as an argument:
+
+```cpp
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+Main is the application entry point, the method that's called automatically by the runtime when it launches the application. Any command-line arguments supplied when the application is launched are available in the args array.
+
+To run the application, use the familiar `dotnet run` command.
 
 ## Organizing and testing using the NewTypes Pets Sample
 
