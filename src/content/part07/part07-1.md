@@ -406,3 +406,8 @@ This works in any folder of the project, as long as you remember to give the opt
 dotnet run -p src/NewTypes/NewTypes.csproj
 dotnet test test/NewTypeTest/NewTypeTest.csproj
 ```
+
+
+# Exercises
+
+<Note>No exercises for this part, just plenty of crucial information.</Note>

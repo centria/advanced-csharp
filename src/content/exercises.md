@@ -10,14 +10,14 @@ The course is divided into six parts, all of which contain exercises. To pass th
 
 Every part will have its own deadline. The deadlines are automatic.
 
-| Part | Deadline       |
-| :----| :------------: |
-| 7    |   11.11.2021   |
-| 8    |   18.11.2021   |
-| 9    |   25.11.2021   |
-| 10   |   02.12.2021   |
-| 11   |   09.12.2021   |
-| 12   |   16.12.2021   |
+| Part | Deadline         |
+| :----| :---------------:|
+| 7    |   No exercises   |
+| 8    |   18.11.2021     |
+| 9    |   25.11.2021     |
+| 10   |   02.12.2021     |
+| 11   |   09.12.2021     |
+| 12   |   16.12.2021     |
 
 
 <Note>

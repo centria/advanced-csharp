@@ -320,3 +320,7 @@ Test-driven software development consists of five steps that are repeated until 
 You might notice, that this is actually the way our exercises have been done: The tests exist and expect you to create a program, which works as the tests require.
 
 Unit testing is only a part of software testing. On top of unit testing, a developer also performs integration tests that examine the interoperability of components, such as classes, and interface tests that test the application's interface through elements provided by the interface, such as buttons.
+
+# Exercises
+
+<Note>No exercises for this part</Note>
