@@ -30,8 +30,9 @@ We have tried our hands with the very basic `dotnet` command, mainly the `dotnet
 
 <Note>
 The instructions are written with Visual Studio Code in mind, as we use that for our exercises.
-The following is an adaptation from [here](https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code?pivots=dotnet-5-0)
 </Note>
+
+The following is an adaptation from [here](https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code?pivots=dotnet-5-0).
 
 1. Start Visual Studio Code
 2. Select *File > Open Folder* from the main menu
