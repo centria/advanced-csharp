@@ -1,7 +1,7 @@
 ---
 title: "Grouping Data Using Dictionaries"
 nav_order: 3
-hidden: false
+hidden: true
 ---
 
 # Grouping Data Using Dictionaries

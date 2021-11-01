@@ -1,7 +1,7 @@
 ---
 title: "Using"
 nav_order: 2
-hidden: false
+hidden: true
 ---
 
 # Using using

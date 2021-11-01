@@ -1,7 +1,7 @@
 ---
 title: "Dictionaries"
 nav_order: 1
-hidden: false
+hidden: true
 ---
 
 # Dictionaries

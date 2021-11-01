@@ -1,7 +1,7 @@
 ---
 title: "Part 11 - Random, files and exceptions"
 nav_order: 6
-hidden: false
+hidden: true
 ---
 
 ## Part 11

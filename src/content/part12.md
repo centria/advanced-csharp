@@ -1,7 +1,7 @@
 ---
 title: "Part 12 - Using, Namespaces and Graphical interfaces"
 nav_order: 7
-hidden: false
+hidden: true
 ---
 
 ## Part 12

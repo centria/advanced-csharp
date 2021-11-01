@@ -1,7 +1,7 @@
 ---
 title: "Similarity of Objects"
 nav_order: 2
-hidden: false
+hidden: true
 ---
 
 # Similarity of Objects

@@ -1,7 +1,7 @@
 ---
 title: "Part 9 - Inheritance and Interfaces"
 nav_order: 4
-hidden: false
+hidden: true
 ---
 
 ## Part 9

@@ -1,7 +1,7 @@
 ---
 title: "Polymorphism"
 nav_order: 3
-hidden: false
+hidden: true
 ---
 
 # Polymorphism

@@ -1,7 +1,7 @@
 ---
 title: "Enum"
 nav_order: 3
-hidden: false
+hidden: true
 ---
 
 # Enumerated Type - Enum

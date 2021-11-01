@@ -41,7 +41,7 @@ For the following steps, create your own files and folders if you wish to test c
 
 The animal types are logically organized into a folder structure that permits the addition of more types later, and tests are also logically placed in folders permitting the addition of more tests later.
 
-The sample contains two types, **Dog** and **Cat**. For the NewTypes project, your goal is to organize the pet-related types into a Pets folder. If another set of types is added later, **WildAnimals** for example, they're placed in the NewTypes folder alongside the Pets folder. The WildAnimals folder may contain types for animals that aren't pets, such as Squirrel and Rabbit types. In this way as types are added, the project remains well organized.
+The sample contains two types, **Dog** and **Cat**. For the NewTypes project, our goal is to organize the pet-related types into a Pets folder. If another set of types is added later, **WildAnimals** for example, they're placed in the NewTypes folder alongside the Pets folder. The WildAnimals folder may contain types for animals that aren't pets, such as Squirrel and Rabbit types. In this way as types are added, the project remains well organized.
 
 ```console
 /NewTypes

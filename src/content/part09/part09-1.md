@@ -1,7 +1,7 @@
 ---
 title: "Inheritance"
 nav_order: 1
-hidden: false
+hidden: true
 ---
 
 # Inheritance

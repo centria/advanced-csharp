@@ -1,7 +1,7 @@
 ---
 title: "Graphical user interfaces"
 nav_order: 3
-hidden: false
+hidden: true
 ---
 
 # Graphical User Interfaces

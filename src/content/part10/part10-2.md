@@ -1,7 +1,7 @@
 ---
 title: "Handling strings"
 nav_order: 2
-hidden: false
+hidden: true
 ---
 
 # StringBuilder and Regular Expressions
