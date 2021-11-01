@@ -33,10 +33,10 @@ Once you have everything installed, you need to download the exercises to your c
 
 When you have the account, follow the instructions for:
 - Selecting your organization: *Centria University of Applied Sciences*
-- Selecting your course: *Advanced of Programming in C#*
+- Selecting your course: *Advanced Programming with C#*
 
 <Note>
-If you are doing this course via open university, select Basics of Programming in C# Open University!
+If you are doing this course via open university, the course will open in 2022!
 </Note>
 
 ## Doing the exercises
