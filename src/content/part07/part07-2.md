@@ -6,7 +6,7 @@ hidden: false
 
 # Testing
 
-Let's take our first steps in the world of program testing.
+In previous section we took a very brief look into testing, but didn't really explain what we were doing. Let's take our first proper steps in the world of program testing.
 
 ## Error Situations and Step-By-Step Problem Resolving
 
@@ -119,11 +119,11 @@ When testing your program again manually, remove or comment out the line **Conso
 
 ## Unit Testing
 
-The automated testing mehtod laid out above where the input to a program is modified is quite convenient, but limited nonetheless. Testing larger programs in this way is challenging. One solution to this is unit testing, where small parts of the program are tested in isolation.
+The automated testing method laid out above where the input to a program is modified is quite convenient, but limited nonetheless. Testing larger programs in this way is challenging. One solution to this is unit testing, where small parts of the program are tested in isolation.
 
 Unit testing refers to the testing of individual components in the source code, such as classes and their provided methods. The writing of tests revelas whether each class and method observs or deviates from the guideline of each method and class having a single, clear responsibility. The more responsibility the method has, the more complex the test. If a large application is written in a single method, writing tests for it becomes very challenging, if not impossible. Similarly, if the application is broken into clear classes and methods, then writing tests is straightforward.
 
-Ready-made unit test libraries are commonly used in writing tests, which provide methods and help classes for writing tests. One of the widely used testing libraries in C# is [**NUnit**](https://nunit.org/), which has already been used in our exercises.
+Ready-made unit test libraries are commonly used in writing tests, which provide methods and help classes for writing tests. One of the widely used testing libraries in C# is [**xUnit**](https://xunit.net/), which has already been used in our exercises.
 
 Let's take a look at writing unit tests with the help of an example. Let's assume that we have the following Calculator class at our use, and want to write automated tests for it.
 
@@ -154,117 +154,98 @@ The calculator works by always remembering the result produced by the preceding 
 
 Unit test writing begins by creating a test class, which is created under the Test folder. When testing the **Calculator** class, the test class is to be called **CalculatorTests**. 
 
-The test class **CalculatorTest** is initially quite forgiving:
+The test class **CalculatorTest** is initially quite forgiving, as it does not infact test anything:
 
 ```cpp
-using NUnit.Framework;
+using System;
+using Xunit;
 
 namespace CalculatorTest
 {
-  public class Tests
-  {
-    [SetUp]
-    public void Setup()
+    public class UnitTest1
     {
-    }
+        [Fact]
+        public void Test1()
+        {
 
-    [Test]
-    public void Test1()
-    {
-      Assert.Pass();
+        }
     }
-  }
 }
 ```
 
 Let's go through the file:
 
 * It belongs to the namespace CalculatorTest
-* It has the class **Tests**
-* Line \[SetUp\] tells that here could be some setup for all the tests. We'll get to that later. Below it is now an empty method for Setup.
-* Line\[Test\] indicates that the following method is a test. **This line is required for dotnet test** to recognize the following method as a test.
-* The test method, now called Test1.
-* Assert.Pass means the test always passes. We will get to **Assertation** soon.
+* It has the class **UnitTest1**
+* Line\[Fact\] indicates that the following method is a test. **This line is required for dotnet test** to recognize the following method as a test.
+* The test method, now called Test1, is empty, and always passes.
 
 Tests are methods of the test class where each test tests an individual unit. Let's begin testing the class -- we start off by creating a test method that confirms that the newly created calculator's value is intially 0.
 
 ```cpp
-using NUnit.Framework;
-using Calculators;
+using System;
+using Xunit;
 
 namespace CalculatorTest
 {
-  public class Tests
-  {
-    [SetUp]
-    public void Setup()
+    public class UnitTest1
     {
+        [Fact]
+        public void CalculatorInitialValueZero()
+        {
+            Calculator calculator = new Calculator();
+            Assert.Equal(0, calculator.value);
+        }
     }
-
-    [Test]
-    public void CalculatorInitialValueZero() {
-        Calculator calculator = new Calculator();
-        Assert.AreEqual(0, calculator.value);
-    }
-  }
 }
 ```
 
 ```console
-dotnet run 
+dotnet test 
 
 [. . .]
 
 Starting test execution, please wait...
-
 A total of 1 test files matched the specified pattern.
 
-Test Run Successful.
-Total tests: 1
-     Passed: 1
- Total time: 1.2903 Seconds
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: < 1 ms
 ```
 
 We also gave our test a more meaningful name.
 
-In the **CalculatorInitialValueZero** method a calculator object is first created. The **Assert.AreEqual** method provided by the NUnit test framework is then used to check the value. The method is imported from the NUnit.Framework with **using NUnit.Framework;**, and it's given the expected value as a parameter - 0 in this instance - and the value returned by the calculator. If the values of the **Assert.AreEqual** method values ​​differ, the test will not pass. Each test method should have an "annotation" **\[Test\]**. This tells the NUnit test framework that this is an executable test method.
+In the **CalculatorInitialValueZero** method a calculator object is first created. The **Assert.Equal** method provided by the xUnit test framework is then used to check the value. The method is imported from the xUnit Framework with **using xUnit;**, and it's given the expected value as a parameter - 0 in this instance - and the value returned by the calculator. If the values of the **Assert.Equal** method values ​​differ, the test will not pass. Each test method should have an "annotation" **\[Fact\]**. This tells the xUnit test framework that this is an executable test method.
 
 Let's add functionality for summing and substacting to the test class.
 
 ```cpp
-using NUnit.Framework;
+using Xunit;
 using Calculators;
 
 namespace CalculatorTest
 {
   public class Tests
   {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
-    [Test]
+    [Fact]
     public void CalculatorInitialValueZero()
     {
       Calculator calculator = new Calculator();
-      Assert.AreEqual(0, calculator.value);
+      Assert.Equal(0, calculator.value);
     }
 
-    [Test]
+    [Fact]
     public void ValueFiveWhenFiveAdded()
     {
       Calculator calculator = new Calculator();
       calculator.Sum(5);
-      Assert.AreEqual(5, calculator.value);
+      Assert.Equal(5, calculator.value);
     }
 
-    [Test]
+    [Fact]
     public void ValueMinusTwoWhenTwoSubstracted()
     {
       Calculator calculator = new Calculator();
       calculator.Substract(2);
-      Assert.AreEqual(-2, calculator.value);
+      Assert.Equal(-2, calculator.value);
     }
   }
 }
@@ -277,26 +258,20 @@ Executing the tests produces the following output.
 dotnet test
 
 Starting test execution, please wait...
-
 A total of 1 test files matched the specified pattern.
-
-  X ValueMinusTwoWhenTwoSubstracted [67ms]
+[xUnit.net 00:00:00.37]     CalculatorTest.Tests.ValueMinusTwoWhenTwoSubstracted [FAIL]
+  Failed CalculatorTest.Tests.ValueMinusTwoWhenTwoSubstracted [1 ms]
   Error Message:
-     Expected: -2
-  But was:  2
-
+   Assert.Equal() Failure
+Expected: -2
+Actual:   2
   Stack Trace:
-     at CalculatorTest.Tests.ValueMinusTwoWhenTwoSubstracted() in /mnt/c/Users/HeikkiHei/Documents/coding-exercises/project_examples/Calculator/test/CalculatorTest/CalculatorTests.cs:line 33
+     at CalculatorTest.Tests.ValueMinusTwoWhenTwoSubstracted() in [. . .]Calculators/test/CalculatorTest/UnitTest1.cs:line 28
 
-
-Test Run Failed.
-Total tests: 3
-     Passed: 2
-     Failed: 1
- Total time: 1.1876 Seconds
+Failed!  - Failed:     1, Passed:     2, Skipped:     0, Total:     3, Duration: 19 ms
  ```
 
- The output tells us that three tests were executed. One of them failed. The test output also informs us of the line in which the error occured (33), and of the expected (-2) and actual (2) values. Whenever the execution of tests ends in an error, the testing framework also displays the error state visually.
+ The output tells us that three tests were executed. One of them failed. The test output also informs us of the line in which the error occured (28), and of the expected (-2) and actual (2) values. Whenever the execution of tests ends in an error, the testing framework also displays the error state visually.
 
  With the previous tests two passed, but one of them resulted in an error. Let's fix the mistake left in the Calculator class.
 
@@ -317,13 +292,9 @@ dotnet test
 [. . .]
 
 Starting test execution, please wait...
-
 A total of 1 test files matched the specified pattern.
 
-Test Run Successful.
-Total tests: 3
-     Passed: 3
- Total time: 1.1971 Seconds
+Passed!  - Failed:     0, Passed:     3, Skipped:     0, Total:     3, Duration: 2 ms
 ```
 
 Unit testing tends to be extremely complicated if the whole application has been written in "Main". To make testing easier, the app should split into small parts, each having a clear responsibility. In the previous sections, we practiced this when we seperated the user interface from the application logic and created proper folder structure. Writing tests for parts of an application, such as the 'Pets' class from the previous section is significantly easier than writing them for program contained in "Main" in its entirety.
