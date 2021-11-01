@@ -25,7 +25,7 @@ This page template was originally created by:
 
 ## Errors in the material?
 
-Did you find an error? A typo perhaps? Please make a pull request at [GitHub](https://github.com/centria/basic-csharp/tree/master/src/content) and help us make the material better!
+Did you find an error? A typo perhaps? Please make a pull request at [GitHub](https://github.com/centria/advanced-csharp/tree/master/src/content) and help us make the material better!
 
 
 

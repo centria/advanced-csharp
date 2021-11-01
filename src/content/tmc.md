@@ -101,4 +101,4 @@ Follow the instructions here: [https://www.mooc.fi/en/installation/vscode/#check
 
 ## Errors in the material?
 
-Did you find an error? A typo perhaps? Please make a pull request at [GitHub](https://github.com/centria/basic-csharp/tree/master/src/content) and help us make the material better!
+Did you find an error? A typo perhaps? Please make a pull request at [GitHub](https://github.com/centria/advanced-csharp/tree/master/src/content) and help us make the material better!
