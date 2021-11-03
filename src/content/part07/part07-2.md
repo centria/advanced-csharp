@@ -180,11 +180,14 @@ Let's go through the file:
 * Line\[Fact\] indicates that the following method is a test. **This line is required for dotnet test** to recognize the following method as a test.
 * The test method, now called Test1, is empty, and always passes.
 
+<Note>Remember to add the reference to the main project!</Note>
+
 Tests are methods of the test class where each test tests an individual unit. Let's begin testing the class -- we start off by creating a test method that confirms that the newly created calculator's value is intially 0.
 
 ```cpp
 using System;
 using Xunit;
+using Calculators;
 
 namespace CalculatorTest
 {
