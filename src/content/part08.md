@@ -1,7 +1,7 @@
 ---
 title: "Part 8 - Dictionaries"
 nav_order: 3
-hidden: true
+hidden: false
 ---
 
 ## Part 8
