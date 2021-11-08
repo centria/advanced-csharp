@@ -1,7 +1,7 @@
 ---
 title: "Similarity of Objects"
 nav_order: 2
-hidden: true
+hidden: false
 ---
 
 # Similarity of Objects
@@ -262,3 +262,9 @@ Arto
 
 * method Equals , so that all equal or apporiximately equal objects cause the comparison to return true and all false for all the rest
 * method GetHashCode , so that as few objects as possible end up with the same hash value
+
+
+
+# Exercises
+
+<Note>Exercises will be published on 10.11. at the latest</Note>

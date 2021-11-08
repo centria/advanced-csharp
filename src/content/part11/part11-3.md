@@ -168,4 +168,4 @@ In our loop, we go through the file line by line. If the line should now contain
 
 After the loop, we use the **Close()** method to save the stream into the file, and close the file.
 
-NOTICE! Both of these methods loaded the original file into the system memory, with **ReadAllLines** and **ReadAllText**. This is completely fine for small files, but with larger files, you will quickly end up filling up the memory and crashing the system.
+<Note> Both of these methods loaded the original file into the system memory, with **ReadAllLines** and **ReadAllText**. This is completely fine for small files, but with larger files, you will quickly end up filling up the memory and crashing the system.</Note>

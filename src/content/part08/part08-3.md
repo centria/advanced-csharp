@@ -1,7 +1,7 @@
 ---
 title: "Grouping Data Using Dictionaries"
 nav_order: 3
-hidden: true
+hidden: false
 ---
 
 # Grouping Data Using Dictionaries
@@ -26,7 +26,7 @@ Pekka's number 040-12348765
 Pekka's number 09-111333
 ```
 
-NOTICE! The way we handled the dictionary is now a bit different. Rather than using the **Add** method, we put the values in by directly addressing the key, this time "Pekka". This way we could also update the value to which the key points to. This works when we assign a value to the key, even though the key does not yet exist in the dictionary.
+<Note> The way we handled the dictionary is now a bit different. Rather than using the **Add** method, we put the values in by directly addressing the key, this time "Pekka". This way we could also update the value to which the key points to. This works when we assign a value to the key, even though the key does not yet exist in the dictionary.</Note>
 
 If we were to search for a value with a key that does not exist, however, we get an error:
 
@@ -175,3 +175,9 @@ Pekka: 3
 Matti: 1
 Matti: 2
 ```
+
+
+
+# Exercises
+
+<Note>Exercises will be published on 10.11. at the latest</Note>

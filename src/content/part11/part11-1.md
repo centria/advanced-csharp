@@ -64,7 +64,7 @@ int temperature = weatherMan.Next(-30, 51);
 Console.WriteLine(temperature);
 ```
 
-NOTICE! The lowerLimit is inclusive but the upperLimit is always exclusive, so we are still getting random between -30 and 50!
+<Note> The lowerLimit is inclusive but the upperLimit is always exclusive, so we are still getting random between -30 and 50!</Note>
 
 A Random object can also be used to create random doubles. These can for example be used for calculating probabilities. Computers often simulate probabilities using doubles between \[0..1\].
 

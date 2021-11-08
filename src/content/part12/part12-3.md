@@ -12,7 +12,7 @@ So far, all our programs have used the console, or terminal, as their interface.
 
 When we created our console projects, we used the command **dotnet new ...**. We can create a graphical project in the same manner. This time, the command is **dotnet new winforms**. 
 
-**NOTICE!** If you are unable to create a project with the command above, you might have to change your Terminal in VSC to be **PowerShell**. Windows Forms programs can only be created and run through a Windows based terminal.
+<Note> If you are unable to create a project with the command above, you might have to change your Terminal in VSC to be **PowerShell**. Windows Forms programs can only be created and run through a Windows based terminal. </Note>
 
 The program can be run with same commands as a console program, i.e. **dotnet run**. One major difference is in our **csproj** file, where we decide we are creating a Windows application.
 
@@ -34,7 +34,7 @@ Windows Forms is one type of graphical interface that can be created with C#. We
 
 Let's create our first project.
 
-NOTICE! This, and all the examples in this part, only work on Windows!
+<Note> This, and all the examples in this part, only work on Windows! </Note>
 
 * Create a folder where you want your project. The example will be in a folder called **GuiProject**.
 

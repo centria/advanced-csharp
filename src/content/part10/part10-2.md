@@ -115,7 +115,7 @@ namespace Exercise001
 Using StringBuilder is more performant that creating strings with the + operator.
 
 
-NOTICE! We need **using System.Text;** for the StringBuilder to work.
+<Note> We need **using System.Text;** for the StringBuilder to work. </Note>
 
 ## Regular expressions
 

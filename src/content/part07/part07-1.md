@@ -166,7 +166,7 @@ Our **NewTypes.csproj** contains the following:
 
 ### Testing the sample
 
-The NewTypes project is in place, and you've organized it by keeping the pets-related types in a folder. Let's put in some tests. In our exercises, we've used [**xUnit tests**]https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test). Unit testing allows you to automatically check the behavior of your pet types to confirm that they're operating properly.
+The NewTypes project is in place, and you've organized it by keeping the pets-related types in a folder. Let's put in some tests. In our exercises, we've used [**xUnit tests**](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test). Unit testing allows you to automatically check the behavior of your pet types to confirm that they're operating properly.
 
 We'll create our tests now a bit manually. Navigate back to the root folder and create a **test** folder with a **NewTypeTest** folder within it. At a command prompt from the **NewTypeTest** folder, execute **dotnet new xunit**. This produces two files: NewTypeTest.csproj and UnitTest1.cs.
 
@@ -184,7 +184,7 @@ If you get an error, or if you just want to do it manually, you can also add thi
 </ItemGroup>
 ```
 
-NOTICE! On some devices, the slashes between folders need to be **\\** rather than **/**. If you get an error after adding the Project Reference, try the other version of slash (just like below); 
+<Note> On some devices, the slashes between folders need to be **\\** rather than **/**. If you get an error after adding the Project Reference, try the other version of slash (just like below); </Note>
 
 Now our **NewTypeTest.csproj** should look something like this:
 

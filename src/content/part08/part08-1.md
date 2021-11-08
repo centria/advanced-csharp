@@ -1,7 +1,7 @@
 ---
 title: "Dictionaries"
 nav_order: 1
-hidden: true
+hidden: false
 ---
 
 # Dictionaries
@@ -550,5 +550,8 @@ public List<Book> GetBooksByPart(string titlePart)
 }
 ```
 
-As with the previous example, the speed dvantage that comes with the dictionary is lost.
+As with the previous example, the speed advantage that comes with the dictionary is lost.
 
+# Exercises
+
+<Note>Exercises will be published on 10.11. at the latest</Note>
