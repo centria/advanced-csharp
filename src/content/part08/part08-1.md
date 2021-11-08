@@ -4,7 +4,6 @@ nav_order: 1
 hidden: false
 ---
 
-# Dictionaries
 
 One of the most commonly used data structures among lists is  a **dictionary**. In C#, the [**Dictionary<TKey,TValue> Class**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netframework-4.8) is located in the **System.Collections.Generic** Namespace. But what does it do?
 

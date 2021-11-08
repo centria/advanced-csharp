@@ -4,7 +4,7 @@ nav_order: 3
 hidden: false
 ---
 
-# Grouping Data Using Dictionaries
+
 
 A dictionary has at most one value per each key. In the following example, we store the phone numbers of people into the dictionary.
 
