@@ -557,7 +557,7 @@ As with the previous example, the speed advantage that comes with the dictionary
 
 <Exercise title={'001 Nicknames'}>
 
-In the Main-method create a new Dictionary\< string , string \> object. Store the names and nicknames of the following example in this dictionary so, that the name is the key and the nickname is the value.
+In the Main-method create a new Dictionary< string , string > object. Store the names and nicknames of the following example in this dictionary so, that the name is the key and the nickname is the value.
 
 Then get the names from the dictionary, and print the following:
 
@@ -579,7 +579,7 @@ Fill in the class **Abbreviations** for managing common abbreviations. The class
 * **public bool HasAbbreviation(string abbreviation)** checks if an abbreviation has already been added; returns true if it has and false if it has not.
 * **public string FindExplanationFor(string abbreviation)** finds the explanation for an abbreviation; returns "not found" if the abbreviation has not been added yet.
 
-HINT! Use HasAbbreviation in your FindExplanationFor to avoid errors!
+<Note>Use HasAbbreviation in your FindExplanationFor to avoid errors!</Note>
 
 Example:
 
