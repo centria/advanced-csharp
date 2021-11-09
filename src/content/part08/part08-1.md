@@ -616,7 +616,7 @@ Exercise template contains a class Program. Implement the following class method
 
 Example of using the class methods:
 
-```cs
+```cpp
 Dictionary<string,string> dict = new Dictionary<string, string>();
 dict.Add("f.e", "for example");
 dict.Add("etc.", "and so on");
