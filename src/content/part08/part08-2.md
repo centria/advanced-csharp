@@ -266,35 +266,148 @@ Arto
 
 # Exercises
 
-<Exercise title={'004 Book Dictionary'}>
+<Exercise title={'006 Same Date'}>
 
-The exercise template contains the already familiar classes Book and Program. In the class Program implement the following class methods:
+The exercise template contains a class **SimpleDate**, which defines a date object based on a given day, month, and year. In this exercise you will expand the SimpleDate class with an equals method, which can tell if the dates are exactly the same.
 
-* **public static void PrintValues(Dictionary\< string, Book \> dictionary)**, which prints all the values in the dictionary given as a parameter using the **ToString** method of the Book objects.
-* **public static void PrintValueIfNameContains(Dictionary\< string, Book \> dictionary, string text)**, which prints only the Books in the given dictionary whose name contains the given string. You can find out the name of a Book with the property **name**.
+* create a method **public override bool Equals(object compared)** for the SimpleDate class, which returns true if the date of the object passed to the method as a parameter is the same as the date of the object used to call the method.
 
-```cs
-Dictionary<string, Book> books = new Dictionary<string, Book>();
-Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
-Book prideAndPrejudice = new Book("Pride and Prejudice", 1813, "....");
-books.Add(senseAndSensibility.name, senseAndSensibility);
-books.Add(prideAndPrejudice.name, prideAndPrejudice);
+create a method **public override int GetGetHashCode()** for the SimpleDate class, which calculates a hash for the the SimpleDate object. Implement the calculation of the hash in way that there are as few similar hashes as possible between the years 1900 and 2100.
 
-PrintValues(books);
-Console.WriteLine("-- -- -- --");
-PrintValueIfNameContains(books, "prejud");
+The Equals should work as follows:
+
+```cpp      
+SimpleDate d = new SimpleDate(1, 2, 2000);
+Console.WriteLine(d.Equals("heh"));
+Console.WriteLine(d.Equals(new SimpleDate(5, 2, 2012)));
+Console.WriteLine(d.Equals(new SimpleDate(1, 2, 2000)));
 ```
 
 ```console
-Name: Sense and Sensibility (1811)
-Content: ...
-Name: Pride and Prejudice (1813)
-Content: ....
--- -- -- --
-Name: Pride and Prejudice (1813)
-Content: ....
+false
+false
+true
 ```
 
-<Note>The order of the output can vary, as the dictionary does not guarantee the order of the objects in it.</Note>
+</Exercise>
 
+<Exercise title={'007 Vehicle Registry'}>
+
+* Section 1
+
+European license plates have to parts, a two letter country code and a nationally unique license number. The license number is made up of numbers and characters. License plates are represented by the following class:
+
+```cpp
+public class LicensePlate
+{
+  private string liNumber;
+  private string country;
+
+  public LicensePlate(string country, string liNumber)
+  {
+    this.liNumber = liNumber;
+    this.country = country;
+  }
+
+
+  public override string ToString()
+  {
+    return country + " " + liNumber;
+  }
+}
+```
+
+We want to be able to save the license plates in e.g Lists and to use them as keys in a Dictionary. Which, as explained above, means that the **Equals** and **GetHashCode** methods need to be overwritten, or they won't work as intended. Implement the methods Equals and GetHashCode for the LicensePlate class.
+
+Example program:
+
+```cpp
+LicensePlate li1 = new LicensePlate("FI", "ABC-123");
+LicensePlate li2 = new LicensePlate("FI", "UXE-465");
+LicensePlate li3 = new LicensePlate("D", "B WQ-431");
+
+List<LicensePlate> finnishPlates = new List<LicensePlate>();
+finnishPlates.Add(li1);
+finnishPlates.Add(li2);
+
+LicensePlate newLi = new LicensePlate("FI", "ABC-123");
+if (!finnishPlates.Contains(newLi))
+{
+  finnishPlates.Add(newLi);
+}
+Console.WriteLine("Finnish: ");
+foreach (LicensePlate plate in finnishPlates)
+{
+  Console.WriteLine(plate);
+}
+
+Dictionary<LicensePlate, string> owners = new Dictionary<LicensePlate, string>();
+owners.Add(li1, "Arto");
+owners.Add(li3, "Jürgen");
+
+Console.WriteLine("Owners:");
+Console.WriteLine(owners[new LicensePlate("FI", "ABC-123")]);
+Console.WriteLine(owners[new LicensePlate("D", "B WQ-431")]);
+```
+
+```console
+Finnish: 
+FI ABC-123
+FI UXE-465
+Owners:
+Arto
+Jürgen
+```
+
+* Section 2
+
+Implement the class **VehicleRegistry**, which has the following methods:
+
+* **public bool Add(LicensePlate licensePlate, string owner)** assigns the owner it received as a parameter to car corresponding with the license plate received as a parameter. If the license plate didn't have an owner returns **true**. If the license already had an owner attached, the method returns **false and does nothing**.
+
+* **public string Get(LicensePlate licensePlate)** returns the owner of the car corresponding to the license plate received as a parameter. If the car isn't in the registry, returns an error message (of your choice).
+
+* **public bool Remove(LicensePlate licensePlate)** removes the license plate and attached data from the registry. Returns **true** if removed successfully and **false** if the license plate wasn't in the registry.
+
+* **public void PrintLicensePlates()** prints the license plates in the registry.
+
+* **public void PrintOwners()** prints the owners of the cars in the registry. Each name should only be printed once, even if a particular person owns more than one car.
+
+Now the program should work something like this:
+
+```cpp
+LicensePlate li1 = new LicensePlate("FI", "ABC-123");
+LicensePlate li2 = new LicensePlate("FI", "UXE-465");
+LicensePlate li3 = new LicensePlate("D", "B WQ-431");
+LicensePlate li4 = new LicensePlate("D", "B WQ-432");
+LicensePlate li5 = new LicensePlate("D", "B WQ-433");
+
+VehicleRegistry register = new VehicleRegistry();
+
+register.Add(li1, "Arto");
+register.Add(li2, "Arto");
+register.Add(li3, "Jürgen");
+register.Add(li4, "Jürgen");
+register.Add(li5, "Jürgen");
+
+Console.WriteLine("Plates:");
+register.PrintLicensePlates();
+
+Console.WriteLine("Owners:");
+register.PrintOwners();
+```
+
+```console
+Plates:
+FI ABC-123
+FI UXE-465
+D B WQ-431
+D B WQ-432
+D B WQ-433
+Owners:
+Arto
+Jürgen
+```
+
+<Note>In the printOwners method, you can create a list used for remembering the owners that were already printed. If an owner is not on the their name is printed and they are added to the list -- if an owner is on the list their name isn't printed.</Note>
 </Exercise>

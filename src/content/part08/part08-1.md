@@ -643,3 +643,94 @@ more precisely
 <Note> The order of the output can vary, as the dictionary does not guarantee the order of the objects in it.</Note>
 
 </Exercise>
+
+<Exercise title={'004 Book Dictionary'}>
+
+The exercise template contains the already familiar classes Book and Program. In the class Program implement the following class methods:
+
+* **public static void PrintValues(Dictionary\< string, Book \> dictionary)**, which prints all the values in the dictionary given as a parameter using the **ToString** method of the Book objects.
+* **public static void PrintValueIfNameContains(Dictionary\< string, Book \> dictionary, string text)**, which prints only the Books in the given dictionary whose name contains the given string. You can find out the name of a Book with the property **name**.
+
+```cpp
+Dictionary<string, Book> books = new Dictionary<string, Book>();
+Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
+Book prideAndPrejudice = new Book("Pride and Prejudice", 1813, "....");
+books.Add(senseAndSensibility.name, senseAndSensibility);
+books.Add(prideAndPrejudice.name, prideAndPrejudice);
+
+PrintValues(books);
+Console.WriteLine("-- -- -- --");
+PrintValueIfNameContains(books, "prejud");
+```
+
+```console
+Name: Sense and Sensibility (1811)
+Content: ...
+Name: Pride and Prejudice (1813)
+Content: ....
+-- -- -- --
+Name: Pride and Prejudice (1813)
+Content: ....
+```
+
+<Note>The order of the output can vary, as the dictionary does not guarantee the order of the objects in it.</Note>
+
+</Exercise>
+
+
+<Exercise title={'005 I Owe You'}>
+
+Create a class called **IOU** which has the following methods:
+
+* constructor **public IOU()** creates a new IOU
+* **public void ChangeDebt(string toWhom, int amount)** saves the amount owed and the person owed to to the IOU. You can use this to also lower the debt, but the total amount cannot be negative!
+* **public int HowMuchDoIOweTo(string toWhom)** returns the amount owed to the person whose name is given as a parameter. If the person cannot be found, it returns 0.
+
+The class can be used like this:
+
+```cpp
+IOU mattsIOU = new IOU();
+mattsIOU.ChangeDebt("Arthur", 51);
+mattsIOU.ChangeDebt("Michael", 30);
+
+Console.WriteLine(mattsIOU.HowMuchDoIOweTo("Arthur"));
+Console.WriteLine(mattsIOU.HowMuchDoIOweTo("Michael"));
+Console.WriteLine(mattsIOU.HowMuchDoIOweTo("Heikki"));
+```
+
+```console
+51
+30
+0
+```
+
+<Note> If a new debt is added, the debt increases or decreases. Take that into account in your code. Also, the the total amount should not be negative! </Note>
+
+```cpp
+IOU mattsIOU = new IOU();
+mattsIOU.ChangeDebt("Arthur", -10);
+
+Console.WriteLine(mattsIOU.HowMuchDoIOweTo("Arthur"));
+
+mattsIOU.ChangeDebt("Arthur", 51);
+mattsIOU.ChangeDebt("Arthur", 30);
+
+Console.WriteLine(mattsIOU.HowMuchDoIOweTo("Arthur"));
+
+mattsIOU.ChangeDebt("Arthur", -30);
+
+Console.WriteLine(mattsIOU.HowMuchDoIOweTo("Arthur"));
+
+mattsIOU.ChangeDebt("Arthur", -80);
+
+Console.WriteLine(mattsIOU.HowMuchDoIOweTo("Arthur"));
+```
+
+```console
+0
+81
+51
+0
+```
+
+</Exercise>
