@@ -187,7 +187,7 @@ Your assignment is to create the class **DictionaryOfManyTranslations**. In it c
 * **public void Add(string word, string translation)** adds the translation for the word and preserves the old translations.
 * **public List<string> Translate(string word)** returns a list of the translations added for the word. If the word has no translations, the method should return an empty list.
 * **public void Remove(string word)** removes the word and all its translations from the dictionary.
-It's probably best to add the translations to an object variable that is of the type **Dictionary\<string, List\<string\> \>**
+It's probably best to add the translations to an object variable that is of the type **Dictionary<string, List<string> >**
 
 An example:
 
