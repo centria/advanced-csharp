@@ -185,9 +185,9 @@ Matti: 2
 Your assignment is to create the class **DictionaryOfManyTranslations**. In it can be stored one or more translations for each word. The class is to implement the following methods:
 
 * **public void Add(string word, string translation)** adds the translation for the word and preserves the old translations.
-* **public List<string> Translate(string word)** returns a list of the translations added for the word. If the word has no translations, the method should return an empty list.
+* **public List<string\> Translate(string word)** returns a list of the translations added for the word. If the word has no translations, the method should return an empty list.
 * **public void Remove(string word)** removes the word and all its translations from the dictionary.
-It's probably best to add the translations to an object variable that is of the type **Dictionary<string, List<string> >**
+It's probably best to add the translations to an object variable that is of the type **Dictionary<string, List<string\> >**
 
 An example:
 
@@ -228,19 +228,19 @@ valehdella
 
 </Exercise>
 
-<Exercise title={'0089 Storage Facility'}>
+<Exercise title={'009 Storage Facility'}>
 
 Your task is creating a class called **StorageFacility** that can be used to keep track of storage units and their contents. The class is to implement the following methods:
 
 * **public void Add(string unit, string item)** adds the parameter item to the storage unit that is also given as a parameter.
 
-* **public List<string> Contents(string storageUnit)** returns a list that contains all the items in the storage unit indicated by the parameter. If there is no such storage unit or it contains no items, the method should return an empty list.
+* **public List<string\> Contents(string storageUnit)** returns a list that contains all the items in the storage unit indicated by the parameter. If there is no such storage unit or it contains no items, the method should return an empty list.
 
 * **public void Remove(string storageUnit, string item)**  removes the given item from the given storage unit. 
 
 <Note>Only removes one item -- if there are several items with the same name, the rest still remain. If the storage unit would be empty after the removal, the method also removes the unit.</Note>
 
-* **public List<string> StorageUnits()**  returns the names of the storage units as a list. 
+* **public List<string\> StorageUnits()**  returns the names of the storage units as a list. 
 
 <Note>Only the units that contain items are listed</Note>
 

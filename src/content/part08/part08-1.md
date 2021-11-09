@@ -648,8 +648,8 @@ more precisely
 
 The exercise template contains the already familiar classes Book and Program. In the class Program implement the following class methods:
 
-* **public static void PrintValues(Dictionary\< string, Book \> dictionary)**, which prints all the values in the dictionary given as a parameter using the **ToString** method of the Book objects.
-* **public static void PrintValueIfNameContains(Dictionary\< string, Book \> dictionary, string text)**, which prints only the Books in the given dictionary whose name contains the given string. You can find out the name of a Book with the property **name**.
+* **public static void PrintValues(Dictionary< string, Book \> dictionary)**, which prints all the values in the dictionary given as a parameter using the **ToString** method of the Book objects.
+* **public static void PrintValueIfNameContains(Dictionary< string, Book \> dictionary, string text)**, which prints only the Books in the given dictionary whose name contains the given string. You can find out the name of a Book with the property **name**.
 
 ```cpp
 Dictionary<string, Book> books = new Dictionary<string, Book>();
