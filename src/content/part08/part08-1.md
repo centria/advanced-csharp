@@ -553,4 +553,93 @@ As with the previous example, the speed advantage that comes with the dictionary
 
 # Exercises
 
-<Note>Exercises will be published on 10.11. at the latest</Note>
+
+
+<Exercise title={'001 Nicknames'}>
+
+In the Main-method create a new Dictionary\< string , string \> object. Store the names and nicknames of the following example in this dictionary so, that the name is the key and the nickname is the value.
+
+Then get the names from the dictionary, and print the following:
+
+```console
+matthew's nickname is matt
+michael's nickname is mix
+arthur's nickname is artie
+```
+
+Use a foreach-loop to print over KeyValuePair for the printing.
+
+</Exercise>
+
+<Exercise title={'002 Abbreviations'}>
+
+Fill in the class **Abbreviations** for managing common abbreviations. The class must have a constructor, which does not take any parameters. The class must also provide the following methods:
+
+* **public void AddAbbreviation(string abbreviation, string explanation)** adds a new abbreviation and its explanation. You can use the **.Add** method for the dictionary and assume we never add the same abbrevation twice.
+* **public bool HasAbbreviation(string abbreviation)** checks if an abbreviation has already been added; returns true if it has and false if it has not.
+* **public string FindExplanationFor(string abbreviation)** finds the explanation for an abbreviation; returns "not found" if the abbreviation has not been added yet.
+
+HINT! Use HasAbbreviation in your FindExplanationFor to avoid errors!
+
+Example:
+
+```cpp
+Abbreviations abbreviations = new Abbreviations();
+abbreviations.AddAbbreviation("e.g", "for example");
+abbreviations.AddAbbreviation("etc.", "and so on");
+abbreviations.AddAbbreviation("i.e", "more precisely");
+
+string text = "e.g i.e etc. lol";
+
+foreach (string part in text.Split(" "))
+{
+  Console.WriteLine(abbreviations.FindExplanationFor(part));
+}
+```
+
+```console
+for example
+and so on
+more precisely
+not found
+```
+
+</Exercise>
+
+<Exercise title={'003 Print Dictionary Keys'}>
+
+Exercise template contains a class Program. Implement the following class methods in the class:
+
+* **public static void PrintKeys(Dictionary<string,string> dict)**, prints all the keys in the dictionary given as a parameter.
+* **public static void PrintKeysWhere(Dictionary<string,string> dict, string text)** prints the keys in the dictionary given as a parameter, which contain the string given as a parameter.
+* **public static void PrintValuesOfKeysWhere(Dictionary<string,string> dict, string text)**, prints the values in the given dictionary whichs keys contain the given string.
+
+Example of using the class methods:
+
+```cs
+Dictionary<string,string> dict = new Dictionary<string, string>();
+dict.Add("f.e", "for example");
+dict.Add("etc.", "and so on");
+dict.Add("i.e", "more precisely");
+
+PrintKeys(dict);
+Console.WriteLine("---");
+PrintKeysWhere(dict, "i");
+Console.WriteLine("---");
+PrintValuesOfKeysWhere(dict, ".e");
+```
+
+```console
+f.e 
+etc. 
+i.e 
+--- 
+i.e 
+--- 
+for example 
+more precisely
+```
+
+<Note> The order of the output can vary, as the dictionary does not guarantee the order of the objects in it.</Note>
+
+</Exercise>
