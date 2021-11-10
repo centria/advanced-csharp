@@ -499,7 +499,7 @@ Content: ....
 
 In the above example, we adhered to the **DRY (Don't Repeat Yourself)** principle according to which code duplication should be avoided. Sanitizing a string, i.e., changing it to lowercase, and trimming, i.e., removing empty characters from the beginning and end, would have been repeated many times in our library class without the **SanitizedString** method. Repetitive code is often not noticed until it has already been written, which means that it almost always makes it's way into the code. There's nothing wrong with that - the important thing is that the code is cleaned up so that places that require tidying up are noticed.
 
-## Going Through A Directory's Keys
+## Going Through A Dictionary's Keys
 
 We may sometimes want to search for a book by a part of it's title. The get method (dictionary\[key\]) in the dictionary is not applicable in this case as it's used to search by a specific key. Searching by a part of a book title is not possible with it.
 

@@ -95,7 +95,7 @@ Pekka's numbers:
 09-111333
 ```
 
-We define the type of the phone number as Dictionary\<string, List\<string\>\>. This refers to a dictionary that uses a string as a key and a list containing strings as its value. As such, the values added to the dictionary are concrete lists.
+We define the type of the phone number as Dictionary<string, List<string\>\>. This refers to a dictionary that uses a string as a key and a list containing strings as its value. As such, the values added to the dictionary are concrete lists.
 
 ```cpp
 // Add Pekka to the Dictionary with a new List for numbers
