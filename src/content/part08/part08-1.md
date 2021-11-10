@@ -121,6 +121,8 @@ Key = 67100, Value = Kokkola
 Key = 99999, Value = 
 ```
 
+You might notice a different way of printing the strings. What we did there was [String interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated).
+
 As you can see, we can also give a **null** as a value. We cannot, however, give null as a key, or we will get **ArgumentNullException**.
 
 ## A Reference Type Variable as a Dictionary Value
