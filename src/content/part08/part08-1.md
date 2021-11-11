@@ -505,7 +505,7 @@ In the above example, we adhered to the **DRY (Don't Repeat Yourself)** principl
 
 We may sometimes want to search for a book by a part of it's title. The get method (dictionary\[key\]) in the dictionary is not applicable in this case as it's used to search by a specific key. Searching by a part of a book title is not possible with it.
 
-We can go through the values ​​of a dictionary by using a for-each loop on the set returned by the keySet() method of the dictionary.
+We can go through the values ​​of a dictionary by using a for-each loop on the KeyCollection returned by the Keys property of the dictionary.
 
 Below, a search is performed for all the books whose names contain the given string.
 
