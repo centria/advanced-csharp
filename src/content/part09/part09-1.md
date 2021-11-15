@@ -1,7 +1,7 @@
 ---
 title: "Inheritance"
 nav_order: 1
-hidden: true
+hidden: false
 ---
 
 # Inheritance
@@ -10,7 +10,7 @@ Classes are used to clarify the concepts of the problem domain in object-oriente
 
 Every C# class extends the class **Object**, which means that every class we create has at their disposal all the methods defined in the Object class. If we want to change how these methods defined in Object function, they must be overriden by defining a new implementation for them in the newly created class. The objects we create receive methods **Equals** and **GetHashCode**, among others, from the **Object** class.
 
-Ever class derives from **Object**, but it's also possible to defire from other classes than that. If we examine the API (Application Programming Interface) of C#'s [**Int32**](https://docs.microsoft.com/en-us/dotnet/api/system.int32?view=netframework-4.8) (or integer, as we know it), we notice that **Int32** has **base class** called **ValueType**. ValueType, in turn, has the class **Object** as its base class.
+Ever class derives from **Object**, but it's also possible to defire from other classes than that. If we examine the API (Application Programming Interface) of C#'s [**Int32**](https://docs.microsoft.com/en-us/dotnet/api/system.int32?view=net-5.0) (or integer, as we know it), we notice that **Int32** has **base class** called **ValueType**. ValueType, in turn, has the class **Object** as its base class.
 
 ```console
 Inheritance
@@ -90,10 +90,10 @@ namespace Exercise001
 
 The class definition **public class Engine : Part** indicates that the class **Engine** inherits the functionality of the class **Part**. We also define an object variable **engineType** in the class **Engine**.
 
-The constructor of the Engine class is worth some interest. On its declaration line we use the keyword **base** to call the constructor of the baseclass. The call **base(identifier, manufacturer, description)** calls the constructor **public Part(string identifier, string manufacturer, string description)** which is defined in the class **Part**. Through this process the object variables defined in the base class are initiated with their initial values. After calling the basecalls constuctor, in the code block of the Engine constructor we set the proper value for the object variable **engineType**.
+The constructor of the Engine class is worth some interest. On its declaration line we use the keyword **base** to call the constructor of the baseclass. The call **base(identifier, manufacturer, description)** calls the constructor **public Part(string identifier, string manufacturer, string description)** which is defined in the class **Part**. Through this process the object variables defined in the base class are initiated with their initial values. After calling the base call's constuctor, in the code block of the Engine constructor we set the proper value for the object variable **engineType**.
 
 
-*The **base** call bears some resemblance to the **this** call in a constructor (i.e. when overloading a constructor); **this** is used to call a constructor of this class, while **base** is used to call a constructor of the base class. If a constructor uses the constructor of the base class, so **base** is called in it, the base call must be on the definition line of the constructor. This is similar to the case with calling **this** (must also be the definition line of the constructor).*
+<Note>The base call bears some resemblance to the this call in a constructor (i.e. when overloading a constructor); this is used to call a constructor of this class, while base is used to call a constructor of the base class. If a constructor uses the constructor of the base class, so base is called in it, the base call must be on the definition line of the constructor. This is similar to the case with calling this (must also be the definition line of the constructor).</Note>
 
 Since the class Engine extends the class Part, it has at its disposal all the methods that the class Part offers. You can create instances of the class Engine the same way you can of any other class.
 
@@ -121,7 +121,7 @@ As you can see, the class **Engine** has all the methods that are defined in the
 
 Private members are visible only in derived classes that are nested in their base class. Otherwise, they are not visible in derived classes. So, from the Engine class there would be no way to directly access the variables identifier, manufacturer, and description,if they were defined private in the base class Part. Now they are public, and as such usable from the derived class.
 
-<Note> We have not defined **set** for our variables in **Part**. This means, that the derived class **Engine** cannot set the values for the variables, only **get** them. </Note>
+<Note> We have not defined set** for our variables in Part. This means, that the derived class Engine cannot set the values for the variables, only get them. </Note>
 
 A derived class sees everything that is defined with the **public** modifier in the base class. IF we want to define some variables or methods that are visible to the derived classes but invisible to everything else, we can use the access modifier **protected** to achieve this.
 
@@ -706,3 +706,7 @@ Choice:
 ```
 
 The greatest difference between interfaces and abstract classes is that abstract classes can contain object variables and constructors in addition to methods. Since you can also define functionality in abstract classes, you can use them to define e.g. default behavior. In the user interface above storing the name of the operation used the functionality defined in the abstract **Operation** class.
+
+# Exercises
+
+<Note>The exercises will be published 17.11. at the latest</Note>

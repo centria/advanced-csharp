@@ -1,7 +1,7 @@
 ---
 title: "Interfaces"
 nav_order: 2
-hidden: true
+hidden: false
 ---
 
 # Interfaces
@@ -18,7 +18,10 @@ namespace Exercise001
 }
 ```
 
-Notice how we started the name of the interface with a capital I? That's a naming convention for C#, and all the interfaces should start with one.
+<Note>
+Notice how we started the name of the interface with a capital I? 
+That's a naming convention for C#, and all the interfaces should start with one.
+</Note>
 
 The IReadable interface declares a Read() method, which returns a string-type object. IReadable defines certain behavior: for example, a text message or an email may be readable.
 
@@ -219,9 +222,12 @@ Type conversion succeeds if, and only if, the variable is of the type that it's 
 The true benefits of interfaces are reaped when they are used as the type of parameter provided to a method. Since an interface can be used as a variable's type, it can also be used as a parameter type in method calls. For example, the **Print** method in the **Printer** class of the class below gets a variable of type read.
 
 ```cpp
-public void Print(IReadable readable)
+public class Printer
 {
-  Console.WriteLine(readable.Read());
+  public void Print(IReadable readable)
+  {
+    Console.WriteLine(readable.Read());
+  }
 }
 ```
 
@@ -600,4 +606,9 @@ Candybar, weight: 0.2
 
 ## Generic Interfaces and more reading.
 
-The C# offers multiple interfaces that are built-in, and we have actually used them. You can read more about them [**from here**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/generic-interfaces) or [**even more from here**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic?view=netframework-4.8#interfaces). Both links lead to Microsoft documentation site, and give a glimpse on how some of the generic interfaces are implemented.
+The C# offers multiple interfaces that are built-in, and we have actually used them. You can read more about them [**from here**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/generic-interfaces) or [**even more from here**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-5.0). Both links lead to Microsoft documentation site, and give a glimpse on how some of the generic interfaces are implemented.
+
+
+# Exercises
+
+<Note>The exercises will be published 17.11. at the latest</Note>

@@ -1,7 +1,7 @@
 ---
 title: "Polymorphism"
 nav_order: 3
-hidden: true
+hidden: false
 ---
 
 # Polymorphism
@@ -110,3 +110,8 @@ public class Cat : Animal, INoiseCapable
 Now we have a class **Cat**, which implements the **abstract class** called **Animal**. At the same time, we also use the **interface** called **INoiseCapable**. 
 
 Now you might also notice, why the capital "I" is very convenient in front of the interfaces: With it we can directly distinguish the difference between the two, and don't have to see their code to know, which is which.
+
+
+# Exercises
+
+<Note>The exercises will be published 17.11. at the latest</Note>
