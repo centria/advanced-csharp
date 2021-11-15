@@ -419,7 +419,7 @@ namespace Exercise001
 }
 ```
 
-<Note> In our methods **Location** and **ManhattanDistanceFromOrigin** we use the keyword **new**, because we are overriding the methods from the base class. Without the keyword, we would get a warning. </Note>
+<Note> In our methods Location and ManhattanDistanceFromOrigin we use the keyword new, because we are overriding the methods from the base class. Without the keyword, we would get a warning. </Note>
 
 ```cpp
 static void Main(string[] args)
