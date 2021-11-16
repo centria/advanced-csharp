@@ -114,4 +114,63 @@ Now you might also notice, why the capital "I" is very convenient in front of th
 
 # Exercises
 
-<Note>The exercises will be published 17.11. at the latest</Note>
+<Exercise title={'008 Animals'}>
+
+In this exercise you'll demonstrate how to use both inheritance and interfaces.
+
+* First implement an **abstract class** called **Animal**. The class should have a constructor that takes the animal's name as a parameter. The Animal class also has non-parameterized methods **Eat** and **Sleep** that return nothing (void).
+
+* The Sleep method should print "(name) sleeps", and the Eat method should print "(name) Eats". Here (name) is the name of the animal in question.
+
+* Implement a class called **Dog** that inherits from Animal. Dog should have a **parameterized constructor** that can be used to name it. The class should also have a **non-parameterized constructor**, which gives the dog the name "Dog". Another method that Dog must have is the non-parameterized **Bark**, and it should not return any value (void). Like all animals, Dog needs to have the methods Eat and Sleep.
+
+* Next to implement is the class **Cat**, that also inherits from the Animal class. Cat should have **two constructors**: one with a parameter, used to name the cat according to the parameter, and one without parameters, in which case the name is simply "Cat". Another methd for Cat is a non-parameterized method called Purr that returns no value (void). Cats should be able to Eat and Sleep like in the first part.
+
+* Finally, create an **interface** called **INoiseCapable**. It should define a non-parameterized method **MakeNoise** that returns no value (void). *Implement the interface in the classes Dog and Cat*. The interface should take use of the Bark and Purr methods you've defined earlier.
+
+Below is an example of the expected functionality of all the parts.
+
+```cpp
+Dog dog = new Dog();
+dog.Bark();
+dog.Eat();
+dog.Sleep();
+
+Dog fido = new Dog("Fido");
+fido.Bark();
+
+Cat cat = new Cat();
+cat.Purr();
+cat.Eat();
+cat.Sleep();
+
+Cat garfield = new Cat("Garfield");
+garfield.Purr();
+
+INoiseCapable doggy = new Dog();
+doggy.MakeNoise();
+
+INoiseCapable catty = new Cat("Garfield");
+catty.MakeNoise();
+
+Cat c = (Cat) catty;
+c.Purr();
+```
+
+```console
+Dog barks
+Dog eats
+Dog sleeps
+Fido barks
+Cat purrs
+Cat eats 
+Cat sleeps
+Garfield purrs
+Dog barks 
+Garfield purrs 
+Garfield purrs
+```
+
+<Note>This exercise is worth 2 points, and requires all the classes implemented to work</Note>
+
+</Exercise>

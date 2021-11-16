@@ -646,4 +646,274 @@ The C# offers multiple interfaces that are built-in, and we have actually used t
 
 # Exercises
 
-<Note>The exercises will be published 17.11. at the latest</Note>
+
+<Exercise title={'005 Taco Boxes'}>
+
+In the exercise template you'll find **Interface ITacoBox** ready for your use. It has the following methods:
+
+the method **int TacosRemaining()** return the number of tacos remaining in the box.
+the method **void Eat()** reduces the number of tacos remaining by one. The number of tacos remaining can't become negative.
+
+* Implement the class **TripleTacoBox**, that implements the TacoBox interface. TripleTacobox has a constructor with no parameters. TripleTacobox has an object variable tacos which is initialized at 3 when the constructor is called.
+
+* Implement the class **CustomTacoBox**, that implements the TacoBox interface. CustomTacoBox has a constructor with one parameter defining the initial number of tacos in the **CustomTacoBox(int tacos)**.
+
+```cpp
+TripleTacoBox trip = new TripleTacoBox();
+Console.WriteLine(trip.TacosRemaining());
+trip.Eat();
+Console.WriteLine(trip.TacosRemaining());
+trip.Eat();
+Console.WriteLine(trip.TacosRemaining());
+trip.Eat();
+Console.WriteLine(trip.TacosRemaining());
+// Try to Eat one too much
+trip.Eat();
+Console.WriteLine(trip.TacosRemaining());
+
+Console.WriteLine();
+
+CustomTacoBox custom = new CustomTacoBox(2);
+Console.WriteLine(custom.TacosRemaining());
+custom.Eat();
+Console.WriteLine(custom.TacosRemaining());
+custom.Eat();
+Console.WriteLine(custom.TacosRemaining());
+// Try to Eat one too much
+custom.Eat();
+Console.WriteLine(custom.TacosRemaining());
+```
+
+```console
+3
+2
+1
+0
+0
+
+2
+1
+0
+0
+```
+
+</Exercise>
+
+<Exercise title={'006 Interface in a Box'}>
+
+Moving houses requires packing all your belongings into boxes. Let's imitate that with a program. The program will have boxes, and items to pack into those boxes. All items must implement the following Interface:
+
+```cpp
+public interface IPackable {
+    int Weight();
+}
+```
+* Section 1
+
+Create classes **Book** and **Furniture**. Book has a constructor in which is given the author (string), name of the book (string) and the publication year (int). The weight of all books is 1 kg. Furniture has a constructor in which is given the type of furniture (string), color (string) and weight (int). Both of these should implement the interface **IPackable**. They also need a ToString each.
+
+The classes should work as following:
+
+```cpp
+Book book1 = new Book("Fedor Dostojevski", "Crime and Punishment", 1866);
+Book book2 = new Book("Robert Martin", "Clean Code", 2008);
+Book book3 = new Book("Kent Beck", "Test Driven Development", 2000);
+
+Furniture sofa = new Furniture("Sofa", "Red", 20);
+Furniture bed = new Furniture("Twin bed", "White", 15);
+Furniture table = new Furniture("Dining room table", "Oak", 30);
+
+List<IPackable> packages = new List<IPackable>();
+packages.Add(book1);
+packages.Add(book2);
+packages.Add(book3);
+packages.Add(sofa);
+packages.Add(bed);
+packages.Add(table);
+
+packages.ForEach(Console.WriteLine);
+```
+
+```console
+Fedor Dostojevski: Crime and Punishment (1866)
+Robert Martin: Clean Code (2008)
+Kent Beck: Test Driven Development (2000)
+Red Sofa - weight 20 kg
+White Twin bed - weight 15 kg
+Oak Dining room table - weight 30 kg
+```
+
+Notice that the weight for books is not printed.
+
+* Section 2
+
+Create a class called **Box**.  Items implementing the **IPackable** interface can be packed into a box. The Box constructor takes the maximum capacity of the box in kilograms as a parameter. The combined weight of all items in a box cannot be more than the maximum capacity of the box. **Box should also implement IPackable**, so you could have boxes inside boxes!
+
+Below is an example of using a box:
+
+```cpp
+Book book1 = new Book("Fedor Dostojevski", "Crime and Punishment", 1866);
+Book book2 = new Book("Robert Martin", "Clean Code", 2008);
+Book book3 = new Book("Kent Beck", "Test Driven Development", 2000);
+
+Furniture sofa = new Furniture("Sofa", "Red", 20);
+Furniture bed = new Furniture("Twin bed", "White", 15);
+Furniture table = new Furniture("Dining room table", "Oak", 30);
+
+Box box = new Box(40);
+box.Add(book1);
+box.Add(book2);
+box.Add(book3);
+box.Add(sofa);
+box.Add(bed);
+box.Add(table);
+
+Console.WriteLine(box);
+```
+
+```console
+5 items, total weight 38 kg
+```
+
+<Note>The table did not fit in the box, as the maximum capacity of the box is 40.</Note>
+
+Let's try some boxes inside boxes, as well:
+
+```cpp
+Book book1 = new Book("Fedor Dostojevski", "Crime and Punishment", 1866);
+Book book2 = new Book("Robert Martin", "Clean Code", 2008);
+Book book3 = new Book("Kent Beck", "Test Driven Development", 2000);
+
+Furniture sofa = new Furniture("Sofa", "Red", 20);
+Furniture bed = new Furniture("Twin bed", "White", 15);
+Furniture table = new Furniture("Dining room table", "Oak", 30);
+
+Box bookBox = new Box(5);
+bookBox.Add(book1);
+bookBox.Add(book2);
+bookBox.Add(book3);
+
+Console.WriteLine(bookBox);
+Console.WriteLine();
+
+Box movingVan = new Box(800);
+movingVan.Add(bookBox);
+movingVan.Add(sofa);
+movingVan.Add(bed);
+movingVan.Add(table);
+
+Console.WriteLine(movingVan);
+Console.WriteLine();
+
+Box shippingContainer = new Box(3000);
+shippingContainer.Add(movingVan);
+
+Console.WriteLine(shippingContainer);
+```
+
+```console
+3 items, total weight 3 kg
+
+4 items, total weight 68 kg
+
+1 items, total weight 68 kg
+```
+
+
+</Exercise>
+
+
+
+
+<Exercise title={'007 Herds'}>
+
+In this exercise we are going to create organisms and herds of organisms that can move around. To represent the locations of the organisms we'll use a two-dimensional coordinate system. Each position involves two numbers: x and y coordinates. The x coordinate indicates how far from the (i.e. point zero, where x = 0, y = 0) that position is horizontally. The y coordinate indicates the distance from the origin vertically. If you are not familiar with using a coordinate system, you can study the basics from e.g. [**Wikipedia**](https://en.wikipedia.org/wiki/Cartesian_coordinate_system).
+
+
+The exercise base includes the interface **IMovable**, which represents something that can be moved from one position to another. The interface includes the method void move(int dx, int dy). The parameter dx tells how much the object moves on the x axis, and dy tells the distance on the y axis.
+
+This exercise consists of you implementing the classes **Organism** and **Herd**, both of which are movable.
+
+* Section 1
+
+Create a class called **Organism** that implements the interface **IMovable**. An organism should know its own location (as x, y coordinates). The API for the class Organism is to be as follows:
+
+* public Organism(int x, int y)
+
+The class constructor that receives the x and y coordinates of the initial position as its parameters.
+
+* public override string ToString()
+
+Creates and returns a string representation of the organism. That representation should remind the following: "x: 3; y: 6". Notice that a semicolon is used to separate the coordinates.
+
+* public void Move(int dx, int dy)
+
+Moves the object by the values it receives as parameters. The dx variable contains the change to coordinate x, and the dy variable ontains the change to the coordinate y. For example, if the value of dx is 5, the value of the object variable x should be incremented by five.
+
+
+Use the following code snippet to test the Organism class.
+
+
+```cpp
+Organism organism = new Organism(20, 30);
+Console.WriteLine(organism);
+organism.Move(-10, 5);
+Console.WriteLine(organism);
+organism.Move(50, 20);
+Console.WriteLine(organism);
+```
+
+```console
+x: 20; y: 30 
+x: 10; y: 35 
+x: 60; y: 55
+```
+
+* Section 2
+
+Create a class called **Herd** that implements the interface **IMovable**. A herd consists of multiple objects that implement the Movable interface. They must be stored in e.g. a list data structure.
+
+The Herd class must have the following API.
+
+* public override string ToString()
+
+
+Returns a string representation of the positions of the members of the herd, each on its own line.
+
+* public void AddToHerd(IMovable movable)
+
+Adds an object that implements the Movable interface to the herd.
+
+* public void Move(int dx, int dy)
+
+Moves the herd with by the amount specified by the parameters. Notice that here you have to move each member of the herd.
+
+Test out your program with the sample code below:
+
+```cpp
+Herd herd = new Herd();
+herd.AddToHerd(new Organism(57, 66));
+herd.AddToHerd(new Organism(73, 56));
+herd.AddToHerd(new Organism(46, 52));
+herd.AddToHerd(new Organism(19, 107));
+Console.WriteLine(herd);
+herd.Move(2,2);
+Console.WriteLine(herd);
+```
+
+```console
+x: 57; y: 66 
+x: 73; y: 56 
+x: 46; y: 52 
+x: 19; y: 107
+
+x: 59; y: 68 
+x: 75; y: 58 
+x: 48; y: 54 
+x: 21; y: 109
+
+```
+
+<Note>The ToString of a herd might end in a line change, and that is totally fine!</Note>
+
+</Exercise>

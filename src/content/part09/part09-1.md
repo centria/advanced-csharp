@@ -810,13 +810,14 @@ For Student and Teacher, use base.ToString() as a starting point.
 
 
 <Exercise title={'003 Warehousing'}>
+
 The exercise template contains a class **Warehouse**, which has the following properties, constructors and methods:
 
 * public int balance - balance of the warehouse, i.e. the capacity which is taken up by the items in the warehouse.
 * public int capacity - the total capacity of the warehouse (i.e. the one that was provided in the constructor).
 * constructor public Warehouse(int capacity) - Creates an empty warehouse, which has the capacity provided as a parameter; an invalid capacity (<=0) creates a useless warehouse, with the the capacity 0.
 
-* public int HowMuchSpaceLeft()** - Returns a value telling how much space is left in the warehouse.
+* public int HowMuchSpaceLeft() - Returns a value telling how much space is left in the warehouse.
 * public void AddToWarehouse(int amount) - Adds the desired amount to the warehouse; if the amount is negative, nothing changes, and if everything doesn't fit, then the warehouse is filled up and the rest is "thrown away" / "overflows".
 * public int TakeFromWarehouse(int amount) - Take the desired amount from the warehouse. The method returns much we actually get. If the desired amount is negative, nothing changes and we return 0. If the desired amount is greater than the amount the warehouse contains, we get all there is to take and the warehouse is emptied.
 * public override string ToString() - Returns the state of the object represented as a string like this 
@@ -830,7 +831,7 @@ In this exercise we build variations of a warehouse based on the Warehouse class
 
 * Section 1
 
-The class <strong>Warehouse</strong> handles the functions related to the amount of a product. Now we want product name for the product and a way to handle the name. Let's write **ProductWarehouse** as a *derived class of Warehouse!* First, we'll just create a private object variable for the product name, and a constructor:
+The class **Warehouse** handles the functions related to the amount of a product. Now we want product name for the product and a way to handle the name. Let's write **ProductWarehouse** as a *derived class of Warehouse!* First, we'll just create a private object variable for the product name, and a constructor:
 
 * public string productName
 * public ProductWarehouse(string productName, int capacity) - Creates an empty product warehouse. The name of the product and the capacity of the warehouse are provided as parameters.
