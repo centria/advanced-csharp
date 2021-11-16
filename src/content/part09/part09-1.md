@@ -709,4 +709,256 @@ The greatest difference between interfaces and abstract classes is that abstract
 
 # Exercises
 
-<Note>The exercises will be published 17.11. at the latest</Note>
+<Exercise title={'001 ABC'}>
+
+Create the following three classes:
+
+* Class A. Class should have no object variables nor should you specify a constructor for it. It only has the method **public void APrint()**, which prints a string "A".
+* Class B. Class should have no object variables nor should you specify a constructor for it. It only has the method **public void BPrint()**, which prints a string "B".
+* Class C. Class should have no object variables nor should you specify a constructor for it. It only has the method **public void CPrint()**, which prints a string "C".
+* After you have created the classes, **modify them** so that class B inherits class A, and class C inherits class B. In other words, class A will be a base class for class B, and class B will be a base class for class C.
+
+```cpp
+A a = new A();
+B b = new B();
+C c = new C();
+
+a.APrint();
+b.BPrint();
+c.CPrint();
+
+Console.WriteLine();
+
+c.APrint();
+c.BPrint();
+c.CPrint();
+```
+
+```console
+A
+B
+C
+
+A
+B
+C
+```
+
+</Exercise>
+
+<Exercise title={'002 Person and Subclasses'}>
+
+* Section 1
+
+Create a class **Person**. The class must work as follows:
+
+```cpp
+Person ada = new Person("Ada Lovelace", "24 Maddox St. London W1S 2QN");
+Person esko = new Person("Esko Ukkonen", "Mannerheimintie 15 00100 Helsinki");
+Console.WriteLine(ada);
+Console.WriteLine(esko);
+```
+
+```console
+Ada Lovelace, 24 Maddox St. London W1S 2QN
+Esko Ukkonen, Mannerheimintie 15 00100 Helsinki
+```
+
+* Section 2
+
+Create a class **Student**, which inherits the class Person.
+
+At creation, student has 0 study credits. Every time a student studies, amount of study credits goes up. Class must act as follows:
+
+```cpp
+Student ollie = new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028");
+Console.WriteLine(ollie);
+ollie.Study();
+Console.WriteLine(ollie);
+```
+
+```console
+Ollie, 6381 Hollywood Blvd. Los Angeles 90028 credits: 0
+Ollie, 6381 Hollywood Blvd. Los Angeles 90028 credits: 1
+```
+
+* Section 3
+
+Create a class **Teacher**, which inherits the class Person.
+
+The class must act as follows:
+
+```cpp
+Teacher ada = new Teacher("Ada Lovelace", "24 Maddox St. London W1S 2QN", 1200);
+Teacher esko = new Teacher("Esko Ukkonen", "Mannerheimintie 15 00100 Helsinki", 5400);
+Console.WriteLine(ada);
+Console.WriteLine(esko);
+```
+
+```console
+Ada Lovelace, 24 Maddox St. London W1S 2QN salary 1200 per month
+Esko Ukkonen, Mannerheimintie 15 00100 Helsinki salary 5400 per month
+```
+
+<Note>
+You have to override the ToString.
+For Student and Teacher, use base.ToString() as a starting point.
+</Note>
+
+</Exercise>
+
+
+
+<Exercise title={'003 Warehousing'}>
+The exercise template contains a class **Warehouse**, which has the following properties, constructors and methods:
+
+* public int balance - balance of the warehouse, i.e. the capacity which is taken up by the items in the warehouse.
+* public int capacity - the total capacity of the warehouse (i.e. the one that was provided in the constructor).
+* constructor public Warehouse(int capacity) - Creates an empty warehouse, which has the capacity provided as a parameter; an invalid capacity (<=0) creates a useless warehouse, with the the capacity 0.
+
+* public int HowMuchSpaceLeft()** - Returns a value telling how much space is left in the warehouse.
+* public void AddToWarehouse(int amount) - Adds the desired amount to the warehouse; if the amount is negative, nothing changes, and if everything doesn't fit, then the warehouse is filled up and the rest is "thrown away" / "overflows".
+* public int TakeFromWarehouse(int amount) - Take the desired amount from the warehouse. The method returns much we actually get. If the desired amount is negative, nothing changes and we return 0. If the desired amount is greater than the amount the warehouse contains, we get all there is to take and the warehouse is emptied.
+* public override string ToString() - Returns the state of the object represented as a string like this 
+
+```console
+balance: 64, space left 16
+``` 
+
+
+In this exercise we build variations of a warehouse based on the Warehouse class.
+
+* Section 1
+
+The class <strong>Warehouse</strong> handles the functions related to the amount of a product. Now we want product name for the product and a way to handle the name. Let's write **ProductWarehouse** as a *derived class of Warehouse!* First, we'll just create a private object variable for the product name, and a constructor:
+
+* public string productName
+* public ProductWarehouse(string productName, int capacity) - Creates an empty product warehouse. The name of the product and the capacity of the warehouse are provided as parameters.
+* public override string ToString() - Returns the state of the object represented as a string like in the example.
+
+<Note>Remind yourself of how a constructor can use the constructor of the base class so you understand the existing code!</Note>
+
+Example usage:
+
+```cpp
+ProductWarehouse juice = new ProductWarehouse("Juice", 1000);
+juice.AddToWarehouse(1000);
+juice.TakeFromWarehouse(11);
+Console.WriteLine(juice.productName); // Juice
+Console.WriteLine(juice);
+```
+
+```console
+Juice
+Juice: balance: 989, space left 11
+```
+* Section 2
+
+Let's create a more informative warehouse. We want to know, if and how the balance of a product has changed. Let's first create a special tool for the change history, and create a class **ChangeHistory**:
+
+* private List<int> history
+* constructor **public ChangeHistory() 
+* public void Add(int status) - adds provided status as the latest amount to remember in the change history.
+* public void Clear() - empties the history
+* public int MaxValue() - returns the largest value of the change history. If the history is empty, returns 0.
+* public int MinValue() - returns the smallest value of the change history. If the history is empty, returns 0.
+* public override string ToString() returns the following kind of string:
+
+```console
+Current: 500 Min: 0 Max: 1000
+```
+
+Where the first number is the current balance (the last index of the list), second number is the smallest number on the list, and last is the largest number on the list.
+
+<Note>Use the methods MaxValue and MinValue in your ToString!</Note>
+
+* Section 3
+
+Implement **ProductWarehouseWithHistory** as a derived class of **ProductWarehouse**. In addition to all the previous fEatures this new warehouse also provides services related to the change history of the warehouse inventory. The history is managed using the **ChangeHistory** object.
+
+Public constructors and methods:
+
+* public ProductWarehouseWithHistory(string productName, int capacity, int initialBalance) creates a product warehouse. The product name, capacity, and initial balance are provided as parameters. Set the initial balance as the initial balance of the warehouse, as well as the first value of the change history.
+* public string History() returns the product history like this:
+
+```console
+Current: 500 Min: 0 Max: 1000
+``` 
+
+Use the string representation of the ChangeHistory object as is.
+
+* new public void AddToWarehouse(int amount) works just like the method in the Warehouse class, but we also record the changed state to the history. NOTICE: the value recorded in the history should be the warehouse's balance after adding, not the amount added!
+* new public int TakeFromWarehouse(int amount) works just like the method in the Warehouse class, but we also record the changed state to the history. NOTICE: the value recorded in the history should be the warehouse's balance after removing, not the amount removed!
+
+
+Here's one massive example:
+
+```cpp
+Warehouse wh = new Warehouse(100);
+Console.WriteLine(wh);
+wh.AddToWarehouse(10);
+Console.WriteLine(wh);
+wh.AddToWarehouse(100);
+Console.WriteLine(wh);
+wh.AddToWarehouse(-10);
+Console.WriteLine(wh);
+wh.TakeFromWarehouse(20);
+Console.WriteLine(wh);
+wh.TakeFromWarehouse(-20);
+Console.WriteLine(wh);
+
+Console.WriteLine();
+
+ProductWarehouse juice = new ProductWarehouse("Juice", 1000);
+juice.AddToWarehouse(1000);
+juice.TakeFromWarehouse(11);
+Console.WriteLine(juice.productName); // Juice
+Console.WriteLine(juice);
+
+Console.WriteLine();
+
+ChangeHistory cs = new ChangeHistory();
+cs.Add(100);
+cs.Add(10);
+cs.Add(200);
+cs.Add(50);
+Console.WriteLine(cs);
+
+Console.WriteLine();
+
+ProductWarehouseWithHistory milk = new ProductWarehouseWithHistory("Milk", 1000, 100);
+Console.WriteLine(milk);
+milk.TakeFromWarehouse(10);
+Console.WriteLine(milk.History());
+Console.WriteLine(milk);
+milk.AddToWarehouse(100);
+Console.WriteLine(milk.History());
+Console.WriteLine(milk);
+milk.TakeFromWarehouse(-10000);
+Console.WriteLine(milk.History());
+Console.WriteLine(milk);
+```
+
+```console
+balance: 0, space left 100
+balance: 10, space left 90
+balance: 100, space left 0
+balance: 100, space left 0
+balance: 80, space left 20
+balance: 80, space left 20
+
+Juice
+Juice: balance: 989, space left 11
+
+Current: 50 Min: 10 Max: 200
+
+Milk: balance: 100, space left 900
+Current: 90 Min: 90 Max: 100
+Milk: balance: 90, space left 910
+Current: 190 Min: 90 Max: 190
+Milk: balance: 190, space left 810
+Current: 190 Min: 90 Max: 190
+Milk: balance: 190, space left 810
+```
+
+</Exercise>
