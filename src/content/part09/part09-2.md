@@ -604,6 +604,41 @@ Wigwam - Nuclear Nightclub (1975)
 Candybar, weight: 0.2
 ```
 
+## Interfaces and properties
+
+So far, we have had only methods in our interfaces. What if we wanted to dictate properties? They work quite similarly as the methods, and for example our IStorable could be much cleaner with a property, rather than with a method. Let's take a look:
+
+```cpp
+public interface IStorable
+{
+  double weight { get; set; }
+}
+```
+
+As we now implement classes which are IStorable, they need to have a property of double weight, with get and set defined. Now our Book, for example, would look like this:
+
+```cpp
+public class Book : IStorable
+{
+  public string author;
+  public string name;
+  public double weight {get; set;}
+  public Book(string author, string name, double weight)
+  {
+    this.author = author;
+    this.name = name;
+    this.weight = weight;
+  }
+
+  public override string ToString()
+  {
+    return this.author + ": " + this.name;
+  }
+}
+```
+
+How do you know, which one to use in which case? This comes with practice. For example, our books are quite fine with just having the public property. But what if we needed a more complex weighing system? For example, we could have a container which holds only a certain amount of weight. In such a case, we would need some logic and a method could be justified.
+
 ## Generic Interfaces and more reading.
 
 The C# offers multiple interfaces that are built-in, and we have actually used them. You can read more about them [**from here**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/generic-interfaces) or [**even more from here**](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-5.0). Both links lead to Microsoft documentation site, and give a glimpse on how some of the generic interfaces are implemented.
