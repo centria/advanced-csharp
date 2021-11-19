@@ -232,7 +232,7 @@ namespace Exercise001
   public class Student : Person
   {
     public int credits { get; set; }
-    public Student() : base(name, address)
+    public Student(string name, string address) : base(name, address)
     {
       this.credits = 0;
     }
