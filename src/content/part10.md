@@ -1,7 +1,7 @@
 ---
 title: "Part 10 - Sorting and other tools"
 nav_order: 5
-hidden: true
+hidden: false
 ---
 
 ## Part 10
