@@ -391,4 +391,43 @@ Trying to find exact matches with regular expressions takes some practice. It is
 
 # Exercises
 
-<Note>The exercises will be published 24.11. at the latest!</Note>
+<Exercise title={'004 Regular Expression Checker'}>
+
+In the template is a class **Checker**, which has three methods. Your task is to fill in the methods as follows:
+
+* Section 1: Use regular expressions in **DayOfWeek(string str)**, which returns true if the parameter string is an abbreviation of a day of the week (mon, tue, wed, thu, fri, sat, sun)
+
+* Section 2: Use regular expressions in **AllVowels(string str)**, which returns true if all the letters in given string are wovels.
+
+<Note>
+For simplicity's sake, in this exercises the letters that are considered vowels are: a, e, i, o, and u. You don't have to take into account capital letters, but you can if you want to.
+</Note>
+
+* Section 3: Use regular expressions in **TimeOfDay(string str)**  to check whether the parameter string expresses a time of day in the form hh:mm:ss (hours, minutes, and seconds each always take up two spaces).
+
+<Note>The last one is tricky, and you might want to search the internet for answers.</Note>
+
+```cpp
+Checker check = new Checker();
+
+Console.WriteLine(check.DayOfWeek("tue"));
+Console.WriteLine(check.DayOfWeek("tues"));
+
+Console.WriteLine(check.AllVowels("aeiouaaeeioiouoiaoueaiaeiou"));
+Console.WriteLine(check.AllVowels("aeiouaaeeioiouoKiaoueaiaeiou"));
+
+Console.WriteLine(check.TimeOfDay("23:23:59"));
+Console.WriteLine(check.TimeOfDay("00:00:60"));
+```
+
+```console
+True
+False
+True
+False
+True
+False
+```
+
+
+</Exercise>

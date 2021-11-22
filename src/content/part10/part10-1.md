@@ -201,4 +201,154 @@ This way we can first check for the name equality and sort by name first, only a
 
 # Exercises
 
-<Note>The exercises will be published 24.11. at the latest!</Note>
+<Exercise title={'001 Wage Order'}>
+
+You are provided with the class **Human**. A human has a name and wage information. Implement the interface **IComparable** in a way, that the **CompareTo**-method sorts the humans according to wage from biggest to smallest salary. The Program.cs already contains the following code for trying out your method.
+
+```cpp
+List<Human> humans = new List<Human>();
+humans.Add(new Human("Merja", 500));
+humans.Add(new Human("Pertti", 80));
+humans.Add(new Human("Matti", 150000));
+
+// Sorts the list when your ComparedTo works
+// Sort uses CompareTo internally
+humans.Sort();
+humans.ForEach(Console.WriteLine);
+```
+
+```console
+Matti 150000
+Merja 500
+Pertti 80
+```
+
+
+</Exercise>
+
+<Exercise title={'002 Students in Alphabetical Order'}>
+
+The exercise template includes the class **Student**, which has a name. Implement the **IComprable**-interface in the Student-class in a way, that the CompareTo-method sorts the students in alphabetical order based on their names.
+
+<Note>
+The name of the Student is a string, which implements Comparable itself. You may use it's CompareTo-method for your advantage when implementing the method for the Student-class. Note that string.CompareTo is case sensitive, but at this exercise, we don't have to worry about it.
+</Note>
+
+```cpp
+Student first = new Student("jamo");
+Student second = new Student("jamo1");
+
+// Should print -1
+Console.WriteLine(first.CompareTo(second));
+``` 
+
+</Exercise>
+
+<Exercise title={'003 Literacy Comparison'}>
+
+Write a program that reads user input for books and their age recommendations.
+
+The program asks for new books until the user gives an empty string (only presses enter). After this, the program will print the amount and names of the books.
+
+* Section 1
+
+Implement the reading and printing the books first in the **TextInterface**, the ordering of them doesn't matter yet.
+
+```console
+Input the name of the book, empty stops: 
+> The Ringing Lullaby Book 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Exiting Transpotation Vehicles 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Snowy Forest Calls 
+Input the age recommendation:
+> 12
+Input the name of the book, empty stops: 
+> Litmanen 10 
+Input the age recommendation:
+> 10
+Input the name of the book, empty stops:
+
+4 books in total.
+
+Books: 
+The Ringing Lullaby Book (recommended for 0 year-olds or older) 
+The Exiting Transpotation Vehicles (recommended for 0 year-olds or older) 
+The Snowy Forest Calls (recommended for 12 year-olds or older) 
+Litmanen 10 (recommended for 10 year-olds or older)
+```
+
+* Section 2
+
+Expand your program so, that the books are sorted based on their age recommendations when they are printed. If two (or more) books share the same age recommendations the order between them does not matter. (i.e. create ComparedTo in Book class)
+
+
+```console
+Input the name of the book, empty stops: 
+> The Ringing Lullaby Book 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Exiting Transpotation Vehicles 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Snowy Forest Calls 
+Input the age recommendation:
+> 12
+Input the name of the book, empty stops: 
+> Litmanen 10 
+Input the age recommendation:
+> 10
+Input the name of the book, empty stops:
+
+4 books in total.
+
+Books: 
+The Ringing Lullaby Book (recommended for 0 year-olds or older) 
+The Exiting Transpotation Vehicles (recommended for 0 year-olds or older) 
+Litmanen 10 (recommended for 10 year-olds or older) 
+The Snowy Forest Calls (recommended for 12 year-olds or older)
+```
+
+* Section 3
+
+Expand your program, so that it sorts the books with the same age recommendation based on their name alphabetically. 
+
+<Note>
+HINT! Use an if for the age recommendations!
+</Note>
+
+```console
+Input the name of the book, empty stops: 
+> The Ringing Lullaby Book 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Exiting Transpotation Vehicles 
+Input the age recommendation:
+> 0
+Input the name of the book, empty stops:
+> The Snowy Forest Calls 
+Input the age recommendation:
+> 12
+Input the name of the book, empty stops: 
+> Litmanen 10 
+Input the age recommendation:
+> 10
+Input the name of the book, empty stops:
+
+4 books in total.
+
+Books: 
+The Exiting Transpotation Vehicles (recommended for 0 year-olds or older) 
+The Ringing Lullaby Book (recommended for 0 year-olds or older) 
+Litmanen 10 (recommended for 10 year-olds or older) 
+The Snowy Forest Calls (recommended for 12 year-olds or older)
+```
+
+</Exercise>
