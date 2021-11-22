@@ -11,7 +11,7 @@ We have already learned some strategies to read text files. If your memories of 
 
 ## StreamReader and StreamWriter
 
-Next, let's take a look at writing data to files. The [**StreamWriter **](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.8) class offers the functionality to write to files. The constructor of the StreamWriter class receives as its parameter a string that represents the location of the target file.
+Next, let's take a look at writing data to files. The [**StreamWriter**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-5.0) class offers the functionality to write to files. The constructor of the StreamWriter class receives as its parameter a string that represents the location of the target file.
 
 ```cpp
 namespace Exercise001
