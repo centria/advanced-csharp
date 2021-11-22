@@ -18,7 +18,7 @@ for (int i = 1; i < 5; i++)
 {
   numbers = numbers + i;
 }
-Console.Write(numbers);
+Console.WriteLine(numbers);
 ```
 
 ```console
@@ -107,7 +107,7 @@ namespace Exercise001
       {
         numbers.Append(i);
       }
-      Console.Write(numbers.ToString());
+      Console.WriteLine(numbers.ToString());
     }
   }
 }
