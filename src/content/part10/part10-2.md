@@ -385,6 +385,10 @@ Our examples all started with **^** and ended with **\$**. These characters have
 
 * $	: End the match at the end of the line. Without this character, the rest of the string could be anything, and we would still get a match. With our string ending to a dollar sign, we make sure the string matches our regex exactly.
 
+### Trying out regular expressions
+
+Trying to find exact matches with regular expressions takes some practice. It is not ideal to rewrite our code again and again to check whether we have achieved the proper regular expression or not. Luckily, the internet has services to try out regular expressions, such as [https://www.regextester.com/](https://www.regextester.com/) or [https://regex101.com/](https://regex101.com/)
+
 # Exercises
 
 <Note>The exercises will be published 24.11. at the latest!</Note>
