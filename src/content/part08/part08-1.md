@@ -557,7 +557,7 @@ As with the previous example, the speed advantage that comes with the dictionary
 
 
 
-<title={'001 Nicknames'}>
+<Exercise title={'001 Nicknames'}>
 
 In the Main-method create a new Dictionary< string , string > object. Store the names and nicknames of the following example in this dictionary so, that the name is the key and the nickname is the value.
 
