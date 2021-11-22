@@ -1,7 +1,7 @@
 ---
 title: "Handling strings"
 nav_order: 2
-hidden: true
+hidden: false
 ---
 
 # StringBuilder and Regular Expressions
@@ -18,7 +18,7 @@ for (int i = 1; i < 5; i++)
 {
   numbers = numbers + i;
 }
-Console.WriteLine(numbers);
+Console.Write(numbers);
 ```
 
 ```console
@@ -67,6 +67,7 @@ Console.WriteLine(numbers);
 Each **+-operation** forms a new string. On the line numbers + i + "\n"; a string is first created, after which another string is created joining a new line onto the previous string. Let's write this out as well.
 
 ```cpp
+string numbers = ""; // creating a new string: ""
 int i = 1;
 // first creating the string "1" and then the string "1\n"
 numbers = numbers + i + "\n";
@@ -77,7 +78,7 @@ i++;
 // first creating the string "1\n2\n3" and then the string "1\n2\n3\n"
 numbers = numbers + i + "\n"
 i++;
-// and so on
+// first creating the string "1\n2\n3\n4" and then the string "1\n2\n3\n4\n"
 numbers = numbers + i + "\n"
 i++;
 
@@ -88,7 +89,7 @@ In the previous example, a total of nine strings is created.
 
 String creation - although unnoticeable at a small scale - is not a quick operation. Space is allocated in memory for each string where the string is then placed. If the string is only needed as part of creating a larger string, performance should be improved.
 
-C#'s ready-made **StringBuilder** from **System.Text** class provides a way to concatenate strings without the need to create them. A new StringBuilder object is created with a new StringBuilder() call, and content is added to the object using the overloaded append method, i.e., there are variations of it for different types of variables. Finally, the StringBuilder object provides a string using the ToString method.
+C#'s ready-made **StringBuilder** from **System.Text** class provides a way to concatenate strings without the need to create them. A new StringBuilder object is created with a *new StringBuilder()* call, and content is added to the object using the overloaded append method, i.e., there are variations of it for different types of variables. Finally, the StringBuilder object provides a string using the ToString method.
 
 In the example below, only one string is created.
 
@@ -106,7 +107,7 @@ namespace Exercise001
       {
         numbers.Append(i);
       }
-      Console.WriteLine(numbers.ToString());
+      Console.Write(numbers.ToString());
     }
   }
 }
@@ -115,13 +116,13 @@ namespace Exercise001
 Using StringBuilder is more performant that creating strings with the + operator.
 
 
-<Note> We need **using System.Text;** for the StringBuilder to work. </Note>
+<Note> We need the using System.Text; for the StringBuilder to work. </Note>
 
 ## Regular expressions
 
 A **regular expression** defines a set of strings in a compact form. Regular expressions are used, among other things, to verify the correctness of strings. We can assess the whether or not a string is in the desired form by a regular expression that defines the strings considered correct.
 
-Let's look at a problem where we need to check if a student number entered by the user is in the correct format. A student number (in Helsinki University) should begin with "01" followed by 7 digits between 0–9.
+Let's look at a problem where we need to check if a student number entered by the user is in the correct format. A student number (in my alma mater, Helsinki University) should begin with "01" followed by exactly 7 digits between 0–9.
 
 You could verify the format of the student number, for instance, by going through the character string representing the student number using the string\[index\] method. Another way would be to check that the first character is "0" and call the Convert.ToInt32 method to convert the string to a number. You could then check that the number returned by the Convert.ToInt32 method is less than 20000000.
 
@@ -137,6 +138,10 @@ namespace Exercise001
   {
     static void Main(string[] args)
     {
+      // Begins with 01
+      // Contains only digits 0-9
+      // exactly 7 of said digits
+      // the string ends
       Regex regex = new Regex("^01[0-9]{7}$");
       Console.Write("Provide a student number: ");
       string number = Console.ReadLine();
@@ -178,7 +183,7 @@ else
 The string contained one of the three alternatives
 ```
 
-The regular expression 00\|111\|0000 is actually searching for a substring from a string. This would work as well:
+The regular expression **00\|111\|0000** is actually searching for a substring from a string. This would work as well:
 
 ```cpp
 Regex regex = new Regex("00|111|0000");
@@ -379,3 +384,7 @@ Our examples all started with **^** and ended with **\$**. These characters have
 * ^	: Begin the match at the beginning of the line. Without this character in the beginning, we would search for the reqular expression substring from any part of the compared string.
 
 * $	: End the match at the end of the line. Without this character, the rest of the string could be anything, and we would still get a match. With our string ending to a dollar sign, we make sure the string matches our regex exactly.
+
+# Exercises
+
+<Note>The exercises will be published 24.11. at the latest!</Note>

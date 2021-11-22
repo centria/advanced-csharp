@@ -1,14 +1,14 @@
 ---
 title: "IComparable Interface"
 nav_order: 1
-hidden: true
+hidden: false
 ---
 
 # IComparable
 
-In the previous section, we looked at interfaces in more general terms - let's now familiarize oruselves with one of C#'s ready interfaces. The [**IComparable interface**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=netframework-4.8) defines the [**CompareTo**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=netframework-4.8#System_IComparable_1_CompareTo__0_) method used to compare objects. If a class implements the IComparable interface, objects created from that class can be **Sort** using C#'s sorting algorithms.
+In the previous section, we looked at interfaces in more general terms - let's now familiarize oruselves with one of C#'s ready interfaces. The [**IComparable interface**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-5.0) defines the [**CompareTo**](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1.compareto?view=net-5.0) method used to compare objects. If a class implements the IComparable interface, objects created from that class can be **Sort** using C#'s sorting algorithms.
 
-The **CompareTo** method required by the IComparable interface gets as its parameter the object to which the "this" object is compared. If the "this" object comes before the object received as a parameter in terms of sorting order, the method should return a negative number. If, on the other hand, id "this" object comes after the object received as a parameter, the method should return a positive number. Otherwise, 0 is returned. The sorting resulting from the CompareTo method is called natural ordering.
+The **CompareTo** method required by the IComparable interface gets as its parameter the object to which the "this" object is compared. If the "this" object comes before the object received as a parameter in terms of sorting order, the method should return a negative number. If, on the other hand, if "this" object comes after the object received as a parameter, the method should return a positive number. Otherwise, 0 is returned. The sorting resulting from the CompareTo method is called natural ordering.
 
 Let's take a look at this with the help of a **Member** class that represents a child or youth who belongs to a club. Each club member has a name and height. The club members should go to eat in order of height, so the Member class should implement the IComparable interface. The IComparable interface takes as its type parameter the class that is the subject of the comparison. We'll use the same Member class as the type parameter.
 
@@ -77,7 +77,7 @@ namespace Exercise001
 
 The CompareTo method required by the interface returns an integer that informs us of the order of comparison.
 
-Since returning a negative number from the **CompareTo()** is enough if the this object is smaller than the parameter object, and zero when the lengths are the same, the CompareTo method described above can also be implemented as follows.
+Since returning a negative number from the **CompareTo()** is enough if the this object is smaller than the parameter object, and zero when the heights are the same, the CompareTo method described above can also be implemented as follows.
 
 ```cpp
 public int CompareTo(Member member)
@@ -129,29 +129,29 @@ A class can implement multiple interfaces. Multiple interfaces are implemented b
 Say we have the following **IIdentifiable** interface.
 
 ```cpp
-public interface IIdentifiable {
-    string getId();
+public interface IIdentifiable
+{
+    string socialSecurityNumber { get; }
 }
 ```
 
 We want to create a Person who is both identifiable and sortable. This can be achieved by implementing both of the interfaces. An example is provided below.
 
 ```cpp
-public class Person : IIdentifiable, IComparable<Person> {
+public class Person : IIdentifiable, IComparable<Person>
+{
     public string name { get; }
     public string socialSecurityNumber { get; }
 
-    public Person(string name, string socialSecurityNumber) {
+    public Person(string name, string socialSecurityNumber)
+    {
         this.name = name;
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
-    public override string getId() {
-        return this.socialSecurityNumber;
-    }
-
-    public int CompareTo(Person another) {
-        return this.getId().CompareTo(another.getId());
+    public int CompareTo(Person another)
+    {
+        return this.socialSecurityNumber.CompareTo(another.socialSecurityNumber);
     }
 }
 ```
@@ -166,10 +166,6 @@ public class Person : IIdentifiable, IComparable<Person> {
     public Person(string name, string socialSecurityNumber) {
         this.name = name;
         this.socialSecurityNumber = socialSecurityNumber;
-    }
-
-    public override string getId() {
-        return this.socialSecurityNumber;
     }
 
     public int CompareTo(Person another) {
@@ -191,14 +187,10 @@ public class Person : IIdentifiable, IComparable<Person> {
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
-    public override string getId() {
-        return this.socialSecurityNumber;
-    }
-
     public int CompareTo(Person another) {
       if (this.name == another.name)
       {
-        return this.getId().CompareTo(another.getId());
+        return this.socialSecurityNumber.CompareTo(another.socialSecurityNumber);
       }
       return this.name.CompareTo(another.name);
     }
@@ -206,3 +198,7 @@ public class Person : IIdentifiable, IComparable<Person> {
 ```
 
 This way we can first check for the name equality and sort by name first, only after that by our socialSecurityNumber (in Finland that's also the birthday).
+
+# Exercises
+
+<Note>The exercises will be published 24.11. at the latest!</Note>

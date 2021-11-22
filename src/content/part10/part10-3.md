@@ -1,7 +1,7 @@
 ---
 title: "Enum"
 nav_order: 3
-hidden: true
+hidden: false
 ---
 
 # Enumerated Type - Enum
@@ -96,3 +96,6 @@ Console.WriteLine((int)Suit.Diamond);
 0
 ```
 
+# Exercises
+
+<Note>The exercises will be published 24.11. at the latest!</Note>
