@@ -156,7 +156,7 @@ Spade A
 
 Create a class **Hand** to represent the cards in player's hand. Add the following to the class:
 
-* **List<Card\>** to store the cards
+* **private List<Card\>** to store the cards
 * **public void Add(Card card)** adds a card to the hand. If the card is already in the hand, someone is cheating, and the card should not be added. **Use a List to store the cards.**
 * **public void Print()** prints the cards in hand as shown in the example below
 

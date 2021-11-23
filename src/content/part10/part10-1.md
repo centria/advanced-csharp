@@ -317,7 +317,7 @@ The Snowy Forest Calls (recommended for 12 year-olds or older)
 
 * Section 3
 
-Expand your program, so that it sorts the books with the same age recommendation based on their name alphabetically. 
+Expand your program, so that it sorts the books with the same age recommendation secondarily based on their name alphabetically. 
 
 <Note>
 HINT! Use an if for the age recommendations!
