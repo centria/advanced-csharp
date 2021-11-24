@@ -211,7 +211,7 @@ humans.Add(new Human("Merja", 500));
 humans.Add(new Human("Pertti", 80));
 humans.Add(new Human("Matti", 150000));
 
-// Sorts the list when your ComparedTo works
+// Sorts the list when your CompareTo works
 // Sort uses CompareTo internally
 humans.Sort();
 humans.ForEach(Console.WriteLine);
@@ -284,7 +284,7 @@ Litmanen 10 (recommended for 10 year-olds or older)
 
 * Section 2
 
-Expand your program so, that the books are sorted based on their age recommendations when they are printed. If two (or more) books share the same age recommendations the order between them does not matter. (i.e. create ComparedTo in Book class)
+Expand your program so, that the books are sorted based on their age recommendations when they are printed. If two (or more) books share the same age recommendations the order between them does not matter. (i.e. create CompareTo in Book class)
 
 
 ```console

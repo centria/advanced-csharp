@@ -126,7 +126,7 @@ Let's look at a problem where we need to check if a student number entered by th
 
 You could verify the format of the student number, for instance, by going through the character string representing the student number using the string\[index\] method. Another way would be to check that the first character is "0" and call the Convert.ToInt32 method to convert the string to a number. You could then check that the number returned by the Convert.ToInt32 method is less than 20000000.
 
-Checking correctness with the help of regular expressions is done by first defining a suitable regular expression. We can then use the **IsMatch** method of the Regex class, which checks whether the string contains the regular expression given as the regex constructor parameter. For the student number, the appropriate regular expression is "^01\[0-9\]\{7\}\$", and checking the student number entered by a user is done as follows:
+Checking correctness with the help of regular expressions is done by first defining a suitable regular expression. We can then use the **IsMatch** method of the Regex class, which checks whether the string contains the regular expression given as the regex constructor parameter. For the student number, the appropriate regular expression is "^01\[0-9\]{7\}$", and checking the student number entered by a user is done as follows:
 
 ```cpp
 namespace Exercise001
@@ -255,7 +255,7 @@ Correct form.
 * The quantifier **?** repeats 0 or 1 times, for example;
 
 ```cpp
-Regex regex = new Regex("^trolo(lo)+$");
+Regex regex = new Regex("^trolo(lo)?$");
 string str = "trololo";
 
 if (regex.IsMatch(str))
@@ -379,7 +379,7 @@ Correct form.
 
 ### Finding exact matches
 
-Our examples all started with **^** and ended with **\$**. These characters have special meanings in regular expressions.
+Our examples all started with **^** and ended with **$**. These characters have special meanings in regular expressions.
 
 * ^	: Begin the match at the beginning of the line. Without this character in the beginning, we would search for the reqular expression substring from any part of the compared string.
 
