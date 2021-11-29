@@ -1,7 +1,7 @@
 ---
 title: "Random"
 nav_order: 1
-hidden: true
+hidden: false
 ---
 
 # Random
@@ -171,4 +171,8 @@ All randomness in computer programs is not pseudorandom. Programs aiming for str
 You can read more about randomness from [**https://www.random.org/randomness/**](https://www.random.org/randomness/).
 
 
+# Exercises
 
+<Note>
+Exercises will be published 1.12. at the latest!
+</Note>

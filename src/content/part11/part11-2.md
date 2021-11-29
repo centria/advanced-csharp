@@ -145,7 +145,7 @@ string text = File.ReadAllText("fileDoesNotExist.txt");
 Console.WriteLine(text);
 ```
 
-In the examples below, \[. . .\] is used to hide the full path of the file. In the real exceptions, there would be a complete file path.
+<Note>In the examples below, \[. . .\] is used to hide the full path of the file. In the real exceptions, there would be a complete file path.</Note>
 
 ```console
 Unhandled exception. System.IO.FileNotFoundException: Could not find file '[. . .]/fileDoesNotExist.txt'.
@@ -368,3 +368,9 @@ Unhandled exception. System.ArgumentException: Grade must be between 0 and 5.
 ```
 
 We read a stack trace from the bottom up. At the bottom is the first call, so the execution of the program has begun from the **Main()** method for the **Program** class. Line 14 of the Main method was used to create the new Grade object, with illegal parameters. Line 14 of the Grade class is the constructor, and it has now thrown and **ArgumentException**. The details of an exception are very useful when trying to pinpoint where an error happens.
+
+# Exercises
+
+<Note>
+Exercises will be published 1.12. at the latest!
+</Note>

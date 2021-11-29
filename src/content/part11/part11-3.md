@@ -6,7 +6,7 @@ hidden: true
 
 # Processing files
 
-We have already learned some strategies to read text files. If your memories of the subject are hazy, take a look at the relevant parts of the **fourth part of the course material**. In that material, we used **ReadAllLines** and **ReadAllText** methods. They have writing versions as well, [**you can read more about those in here**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file). In this section how ever, we concentrate on **StreamReader and StreamWriter**.
+We have already learned some strategies to read text files. If your memories of the subject are hazy, take a look at the relevant parts of the [**fourth part of the Basic course material**](https://centria.github.io/basic-csharp/part4/part4-3). In that material, we used **ReadAllLines** and **ReadAllText** methods. They have writing versions as well, [**you can read more about those in here**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file). In this section how ever, we concentrate on **StreamReader and StreamWriter**.
 
 
 ## StreamReader and StreamWriter
@@ -169,3 +169,9 @@ In our loop, we go through the file line by line. If the line should now contain
 After the loop, we use the **Close()** method to save the stream into the file, and close the file.
 
 <Note> Both of these methods loaded the original file into the system memory, with **ReadAllLines** and **ReadAllText**. This is completely fine for small files, but with larger files, you will quickly end up filling up the memory and crashing the system.</Note>
+
+# Exercises
+
+<Note>
+Exercises will be published 1.12. at the latest!
+</Note>
