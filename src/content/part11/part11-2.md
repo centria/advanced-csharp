@@ -376,9 +376,11 @@ We read a stack trace from the bottom up. At the bottom is the first call, so th
 Let's practise a little parameter validation with the **ArgumentException** exception. There is a class called Person in the exercise:
 
 * Section 1
+
 The constructor of the class **Person** should ensure that the name given as the parameter is not null, empty, or over 40 characters in length. If these conditions are not met, the constructor should throw an **ArgumentException**.
 
 * Section 2
+
 In the contsructor, the age should between 0 and 120. If these conditions are not met, the constructor should throw an **ArgumentException**.
 
 </Exercise>
@@ -404,9 +406,9 @@ namespace Exercise004
 
 * Section 1
 
-Create a class called StandardSensor that implements the interface ISensor.
+Create a class called **StandardSensor** that implements the interface ISensor.
 
-A standard sensor is always on. Calling the methods SetOn and SetOff has no effect. The StandardSensor must have a constructor that takes one integer parameter. The method call Read returns the number that was given to the constructor.
+A standard sensor is always on. Calling the methods **SetOn** and **SetOff** has no effect. The StandardSensor must have a constructor that takes one integer parameter. The method call Read returns the number that was given to the constructor.
 
 An example:
 

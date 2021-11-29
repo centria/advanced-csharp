@@ -291,9 +291,9 @@ below
 
 Create the method **public bool Save()**, which saves the dictionary to the file given to the dictionary as a parameter to the constructor. If the program cannot save to the file, the method returns false. Otherwise it returns true. The dictionary files have to be saved in the form described above, so the program has to be able to read the files it has written.
 
-<Note>Only the method save writes to the file.</Note>
+<Note>Only the method Save() writes to the file.</Note>
 
-<Note>Even though the dictionary can translate both ways, the dictionary file should only contain one way. So if the dictionary for example knows, that computer = tietokone, the file should contain:</Note>
+<Note>Even though the dictionary can translate both ways, the dictionary file should only contain one way. So if the dictionary for example knows, that computer = tietokone, the file should contain:
 
 ```console
 tietokone:computer
@@ -306,6 +306,8 @@ computer:tietokone
 ```
 
 but not both!
+
+</Note>
 
 It is best to handle the saving to, that the whole dictionary is written again on top of the previously saved version, rather than appending the new words.
 
