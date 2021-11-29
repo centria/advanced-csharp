@@ -1,7 +1,7 @@
 ---
 title: "Exceptions"
 nav_order: 2
-hidden: true
+hidden: false
 ---
 
 # Exceptions

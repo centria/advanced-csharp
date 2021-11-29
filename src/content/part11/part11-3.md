@@ -1,7 +1,7 @@
 ---
 title: "Processing files"
 nav_order: 3
-hidden: true
+hidden: false
 ---
 
 # Processing files
