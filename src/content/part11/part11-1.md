@@ -176,3 +176,144 @@ You can read more about randomness from [**https://www.random.org/randomness/**]
 <Note>
 Exercises will be published 1.12. at the latest!
 </Note>
+
+<Exercise title={'001 Dice'}>
+
+The exercise template contains a class **Die**, which has the following body:
+
+```cpp
+namespace Exercise
+{
+  using System;
+  public class Die
+  {
+    private Random random;
+    private int numberOfFaces;
+
+    public Die(int numberOfFaces)
+    {
+      this.random = new Random();
+      // Initialize the value of numberOfFaces here
+    }
+    public int ThrowDie()
+    {
+      // generate a random number which may be any number
+      // between one and the number of faces, and then return it
+      return 0;
+    }
+  }
+}
+```
+
+Modify the class, such that the constructor **Die(int numberOfFaces)** creates a new die-object with the given number of faces (i.e. the number of "sides" with a number). Also, modify the method **ThrowDie** so it returns the result of a random throw of the die, which should be a value withing the range 1 ... number of faces.
+
+The following is a Main program for testing the die:
+
+```cpp
+Die die = new Die(6);
+
+for (int i = 0; i < 10; i++)
+{
+  Console.WriteLine(die.ThrowDie());
+}
+```
+
+The output could be as follows:
+
+```console
+5
+3
+2
+6
+4
+2
+4
+1
+2
+5
+```
+
+</Exercise>
+
+<Exercise title={'002 Lottery Row'}>
+
+Your assignment is to complete the class **LotteryRow**, which is used to draw the week's winning numbers. The numbers are in range 1--40, and 7 numbers will be drawn in total. In other words, a lottery row consists of seven different numbers that are all in range 1--40.
+
+We wish to implement the following functions in the class:
+
+* the constructor **LotteryRow** creates a new LotteryRow object that contains new randomized numbers.
+* the method **Numbers** returns the drawn lottery numbers of this lottery row
+* the method **ContainsNumber** tells whether the given number is included in the drawn numbers
+* the method **RandomizeNumbers** randomizes new numbers for the lottery row.  
+
+The basic structure of the class is as follows:
+
+```cpp
+namespace Exercise
+{
+  using System;
+  using System.Collections.Generic;
+
+  public class LotteryRow
+  {
+    private List<int> numbers;
+
+    public LotteryRow()
+    {
+      this.RandomizeNumbers();
+    }
+
+    public List<int> Numbers()
+    {
+      return this.numbers;
+    }
+
+    public bool ContainsNumber(int number)
+    {
+      // Tests whether the number is already among the randomized numbers
+      return false;
+    }
+
+    public void RandomizeNumbers()
+    {
+      // initialize the list for numbers
+      this.numbers = new List<int>();
+      // Implement the randomization of the numbers by using the method ContainsNumber() here
+    }
+
+  }
+}
+```
+
+The following Main program is supplied in the exercise base:
+
+```cpp
+LotteryRow row = new LotteryRow();
+List<int> lotteryNumbers = row.Numbers();
+
+Console.WriteLine("Lottery numbers:");
+foreach (int number in lotteryNumbers)
+{
+  Console.Write(number + " ");
+}
+
+Console.WriteLine("");
+```
+
+Here are a few possible outputs of the program:
+
+```console
+Lottery numbers:
+2 10 14 15 22 26 33
+```
+
+
+```console
+Lottery numbers:
+6 8 10 26 31 35 40
+```
+
+<Note>The same number can only appear once in a lottery row. Remember to also Sort() your list at the end of RandomizeNumbers.</Note>
+
+
+</Exercise>

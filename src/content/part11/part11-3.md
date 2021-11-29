@@ -172,6 +172,177 @@ After the loop, we use the **Close()** method to save the stream into the file, 
 
 # Exercises
 
-<Note>
-Exercises will be published 1.12. at the latest!
-</Note>
+<Exercise title={'005 Saveable Dictionary'}>
+
+In this exercise we will create a dictionary so, that it can read words from a file and write words to a file. The dictionary must also be able to translate both from one to another language and back (in this exercise we ignore the fact that some words might be written the same in Finnish and in other languages). Your mission is to create a dictionary in the class **SaveableDictionary**.
+
+* Section 1
+
+For the dictionary, implement the following:
+* public SaveableDictionary(), i.e. a construrctor with no parameters
+* public SaveableDictionary(string file) , i.e. a constructor with filename as parameter. We will use this in later sections of the exercise.
+* public void Add(string words, string translation) adds a word to the dictionary. Every word has just one translation, and if the same word is added for the second time, nothing happens.
+* public string Translate(string word) returns the translation for the given word. If the word is not in the dictionary, returns null.  
+
+In this phase, the dictionary should work as follows:
+
+```cpp
+SaveableDictionary dictionary = new SaveableDictionary();
+dictionary.Add("apina", "monkey");
+dictionary.Add("banaani", "banana");
+dictionary.Add("apina", "apfe");
+
+Console.WriteLine(dictionary.Translate("apina"));
+Console.WriteLine(dictionary.Translate("monkey"));
+Console.WriteLine(dictionary.Translate("ohjelmointi"));
+Console.WriteLine(dictionary.Translate("banana"));      
+```
+
+```console
+monkey
+apina
+
+banaani
+```
+
+As can be seen from the output, after a translation has been added to the dictionary, it can translate the word to and from.
+
+<Note>The methods Add and Translate do not read from a file or write to a file! The constructors do not touch the file either.</Note>
+
+* Section 2
+
+Add the dictionary method **public void Delete(string word)** which deletes the given word and its translation from the dictionary.
+
+```cpp
+SaveableDictionary dictionary = new SaveableDictionary();
+dictionary.Add("apina", "monkey");
+dictionary.Add("banaani", "banana");
+dictionary.Add("apina", "apfe");
+dictionary.Add("ohjelmointi", "programming");
+
+dictionary.Delete("apina");
+dictionary.Delete("banana");
+
+Console.WriteLine(dictionary.Translate("apina"));
+Console.WriteLine(dictionary.Translate("monkey"));
+Console.WriteLine(dictionary.Translate("banana"));
+Console.WriteLine(dictionary.Translate("banaani"));
+Console.WriteLine(dictionary.Translate("ohjelmointi"));
+```
+
+```console
+  
+  
+  
+  
+programming
+```
+
+Deleting also works both ways: Both the word and its translation are removed if either the word or the translation are deleted.
+
+* Section 3
+
+Let's start using the constructor **public SaveableDictionary(string file)**.
+Also create a method **public bool Load()**, which loads the dictionary from the file given to the constructor as a parameter. If the program is unable to open the file or read from it, the method returns false, otherwise it returns true.
+
+<Note>The constructor only tells the dictionary the name of the file to load the dictionary from. The constructor does not read the file. Only the method Load reads the file.</Note>
+
+In the dictionary file one line contains a word and its translation separated by ":". The exercise template contains a file words.txt which contains the following:
+
+```console
+apina:monkey
+alla oleva:below
+olut:beer
+```
+
+You can split a line using the string method **Split** like so:
+
+```cpp
+string[] parts = line.split(":");   // split the line based on the ':' character
+
+Console.WriteLine(parts[0]);     // part of line before :
+Console.WriteLine(parts[1]);     // part of line after :
+```
+
+The dictionary can be used as follows:
+
+```cpp
+SaveableDictionary dictionary = new SaveableDictionary("words.txt");
+bool wasSuccessful = dictionary.Load();
+
+if (wasSuccessful) 
+{
+  Console.WriteLine("Successfully loaded the dictionary from file");
+}
+
+Console.WriteLine(dictionary.Translate("apina"));
+Console.WriteLine(dictionary.Translate("ohjelmointi"));
+Console.WriteLine(dictionary.Translate("alla oleva"));
+```
+
+```console
+Successfully loaded the dictionary from file
+monkey
+
+below
+```
+
+* Sections 4 and 5
+
+Create the method **public bool Save()**, which saves the dictionary to the file given to the dictionary as a parameter to the constructor. If the program cannot save to the file, the method returns false. Otherwise it returns true. The dictionary files have to be saved in the form described above, so the program has to be able to read the files it has written.
+
+<Note>Only the method save writes to the file.</Note>
+
+<Note>Even though the dictionary can translate both ways, the dictionary file should only contain one way. So if the dictionary for example knows, that computer = tietokone, the file should contain:</Note>
+
+```console
+tietokone:computer
+```
+
+or
+
+```console
+computer:tietokone
+```
+
+but not both!
+
+It is best to handle the saving to, that the whole dictionary is written again on top of the previously saved version, rather than appending the new words.
+
+The final version of the dictionary works as follows:
+
+```cpp
+// assume the words.txt contains the original content.
+SaveableDictionary dictionary = new SaveableDictionary("words.txt");
+dictionary.Load();
+
+// Translate all the words in the file both ways
+Console.WriteLine(dictionary.Translate("apina"));
+Console.WriteLine(dictionary.Translate("monkey"));
+Console.WriteLine(dictionary.Translate("beer"));
+Console.WriteLine(dictionary.Translate("olut"));
+Console.WriteLine(dictionary.Translate("below"));
+Console.WriteLine(dictionary.Translate("alla oleva"));
+
+// Try adding, translating and removing a word, this should not affect the file
+dictionary.Add("poista", "remove");
+Console.WriteLine(dictionary.Translate("remove"));
+dictionary.Delete("remove");
+
+// Save the file
+dictionary.Save();
+```
+
+```console
+monkey
+apina
+olut
+beer
+alla oleva
+below
+poista
+```
+
+So in the beginning the dictionary is loaded from a file, and in the end it is saved back to the file, so that changes made to the dictionary are kept for the next time the dictionary is used.
+
+</Exercise>
