@@ -145,7 +145,7 @@ string text = File.ReadAllText("fileDoesNotExist.txt");
 Console.WriteLine(text);
 ```
 
-<Note>In the examples below, \[. . .\] is used to hide the full path of the file. In the real exceptions, there would be a complete file path.</Note>
+<Note>In the examples below, [. . .] is used to hide the full path of the file. In the real exceptions, there would be a complete file path.</Note>
 
 ```console
 Unhandled exception. System.IO.FileNotFoundException: Could not find file '[. . .]/fileDoesNotExist.txt'.
