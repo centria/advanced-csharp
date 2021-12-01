@@ -4,7 +4,6 @@ nav_order: 1
 hidden: false
 ---
 
-# Namespaces
 
 We have used **namespaces** in our exercises and examples since the beginning of the course. But what are they, exactly?
 
