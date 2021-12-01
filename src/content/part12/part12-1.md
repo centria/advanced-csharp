@@ -1,7 +1,7 @@
 ---
 title: "Namespaces"
 nav_order: 1
-hidden: true
+hidden: false
 ---
 
 # Namespaces
