@@ -4,7 +4,6 @@ nav_order: 1
 hidden: true
 ---
 
-# Graphical User Interfaces
 
 So far, all our programs have used the console, or terminal, as their interface. But in modern operating systems, **graphical user interfaces** (GUIs) are more common. C# has a variety of choices built in for creating graphical programs for Windows environment, and on this course, we'll take a quick glance of one of the options.
 
@@ -23,6 +22,29 @@ The program can be run with same commands as a console program, i.e. **dotnet ru
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+</Project>
+```
+
+We have to modify this a little bit, and add
+
+```xml
+<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+```
+
+To our property group. This is because .NET functionality has changed a somewhat in versions 5 and newer. For reference, you can find more information [in here](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/migration/?view=netdesktop-5.0).
+
+With this, the file will look like follows:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
 </Project>
