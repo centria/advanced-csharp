@@ -165,7 +165,7 @@ We can predict how computers work, because they slavishly execute any command we
 
 Random numbers used by computer programs are typically pseudorandom. They seem like random numbers, but in reality they follow some algorihmically created series of numbers. Most of the time pseudorandom is good enough -- for example the user will not notice any difference when YouTube random play is pseudorandom. On the other hand if random numbers are used for scientific calculations, using a weak pseudorandom number generator can lead to questionable results. One example is IBM's [**RANDU**](https://en.wikipedia.org/wiki/RANDU) which was used for a short while in the 1960's.
 
-All randomness in computer programs is not pseudorandom. Programs aiming for stronger randomness use, among other things, real life random phenomena to generate random numbers. For example space radiation or [**lava lamps**](https://www.wired.com/2003/08/random/) are thought to be random phenomena.
+All randomness in computer programs is not pseudorandom. Programs aiming for stronger randomness use, among other things, real life random phenomena to generate random numbers. For example space radiation or [**lava lamps**](https://www.cloudflare.com/learning/ssl/lava-lamp-encryption/) are thought to be random phenomena.
 
 
 You can read more about randomness from [**https://www.random.org/randomness/**](https://www.random.org/randomness/).
