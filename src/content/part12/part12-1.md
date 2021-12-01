@@ -167,3 +167,7 @@ In the example above:
 * Just like previously, we can of course have other classes in our namespaces as well. Here, we have the class **ExampleOtherClass**, with the fully qualified name **Outmost.Inner.ExampleOtherClass**.
 
 Just by looking at the fully qualified names, we can know if a type or a namespace is part of a larger whole, and how the structure above has been created.
+
+# Exercises
+
+<Note> Exercises will be published 8.12.2021 at the latest!</Note>

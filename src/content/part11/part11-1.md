@@ -173,10 +173,6 @@ You can read more about randomness from [**https://www.random.org/randomness/**]
 
 # Exercises
 
-<Note>
-Exercises will be published 1.12. at the latest!
-</Note>
-
 <Exercise title={'001 Dice'}>
 
 The exercise template contains a class **Die**, which has the following body:

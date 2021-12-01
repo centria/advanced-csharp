@@ -90,7 +90,7 @@ The using statement is meant for objects which inherit the [**IDisposable interf
 For example, the using statement has been used in our exercise test since the beginning. Let's take a look:
 
 ```cpp
-[Test]
+[Fact]
 public void TestExercise01()
 {
   using (StringWriter sw = new StringWriter())
@@ -115,3 +115,7 @@ We do not have to worry about the functionality of the test itself, our focus is
 When you only need an object for a very short period of time, you should use the **using statement**. This ensures the correct disposal of the object and saves up memory.
 
 [**You can read more about the statement documentation from here.**](https://docs.microsoft.com/fi-fi/dotnet/csharp/language-reference/keywords/using-statement)
+
+# Exercises
+
+<Note> Exercises will be published 8.12.2021 at the latest!</Note>
