@@ -1,5 +1,5 @@
 ---
-title: "Part 13 - Using and Namespaces"
+title: "Part 13 - Graphical User Interfaces"
 nav_order: 8
 hidden: false
 ---
