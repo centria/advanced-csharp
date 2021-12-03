@@ -436,6 +436,21 @@ true
 
 Create a class **TemperatureSensor** that implements the ISensor interface.
 
-At first a temperature sensor is off. When the method Read is called and the sensor is on, the sensor randomly chooses an integer in the range -30...30 and returns it. If the sensor is off, the method Read throws an **InvalidOperationException**.
+* The constructor takes no parameters.
+* At first a temperature sensor is off. 
+* When the method Read is called and the sensor is on, the sensor randomly chooses an integer in the range -30...30 and returns it. 
+* If the sensor is off, the method Read throws an **InvalidOperationException**.
+
+An example:
+
+```cpp
+TemperatureSensor temperatureSensor = new TemperatureSensor();
+temperatureSensor.SetOn();
+Console.WriteLine(temperatureSensor.Read());
+```
+
+```console
+23
+```
 
 </Exercise>
