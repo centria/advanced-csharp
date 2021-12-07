@@ -128,7 +128,8 @@ All the exercises in this part are worth 2 points, without separate sections!
 * In this exercise, our very simple program is missing its **using directives**. Add them to make the code work. You will need 4 different usings.
 
 <Note>
-If you don't know where everything is located, look from for example [**the Microsoft API Browser**](https://docs.microsoft.com/en-us/dotnet/api/system?view=dotnet-plat-ext-3.1) for help. 
+If you don't know where everything is located, look from for example <a href="https://docs.microsoft.com/en-us/dotnet/api/system?view=dotnet-plat-ext-3.1" target="_blank">the Microsoft API Browser</a> for help. 
+
 You might have to find something we have not used yet...
 </Note>
 
