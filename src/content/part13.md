@@ -6,4 +6,4 @@ hidden: false
 
 ## Part 13
 
-Part 13 will be published before Christmas, containing graphical user interfaces, but does not contain exercises.
+Part 13 contains basics of graphical user interfaces, but does not contain exercises.
