@@ -1,7 +1,7 @@
 ---
 title: "Graphical user interfaces"
 nav_order: 1
-hidden: true
+hidden: false
 ---
 
 
@@ -78,7 +78,7 @@ You will get a project structure something like this:
 
 You can now test out your project, with **dotnet run**. You should get an program that looks like this:
 
-![Winform1](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform1.png)
+![Winform1]https://raw.githubusercontent.com/centria/advanced-csharp/master/src/images/part12/winform1.png)
 
 Hooray, the program opens! It does not do anything quite yet. Let's look into our files, and then start adding some functionality.
 
@@ -345,7 +345,7 @@ this.Controls.Add(this.textBox1);
 
 * Earlier we mentioned components, which have the non-displayable components. In **Controls**, we store everything we want to show to the user.
 
-![Winform2](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform2.png)
+![Winform2]https://raw.githubusercontent.com/centria/advanced-csharp/master/src/images/part12/winform2.png)
 
 ## More functionality - Button
 
@@ -445,7 +445,7 @@ Controls.Add(this.button1);
 
 * Add to Controls so the button is visible
 
-![Winform3](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform3.png)
+![Winform3]https://raw.githubusercontent.com/centria/advanced-csharp/master/src/images/part12/winform3.png)
 
 ```cpp
 private void ShowMessage(object sender, System.EventArgs e)
@@ -458,7 +458,7 @@ private void ShowMessage(object sender, System.EventArgs e)
 
 * In our method, we change our textBox1 text.
 
-![Winform4](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform4.png)
+![Winform4]https://raw.githubusercontent.com/centria/advanced-csharp/master/src/images/part12/winform4.png)
 
 As we can see, now that we did not give our button any specific location, it will start in the top-left corner. What happens, if we create 2 buttons?
 
@@ -475,7 +475,7 @@ this.button2.Click += new System.EventHandler(ShowMessage);
 Controls.Add(this.button2);
 ```
 
-![Winform5](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform5.png)
+![Winform5]https://raw.githubusercontent.com/centria/advanced-csharp/master/src/images/part12/winform5.png)
 
 We can see that only the first button is drawn. If we want to have the other button in another location, we have to define the new location. Let's also make some other adjustements to the code:
 
@@ -502,7 +502,7 @@ this.button2.Location = new System.Drawing.Point(this.button1.Width+5, 0);
 
 * We define our button location to start from the **button 1 width + 5 pixels**, but keeping the starting height the same. This way, we have our buttons side by side with a little gap between them:
 
-![Winform6](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform6.png)
+![Winform6]https://raw.githubusercontent.com/centria/advanced-csharp/master/src/images/part12/winform6.png)
 
 ## EventHandling
 
@@ -542,7 +542,7 @@ private void ShowMessage(object sender, System.EventArgs e)
 
 Let's create something more meaningful with our new skills, like a simple Calculator. 
 
-![Calculator](https://github.com/centria/basic-coding/raw/master/assets/images/part12/calculator.png)
+![Calculator]https://raw.githubusercontent.com/centria/advanced-csharp/master/src/images/part12/calculator.png)
 
 Our project structure looks something like this:
 
@@ -558,9 +558,11 @@ Our project structure looks something like this:
     └── obj
 ```
 
-[**And you can find the code from here!**](https://github.com/centria/coding-exercises/tree/master/project_examples/GuiCalculator/src), which is part of the exercise repository.
+[**And you can find the code from here!**](https://github.com/centria/csharp-calculator), so you don't have to write every bit yourself.
 
-We shall not have the whole code here, but you can find it from the link above. Let's take a look at some of the highlights:
+<Note>We shall not have the whole code here, but you can find it from the link above. </Note>
+
+Let's take a look at some of the highlights:
 
 ```cpp
 using System;

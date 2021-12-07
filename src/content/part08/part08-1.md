@@ -39,7 +39,7 @@ Tampere
 
 The internal state of the dictionary created above looks like this. Each key refers to some value.
 
-![Dictionary](https://github.com/centria/basic-coding/raw/master/assets/images/part8-1-dict.png)
+![Dictionary]https://raw.githubusercontent.com/centria/advanced-csharp/master/src/images//part8-1-dict.png)
 
 If the dictionary does not contain the key used for search, we get a **KeyNotFoundException**.
 
