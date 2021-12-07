@@ -24,3 +24,4 @@ This concludes our course for Basics and Advanced programming with C#. Your jour
 ## More courses
   * [Relational databases and SQL](https://centria.github.io/databases/)
   * [Command line and version control](https://centria.github.io/console/)
+  * [Popular MOOC courses in Finland](https://www.mooc.fi/en/)
