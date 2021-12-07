@@ -119,4 +119,35 @@ When you only need an object for a very short period of time, you should use the
 
 # Exercises
 
-<Note> Exercises will be published 8.12.2021 at the latest!</Note>
+<Note>
+All the exercises in this part are worth 2 points, without separate sections!
+</Note>
+
+<Exercise title={'002 Using Directives'}>
+
+* In this exercise, our very simple program is missing its **using directives**. Add them to make the code work. You will need 4 different usings.
+
+<Note>
+If you don't know where everything is located, look from for example [**the Microsoft API Browser**](https://docs.microsoft.com/en-us/dotnet/api/system?view=dotnet-plat-ext-3.1) for help. 
+You might have to find something we have not used yet...
+</Note>
+
+</Exercise>
+
+<Exercise title={'003 Aliases'}>
+
+* In this exercise, we are missing an alias from both **MasterProject.cs** and from **Program.cs**. Create them to make the code work. You can find the alias name by looking at the **fully qualified names** and **method calls**.
+
+</Exercise>
+
+<Exercise title={'004 Using StreamWriter'}>
+
+* In this exercise, we have a working Main, which has a **StreamWriter**. Change the code, so that the Main has a **using statement** for the StreamWriter.
+
+* You will also have to take away the **Close()** command, as the using statement takes care of it!
+
+<Note>
+The functionality should not change!
+</Note>
+
+</Exercise>

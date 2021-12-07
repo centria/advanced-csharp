@@ -169,4 +169,15 @@ Just by looking at the fully qualified names, we can know if a type or a namespa
 
 # Exercises
 
-<Note> Exercises will be published 8.12.2021 at the latest!</Note>
+<Note>
+All the exercises in this part are worth 2 points, without separate sections!
+</Note>
+
+<Exercise title={'001 Namespace Examples'}>
+
+* In the exercise, you have a program with a ready Main, but the **NamespaceExample.cs** is missing namespaces.
+
+* Create two namespaces, one nested in another. You can find the namespaces by looking at the **fully qualified names** of the method calls in Main.
+
+</Exercise>
+
