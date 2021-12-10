@@ -293,6 +293,11 @@ Create the method **public bool Save()**, which saves the dictionary to the file
 
 <Note>Only the method Save() writes to the file.</Note>
 
+<Note>
+Removing the ready given files, such as words.txt, may break some tests locally. 
+If this happens, recreate the files with the correct content.
+</Note>
+
 <Note>Even though the dictionary can translate both ways, the dictionary file should only contain one way. So if the dictionary for example knows, that computer = tietokone, the file should contain:
 
 ```console
