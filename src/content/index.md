@@ -4,11 +4,10 @@ nav_order: 1
 hidden: false
 ---
 
-Welcome to the Advanced Programming with C# course! The course begins 1.11.2021 and ends 19.12.2021. 
+Welcome to the Advanced Programming with C# course! The course begins 11.1.2022 and ends 31.7.2022. 
 
 This is the second part of the two part course. You can find the first part, Basics of Programming with C#, from here: [https://centria.github.io/basic-csharp/](https://centria.github.io/basic-csharp/).
 
-<Note>This course has a living material, which means it will be published on weekly basis. This includes both the materials and the exercises.</Note>
 
 ## If you just want to learn
 
@@ -17,9 +16,9 @@ To attend the course, you do not have to be a student in Centria University of A
 
 ## Registering to Open University course
 
-<Note>The open version will be published in January!</Note>
+You can register to the course from [this page: https://tki.centria.fi/koulutus/software-development-advanced-programming-with-c-2021-2022/7181](https://tki.centria.fi/koulutus/software-development-advanced-programming-with-c-2021-2022/7181). This course is open until 31.7.2022 and has only one final deadline at the end.
 
-You can register to the course from [TBD](https://tki.centria.fi/koulutus/). This version of the course is open until 1.5.2022 and has only one final deadline at 1.5.2022.
+<Note>Registering for the exam closes already 31.5.2022!</Note>
 
 
 ## Learning goals and grading
