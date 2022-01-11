@@ -36,7 +36,7 @@ Also, register with same email to TMC and to Open University, if you want credit
 
 When you have the account, follow the instructions for:
 - Selecting your organization: *Centria University of Applied Sciences*
-- Selecting your course: *Advanced Programming with C# in Open University*
+- Selecting your course: *Advanced Programming with C# Open University*
 
 
 ## Doing the exercises
