@@ -29,15 +29,15 @@ You also need the `C#` plugin: [https://marketplace.visualstudio.com/items?itemN
 
 Once you have everything installed, you need to download the exercises to your computer. To do that, you need to have a `MOOC.fi account`. You can read the instructions from here: [https://www.mooc.fi/en/installation/vscode/#mooc.fi-create-account](https://www.mooc.fi/en/installation/vscode/#mooc.fi-create-account). Follow the instructions to `login`.
 
-<Note>Register with your university (or school) email, if you have one!</Note>
+<Note>
+Register with your university (or school) email, if you have one!
+Also, register with same email to TMC and to Open University, if you want credits!
+</Note>
 
 When you have the account, follow the instructions for:
 - Selecting your organization: *Centria University of Applied Sciences*
-- Selecting your course: *Advanced Programming with C#*
+- Selecting your course: *Advanced Programming with C# in Open University*
 
-<Note>
-If you are doing this course via open university, the course will open in 2022!
-</Note>
 
 ## Doing the exercises
 
