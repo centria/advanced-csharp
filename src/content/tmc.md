@@ -65,11 +65,11 @@ A selection of options will pop up. The selections contain all the open exercise
 * Select the exercise you are doing
 * A new terminal opens at the bottom of Visual Studio Code.
 
-* write the command `cd/Exercise000` , but instead of the zeros, use the actual exercise number. Press `Enter`.
+* write the command `cd src/Exercise000` , but instead of the zeros, use the actual exercise number. Press `Enter`.
 
 ![Selecting source folder](https://github.com/centria/basic-csharp/raw/master/src/images/exercise003.png)
 
-* In the example, I am doing exercise 003 of the part, so my command is `cd/Exercise003`
+* In the example, I am doing exercise 003 of the part, so my command is `cd src/Exercise003`
 * Now you are in the actual exercise folder, and can run the program.
 * Run the program with the command `dotnet run`. 
 
