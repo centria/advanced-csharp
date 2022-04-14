@@ -8,7 +8,7 @@ The course is divided into six parts, all of which contain exercises. To pass th
 
 ## Deadlines
 
-The course has only the final deadline 15.8.2022, by which exercises have to be done. The deadline is automatic and hard.
+The course has only the final deadline 14.8.2022, by which exercises have to be done. The deadline is automatic and hard.
 
 ## Advancing on the course
 
