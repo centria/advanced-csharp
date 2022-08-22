@@ -20,8 +20,7 @@ Exercise submission instructions <Link style={{color: "#ef5b5b"}} to='/tmc'>can 
 
 ## The exam
 
-The exam will be held in Centria's Itslearning platform. To access the exam, you have to register to the Open University course from [this page: https://tki.centria.fi/koulutus/software-development-advanced-programming-with-c-2021-2022/7181](https://tki.centria.fi/koulutus/software-development-advanced-programming-with-c-2021-2022/7181).
+The exam will be held in Centria's Itslearning platform. To access the exam, you have to register to the Open University course from [this page: https://koulutus.centria.fi/koulutukset/software-development/](https://koulutus.centria.fi/koulutukset/software-development/s).
 
-The deadline for the exam and to gain credits is 31.7.2022.
+Those who want to get ECTS credits, must enroll in open university by 31.7.2022. The registrees will get the credentials in Centria’s Itslearning-environment on 5.8. The final exam in Itslearning must be finished by 14.8. The student’s performance will be evaluated by the teacher on 14.9. at latest.
 
-<Note>Registering for the exam closes already 31.5.2022!</Note>
