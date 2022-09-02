@@ -4,7 +4,7 @@ nav_order: 1
 hidden: false
 ---
 
-Welcome to the Advanced Programming with C# course! The course begins 11.1.2022 and ends 31.7.2022. 
+Welcome to the Advanced Programming with C# course!
 
 This is the second part of the two part course. You can find the first part, Basics of Programming with C#, from here: [https://centria.github.io/basic-csharp/](https://centria.github.io/basic-csharp/).
 
@@ -16,7 +16,9 @@ To attend the course, you do not have to be a student in Centria University of A
 
 ## Registering to Open University course
 
-You can register to the course from [HERE](https://koulutus.centria.fi/koulutukset/software-development/). This course is open until 14.8.2022 and has only one final deadline at the end.
+You can register to the course from [HERE](https://koulutus.centria.fi/koulutukset/software-development/).
+
+<Note>Centria students don't have to enroll to Open University, but enroll from Peppi!</Note>
 
 
 ## Learning goals and grading
@@ -47,7 +49,7 @@ The course is graded on a scale of 0-5. The grade comprises of the amount of exe
 | 50 % - 59,99 %  |   1   |
 | Less than 50 %  |   0   |
 
-At the end of the course, there is also an exam with **pass / fail** grading. This does not affect the grade but is to ensure that you have done the exercises yourself. The exam is reserved for students of Centria University of Applied Sciences or via Open University, and at the moment official credits are only for said students. The information and the exercises are available still for anyone who wants.
+At the end of the course, there is also an exam with **pass / fail** grading. This does not affect the grade but is to ensure that you have done the exercises yourself. The exam is reserved for students of Centria University of Applied Sciences and Centria Open University, and you can find the registeration information from above. The course material and the exercises are available still for anyone who wants.
 
 ## Errors in the material?
 

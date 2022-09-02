@@ -58,7 +58,7 @@ module.exports = {
         background_color: '#f7f0eb',
         theme_color: '#a2466c',
         display: 'standalone',
-        icon: 'src/images/Centria-icon.png',
+        icon: 'src/images/C.jpg',
       },
     },
     'gatsby-plugin-sharp',

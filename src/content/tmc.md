@@ -12,7 +12,7 @@ To do the exercises for this course, you need to install a few software to your 
 ## .NET
 You need to have `.NET` (also called `Dotnet`) installed. You can install it from here: [https://dotnet.microsoft.com/download](https://dotnet.microsoft.com/download). 
 
-<Note>Dotnet 5.0 has met its End of Life. Course with dotnet 6.0 support coming 1.9.2022!</Note>
+<Note>Dotnet 5.0 has met its End of Life. Course with dotnet 6.0 online now!</Note>
 
 ## Visual Studio Code
 
@@ -36,9 +36,17 @@ Register with your university (or school) email, if you have one!
 Also, register with same email to TMC and to Open University, if you want credits!
 </Note>
 
+### Centria students
+
 When you have the account, follow the instructions for:
 - Selecting your organization: *Centria University of Applied Sciences*
-- Selecting your course: *Advanced Programming with C# Open University*
+- Selecting your course according to time of attendance, for example *Advanced Programming in C# Fall 1*
+    - The correct course name can also be found from Itslearning.
+
+
+When you have the account, follow the instructions for:
+- Selecting your organization: *Centria University of Applied Sciences*
+- Selecting your course: *Advanced Programming in C# Open University*
 
 
 ## Doing the exercises
@@ -49,37 +57,45 @@ You can follow these instructions (to a point) on how to submit exercises:
 [https://www.mooc.fi/en/installation/vscode/#first-programming-exercise](https://www.mooc.fi/en/installation/vscode/#first-programming-exercise)
 
 <Note>
+At this point, you might encounter a bug, and the exercises do not show up.
+
+In this case, you have to choose again the Extensions menu, select the TMC extension, and enable it.
+
+After enabling, VSCode will ask if you trust the extension and the files, say YES to both questions.
+</Note>
+
+## Running the exercises
+
+<Note>
 The part of "Running the source code" does not unfortunately work yet.
 
 We have to run our exercises manually, if we want to do so.
 </Note>
 
-## Running the exercises
-
 In Visual Studio Code, select `Terminal` and then `New Terminal`
 
-![Terminal menu](https://github.com/centria/basic-csharp/raw/master/src/images/new-terminal.png)
+![Terminal menu](https://github.com/centria/advanced-csharp/raw/master/src/images/new-terminal.png)
 
 A selection of options will pop up. The selections contain all the open exercises. In the example, I am doing part 6, so I have those open.
 
-![Folder selection](https://github.com/centria/basic-csharp/raw/master/src/images/select-folder.png)
+![Folder selection](https://github.com/centria/advanced-csharp/raw/master/src/images/select-folder.png)
 
 * Select the exercise you are doing
 * A new terminal opens at the bottom of Visual Studio Code.
 
 * write the command `cd src/Exercise000` , but instead of the zeros, use the actual exercise number. Press `Enter`.
 
-![Selecting source folder](https://github.com/centria/basic-csharp/raw/master/src/images/exercise003.png)
+![Selecting source folder](https://github.com/centria/advanced-csharp/raw/master/src/images/exercise003.png)
 
 * In the example, I am doing exercise 003 of the part, so my command is `cd src/Exercise003`
 * Now you are in the actual exercise folder, and can run the program.
 * Run the program with the command `dotnet run`. 
 
-![Dotnet run](https://github.com/centria/basic-csharp/raw/master/src/images/dotnet-run.png)
+![Dotnet run](https://github.com/centria/advanced-csharp/raw/master/src/images/dotnet-run.png)
 
 * If your program works as it should, you can see the output in the console. The next example is from Part 6, exercise 003:
 
-![Dotnet run](https://github.com/centria/basic-csharp/raw/master/src/images/dotnet-print.png)
+![Dotnet run](https://github.com/centria/advanced-csharp/raw/master/src/images/dotnet-print.png)
 
 <Note>The dollar sign in the pictures is NOT part of the command! </Note>
 
