@@ -155,10 +155,12 @@ Our **NewTypes.csproj** contains the following:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
-  
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
 </Project>
@@ -192,7 +194,7 @@ Now our **NewTypeTest.csproj** should look something like this:
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -230,7 +232,7 @@ There are also unnecessary parts for our basic testing. Remove the *assets* for 
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -322,7 +324,7 @@ Actual:   "Woof!"
   Stack Trace:
      at PetTests.DogTalkToOwnerReturnsWoof() in C:\Users\HeikkiHei\Documents\repos\coding-exercises\testproject\test\NewTypeTest\PetTests.cs:line 13
 
-Failed!  - Failed:     2, Passed:     0, Skipped:     0, Total:     2, Duration: 4 ms - NewTypeTest.dll (net5.0)
+Failed!  - Failed:     2, Passed:     0, Skipped:     0, Total:     2, Duration: 4 ms - NewTypeTest.dll (net6.0)
 ```
 
 Change the assertions of your tests from **Assert.NotEqual** to **Assert.Equal** and rerun the tests with **dotnet test**:
@@ -331,7 +333,7 @@ Change the assertions of your tests from **Assert.NotEqual** to **Assert.Equal**
 Starting test execution, please wait...
 A total of 1 test files matched the specified pattern.
 
-Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 1 ms - NewTypeTest.dll (net5.0)
+Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 1 ms - NewTypeTest.dll (net6.0)
 ```
 
 Now we have created a well organized project. We are able to run our tests and the project itself. You might have noticed, that we ran the commands **dotnet run** and **dotnet test** in different folders. That's because when we run the commands, we actually check the **.csproj** file what we are running. 
