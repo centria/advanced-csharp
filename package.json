@@ -20,7 +20,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@theme-ui/prism": "^0.9.1",
-    "gatsby": "^3.5.0",
+    "gatsby": "^3.14.6",
     "gatsby-plugin-emotion": "^6.4.0",
     "gatsby-plugin-image": "^1.1.2",
      "gatsby-plugin-manifest": "^3.6.0",
