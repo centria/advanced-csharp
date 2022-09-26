@@ -1,6 +1,6 @@
 ---
 title: "Similarity of Objects"
-nav_order: 2
+nav_order: 82
 hidden: false
 ---
 

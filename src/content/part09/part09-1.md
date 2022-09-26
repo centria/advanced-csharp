@@ -1,6 +1,6 @@
 ---
 title: "Inheritance"
-nav_order: 1
+nav_order: 91
 hidden: false
 ---
 
