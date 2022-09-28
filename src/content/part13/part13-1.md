@@ -11,7 +11,7 @@ So far, all our programs have used the console, or terminal, as their interface.
 
 When we created our console projects, we used the command **dotnet new ...**. We can create a graphical project in the same manner. This time, the command is **dotnet new winforms**. 
 
-<Note> If you are unable to create a project with the command above, you might have to change your Terminal in VSC to be **PowerShell**. Windows Forms programs can only be created and run through a Windows based terminal. </Note>
+<Note> If you are unable to create a project with the command above, you might have to change your Terminal in VSC to be "PowerShell". Windows Forms programs can only be created and run through a Windows based terminal. </Note>
 
 The program can be run with same commands as a console program, i.e. **dotnet run**. One major difference is in our **csproj** file, where we decide we are creating a Windows application.
 
@@ -21,30 +21,9 @@ The program can be run with same commands as a console program, i.e. **dotnet ru
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
-  </PropertyGroup>
-
-</Project>
-```
-
-We have to modify this a little bit, and add
-
-```xml
-<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-```
-
-To our property group. This is because .NET functionality has changed a somewhat in versions 5 and newer. For reference, you can find more information [in here](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/migration/?view=netdesktop-5.0).
-
-With this, the file will look like follows:
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <UseWindowsForms>true</UseWindowsForms>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
 </Project>
@@ -73,7 +52,8 @@ You will get a project structure something like this:
     ├── Form1.cs
     ├── Program.cs
     ├── obj
-    └── src.csproj
+    ├── src.csproj
+    └── src.csproj.user
 ```
 
 You can now test out your project, with **dotnet run**. You should get an program that looks like this:
@@ -84,28 +64,21 @@ Hooray, the program opens! It does not do anything quite yet. Let's look into ou
 
 ```cpp
 // Program.cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+namespace src;
 
-namespace src
+static class Program
 {
-  static class Program
-  {
     /// <summary>
     ///  The main entry point for the application.
     /// </summary>
     [STAThread]
     static void Main()
     {
-      Application.SetHighDpiMode(HighDpiMode.SystemAware);
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new Form1());
-    }
-  }
+        // To customize application configuration such as set high DPI settings or default font,
+        // see https://aka.ms/applicationconfiguration.
+        ApplicationConfiguration.Initialize();
+        Application.Run(new Form1());
+    }    
 }
 ```
 
@@ -117,25 +90,14 @@ We do have to care about [**[STAThread]**](https://docs.microsoft.com/en-us/prev
 
 ```cpp
 // Form1.cs
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+namespace src;
 
-namespace src
+public partial class Form1 : Form
 {
-  public partial class Form1 : Form
-  {
     public Form1()
     {
-      InitializeComponent();
+        InitializeComponent();
     }
-  }
 }
 ```
 
@@ -143,10 +105,10 @@ Nothing much happens in this file, except we call the method **InitializeCompone
 
 ```cpp
 // Form1.Designer.cs
-namespace src
+namespace src;
+
+partial class Form1
 {
-  partial class Form1
-  {
     /// <summary>
     ///  Required designer variable.
     /// </summary>
@@ -158,11 +120,11 @@ namespace src
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
     protected override void Dispose(bool disposing)
     {
-      if (disposing && (components != null))
-      {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
+        if (disposing && (components != null))
+        {
+            components.Dispose();
+        }
+        base.Dispose(disposing);
     }
 
     #region Windows Form Designer generated code
@@ -173,15 +135,15 @@ namespace src
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
-      this.Text = "Form1";
+        this.components = new System.ComponentModel.Container();
+        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        this.ClientSize = new System.Drawing.Size(800, 450);
+        this.Text = "Form1";
     }
 
     #endregion
-  }
 }
+
 ```
 
 Once again, we see quite much of the comments created by the designer, but also a different comment, starting with a **#**. Those are for collapsing code out of view if certain options are enabled, but for us, yet another part not to worry about. Let's clean up the file:
@@ -247,27 +209,17 @@ Our other method, **protected override void Dispose(bool disposing)**, is automa
 As always, we start with a classic "Hello World" in our code. Let's add some content to our window.
 
 ```cpp
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+// Form1.cs
+namespace src;
 
-namespace src
+public partial class Form1 : Form
 {
-  public partial class Form1 : Form
-  {
     // Added TextBox1
     private TextBox textBox1;
     public Form1()
     {
-      InitializeComponent();
+        InitializeComponent();
     }
-  }
 }
 
 ```
@@ -275,41 +227,41 @@ namespace src
 As our other form is a partial for this one, we want to create the priave TextBox here. We could, just as well, create it in the next file, and bring the correct namespace with it. Let's keep it here, though, for at least now.
 
 ```cpp
-namespace src
-{
-  partial class Form1
-  {
+// Form1.Designer.cs
+namespace src;
 
+partial class Form1
+{
     private System.ComponentModel.IContainer components = null;
+
     protected override void Dispose(bool disposing)
     {
-      if (disposing && (components != null))
-      {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
+        if (disposing && (components != null))
+        {
+            components.Dispose();
+        }
+        base.Dispose(disposing);
     }
 
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
-      // More meaningful text
-      this.Text = "Hello World Application";
+        this.components = new System.ComponentModel.Container();
+        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        this.ClientSize = new System.Drawing.Size(800, 450);
+        // More meaningful text
+        this.Text = "Hello World Application";
 
-      // Call this.textBox1 and initialize
-      this.textBox1 = new System.Windows.Forms.TextBox();
-      // Give the textbox some content
-      this.textBox1.Text = "Hello World";
-      // Make it ReadOnly, so it cannot be edited by the users
-      this.textBox1.ReadOnly = true;
-      // Center to the screen
-      this.textBox1.Location = new System.Drawing.Point((this.Width - this.textBox1.Width) / 2, (this.Height - this.textBox1.Height) / 2);
-      // Add to controls
-      this.Controls.Add(this.textBox1);
+        // Call this.textBox1 and initialize
+        this.textBox1 = new System.Windows.Forms.TextBox();
+        // Give the textbox some content
+        this.textBox1.Text = "Hello World";
+        // Make it ReadOnly, so it cannot be edited by the users
+        this.textBox1.ReadOnly = true;
+        // Center to the screen
+        this.textBox1.Location = new System.Drawing.Point((this.Width - this.textBox1.Width) / 2, (this.Height - this.textBox1.Height) / 2);
+        // Add to controls
+        this.Controls.Add(this.textBox1);
     }
-  }
 }
 ```
 
@@ -354,58 +306,56 @@ Quite a lot of work has gone into getting a simple one-liner into our GUI. Let's
 ```cpp
 // Form1.cs
 
-// plenty of usings
+namespace src;
 
-namespace src
+public partial class Form1 : Form
 {
-  public partial class Form1 : Form
-  {
     private TextBox textBox1;
     // Added the private Button
     private Button button1;
-
     public Form1()
     {
-      InitializeComponent();
+        InitializeComponent();
     }
-  }
 }
+
 ```
 
 ```cpp
-namespace src
+namespace src;
+
+partial class Form1
 {
-  partial class Form1
-  {
     private System.ComponentModel.IContainer components = null;
+
     protected override void Dispose(bool disposing)
     {
-      if (disposing && (components != null))
-      {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
+        if (disposing && (components != null))
+        {
+            components.Dispose();
+        }
+        base.Dispose(disposing);
     }
 
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
-      this.Text = "Hello World Application";
+        this.components = new System.ComponentModel.Container();
+        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        this.ClientSize = new System.Drawing.Size(800, 450);
+        this.Text = "Hello World Application";
 
-      this.textBox1 = new System.Windows.Forms.TextBox();
+        this.textBox1 = new System.Windows.Forms.TextBox();
 
-      this.textBox1.Text = "Hello World";
-      this.textBox1.ReadOnly = true;
-      this.textBox1.Location = new System.Drawing.Point((this.Width - this.textBox1.Width) / 2, (this.Height - this.textBox1.Height) / 2);
-      this.Controls.Add(this.textBox1);
+        this.textBox1.Text = "Hello World";
+        this.textBox1.ReadOnly = true;
+        this.textBox1.Location = new System.Drawing.Point((this.Width - this.textBox1.Width) / 2, (this.Height - this.textBox1.Height) / 2);
+        this.Controls.Add(this.textBox1);
 
-      // Button
-      this.button1 = new System.Windows.Forms.Button();
-      this.button1.Text = "Click me!";
-      this.button1.Click += new System.EventHandler(ShowMessage);
-      Controls.Add(this.button1);
+        // Button
+        this.button1 = new System.Windows.Forms.Button();
+        this.button1.Text = "Click me!";
+        this.button1.Click += new System.EventHandler(ShowMessage);
+        Controls.Add(this.button1);
 
 
     }
@@ -413,10 +363,10 @@ namespace src
     // Button function
     private void ShowMessage(object sender, System.EventArgs e)
     {
-      this.textBox1.Text = "Button Clicked!";
+        this.textBox1.Text = "Button Clicked!";
     }
-  }
 }
+
 ```
 
 Let's see what our button's code does:
@@ -565,25 +515,19 @@ Our project structure looks something like this:
 Let's take a look at some of the highlights:
 
 ```cpp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+namespace GuiCalculator;
 
-namespace GuiCalculator
+using System.Windows.Forms;
+static class Program
 {
-  static class Program
-  {
     [STAThread]
     static void Main()
     {
-      Application.SetHighDpiMode(HighDpiMode.SystemAware);
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new Calculator());
+        Application.SetHighDpiMode(HighDpiMode.SystemAware);
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Application.Run(new Calculator());
     }
-  }
 }
 ```
 
@@ -591,25 +535,16 @@ namespace GuiCalculator
 
 
 ```cpp
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+namespace GuiCalculator;
 
-namespace GuiCalculator
+using System.Windows.Forms;
+public partial class Calculator : Form
 {
-  public partial class Calculator : Form
-  {
     // Calculation variables
     private double accumulator = 0;
     private string lastOperation;
 
-    // All the buttons are already initialized here
+    // Number buttons
     private Button button0 = new Button();
     private Button button1 = new Button();
     private Button button2 = new Button();
@@ -623,41 +558,40 @@ namespace GuiCalculator
     // Very clean constructor
     public Calculator()
     {
-      InitializeComponent();
+        InitializeComponent();
     }
-  }
 }
 ```
 
 ```cpp
 private void InitializeComponent()
 {
-  this.components = new System.ComponentModel.Container();
-  this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-  this.ClientSize = new System.Drawing.Size(300, 300);
-  // Text at the top
-  this.Text = "Calculator";
+    this.components = new System.ComponentModel.Container();
+    this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+    this.ClientSize = new System.Drawing.Size(300, 300);
+    // Text at the top
+    this.Text = "Calculator";
 
-  // Button sizes
-  int buttonWidth = 60;
-  int buttonHeight = 60;
+    // Button sizes
+    int buttonWidth = 60;
+    int buttonHeight = 60;
 
-  // Results box
-  this.results.Text = "0";
-  this.results.Font = new System.Drawing.Font("Arial", 30);
-  this.results.Width = 300;
-  // Move text to right side
-  this.results.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-  this.results.ReadOnly = true;
-  this.results.Location = new System.Drawing.Point(0, 0);
+    // Results box
+    this.results.Text = "0";
+    this.results.Font = new System.Drawing.Font("Arial", 30);
+    this.results.Width = 300;
+    // Move text to right side
+    this.results.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+    this.results.ReadOnly = true;
+    this.results.Location = new System.Drawing.Point(0, 0);
 
-  // Define button 7, top-left
-  this.button7.Location = new System.Drawing.Point(0, buttonHeight);
-  this.button7.Font = new System.Drawing.Font("Arial", 20);
-  this.button7.Height = buttonHeight;
-  this.button7.Width = buttonWidth;
-  this.button7.Text = "7";
-  this.button7.Click += new System.EventHandler(AddToString);
+    // Define button 7, top-left
+    this.button7.Location = new System.Drawing.Point(0, buttonHeight);
+    this.button7.Font = new System.Drawing.Font("Arial", 20);
+    this.button7.Height = buttonHeight;
+    this.button7.Width = buttonWidth;
+    this.button7.Text = "7";
+    this.button7.Click += new System.EventHandler(AddToString);
   
   /* 
   

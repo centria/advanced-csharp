@@ -47,15 +47,24 @@ The folder name becomes the project name and the namespace name by default. You'
 dotnet new console
 ```
 
+When using *dotnet 6.0* the template is quite simple, only containing the *Console.WriteLine(String)* method to display "Hello World!" in the console window.
+
+```cpp
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+```
+
+In practice (and in older versions of dotnet), the template is something like the following:
+
 The template creates a simple "Hello World" application. It calls the *Console.WriteLine(String)* method to display "Hello World!" in the console window.
 
 The template code defines a class, Program, with a single method, Main, that takes a String array as an argument:
 
 ```cpp
-using System;
-
 namespace HelloWorld
 {
+    using System;
+
     class Program
     {
         static void Main(string[] args)
@@ -99,56 +108,43 @@ The sample contains two types, **Dog** and **Cat**. For the NewTypes project, ou
 **Dog.cs** could look something like this:
 
 ```cpp
-using System;
-
 namespace Pets
 {
-  public class Dog
-  {
-    public string TalkToOwner()
+    public class Dog
     {
-      return "Woof!";
-    } 
-  }
+        public string TalkToOwner()
+        {
+            return "Woof!";
+        }
+    }
 }
 ```
 
 And **Cat.cs** something like this: 
 
 ```cpp
-using System;
-
 namespace Pets
 {
-  public class Cat
-  {
-    public string TalkToOwner()
+    public class Cat
     {
-      return "Meow!";
-    } 
-  }
+        public string TalkToOwner()
+        {
+            return "Meow!";
+        }
+    }
 }
 ```
 
 Our **Program.cs** looks like this:
 
 ```cpp
-using System;
+// See https://aka.ms/new-console-template for more information
 using Pets;
 
-namespace ConsoleApplication
-{
-  public class Program
-  {
-    public static void Main(string[] args)
-    {
-      Dog doggie = new Dog();
-      Cat cattie = new Cat();
-      Console.WriteLine(doggie.TalkToOwner());
-      Console.WriteLine(cattie.TalkToOwner());
-    }
-  }
-}
+Dog doggie = new Dog();
+Cat cattie = new Cat();
+Console.WriteLine(doggie.TalkToOwner());
+Console.WriteLine(cattie.TalkToOwner());
 ```
 
 Our **NewTypes.csproj** contains the following:
@@ -170,7 +166,7 @@ Our **NewTypes.csproj** contains the following:
 
 The NewTypes project is in place, and you've organized it by keeping the pets-related types in a folder. Let's put in some tests. In our exercises, we've used [**xUnit tests**](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test). Unit testing allows you to automatically check the behavior of your pet types to confirm that they're operating properly.
 
-We'll create our tests now a bit manually. Navigate back to the root folder and create a **test** folder with a **NewTypeTest** folder within it. At a command prompt from the **NewTypeTest** folder, execute **dotnet new xunit**. This produces two files: NewTypeTest.csproj and UnitTest1.cs.
+We'll create our tests now a bit manually. Navigate back to the root folder and create a **test** folder with a **NewTypeTest** folder within it. At a command prompt from the **NewTypeTest** folder, execute **dotnet new xunit**. This produces three files: *Usings.cs*, *NewTypeTest.csproj* and *UnitTest1.cs*.
 
 The test project cannot currently test the types in NewTypes and requires a project reference to the NewTypes project. To add a project reference, use the dotnet add reference command:
 
@@ -186,7 +182,7 @@ If you get an error, or if you just want to do it manually, you can also add thi
 </ItemGroup>
 ```
 
-<Note> On some devices, the slashes between folders need to be **\\** rather than **/**. If you get an error after adding the Project Reference, try the other version of slash (just like below); </Note>
+<Note> On some devices, the slashes between folders need to be "\" rather than "/". If you get an error after adding the Project Reference, try the other version of slash (just like below); </Note>
 
 Now our **NewTypeTest.csproj** should look something like this:
 
@@ -195,18 +191,20 @@ Now our **NewTypeTest.csproj** should look something like this:
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="1.3.0">
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -233,12 +231,14 @@ There are also unnecessary parts for our basic testing. Remove the *assets* for 
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>
@@ -253,29 +253,29 @@ There are also unnecessary parts for our basic testing. Remove the *assets* for 
 Change the name of **UnitTest1.cs** to **PetTests.cs** and replace the code in the file with the following:
 
 ```cpp
-using System;
-using Xunit;
+namespace NewTypeTest;
+
 using Pets;
 
 public class PetTests
 {
-  [Fact]
-  public void DogTalkToOwnerReturnsWoof()
-  {
-    string expected = "Woof!";
-    string actual = new Dog().TalkToOwner();
+    [Fact]
+    public void DogTalkToOwnerReturnsWoof()
+    {
+        string expected = "Woof!";
+        string actual = new Dog().TalkToOwner();
 
-    Assert.NotEqual(expected, actual);
-  }
+        Assert.NotEqual(expected, actual);
+    }
 
-  [Fact]
-  public void CatTalkToOwnerReturnsMeow()
-  {
-    string expected = "Meow!";
-    string actual = new Cat().TalkToOwner();
+    [Fact]
+    public void CatTalkToOwnerReturnsMeow()
+    {
+        string expected = "Meow!";
+        string actual = new Cat().TalkToOwner();
 
-    Assert.NotEqual(expected, actual);
-  }
+        Assert.NotEqual(expected, actual);
+    }
 }
 ```
 
