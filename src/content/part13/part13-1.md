@@ -7,6 +7,8 @@ hidden: false
 
 So far, all our programs have used the console, or terminal, as their interface. But in modern operating systems, **graphical user interfaces** (GUIs) are more common. C# has a variety of choices built in for creating graphical programs for Windows environment, and on this course, we'll take a quick glance of one of the options.
 
+<Note> This, and all the examples in this part, only work on Windows! </Note>
+
 ## Creating a new Windows Forms project
 
 When we created our console projects, we used the command **dotnet new ...**. We can create a graphical project in the same manner. This time, the command is **dotnet new winforms**. 
@@ -35,7 +37,7 @@ Windows Forms is one type of graphical interface that can be created with C#. We
 
 Let's create our first project.
 
-<Note> This, and all the examples in this part, only work on Windows! </Note>
+
 
 * Create a folder where you want your project. The example will be in a folder called **GuiProject**.
 

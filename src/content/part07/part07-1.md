@@ -250,6 +250,7 @@ There are also unnecessary parts for our basic testing. Remove the *assets* for 
 </Project>
 ```
 
+
 Change the name of **UnitTest1.cs** to **PetTests.cs** and replace the code in the file with the following:
 
 ```cpp
@@ -279,8 +280,14 @@ public class PetTests
 }
 ```
 
+<Note> 
+The namespaces look a bit different than what we've used to, having semicolons rather than code blocks. This is a new feature.
+ </Note>
+
 <Note>
-Although you expect that the expected and actual values are equal, an initial assertion with the Assert.NotEqual check specifies that these values are not equal. Always initially create a test to fail in order to check the logic of the test. After you confirm that the test fails, adjust the assertion to allow the test to pass. We'll get to testing just in a bit.
+Although you expect that the expected and actual values are equal, an initial assertion with the Assert.NotEqual check specifies that these values are not equal. 
+
+Always initially create a test to fail in order to check the logic of the test. After you confirm that the test fails, adjust the assertion to allow the test to pass. We'll get to testing just in a bit.
 </Note>
 
 The following shows the complete project structure:
