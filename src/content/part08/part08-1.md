@@ -575,7 +575,7 @@ Use a foreach-loop to print over KeyValuePair for the printing.
 
 <Exercise title={'002 Abbreviations'}>
 
-Fill in the class **Abbreviations** for managing common abbreviations. The class must have a constructor, which does not take any parameters. The class must also provide the following methods:
+Create the class **Abbreviations** for managing common abbreviations. The class must have a constructor, which does not take any parameters. The class must also provide the following methods:
 
 * **public void AddAbbreviation(string abbreviation, string explanation)** adds a new abbreviation and its explanation. You can use the **.Add** method for the dictionary and assume we never add the same abbrevation twice.
 * **public bool HasAbbreviation(string abbreviation)** checks if an abbreviation has already been added; returns true if it has and false if it has not.
