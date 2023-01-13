@@ -676,6 +676,8 @@ Content: ....
 ```
 
 <Note>The order of the output can vary, as the dictionary does not guarantee the order of the objects in it.</Note>
+  
+<Note>The search is case-insensitive!</Note>
 
 </Exercise>
 
