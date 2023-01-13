@@ -329,7 +329,7 @@ Content: ....
 Time elapsed: 5.8134 milliseconds
 ```
 
-As we can see, the dictionary is quite much faster, and that's with only 2 books. What if we needed to search for 3? Or 100?
+As we can see, the dictionary is quite much faster, and that's with searching only for 2 books. What if we needed to search for 3? Or 100?
 
 ## Dictionary as an Instance Variable
 
