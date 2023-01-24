@@ -61,7 +61,7 @@ In addition to the TextMessage class, let's add another class that implements th
 namespace Exercise001
 {
   using System.Collections.Generic;
-  public class EBook : Readable
+  public class EBook : IReadable
   {
     public string name { get; }
     private List<string> pages;
