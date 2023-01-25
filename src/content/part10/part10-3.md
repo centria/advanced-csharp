@@ -104,7 +104,12 @@ The exercise template has a class that represents a playing card. Each card has 
 
 * Section 1
 
-Card's value is represented as a number *2, 3, ..., 14* and its suit as *Club, Diamond, Heart or Spade*. Ace's value is 14. The value is represented with an integer, and the suit as an enum. Cards also have a method **ToString**, which can be used to print the value and the suit in a readable form.
+Card's value is represented as a number *2, 3, ..., 14* and its suit as *Club, Diamond, Heart or Spade*. Ace's value is 14. The value is represented with an integer, and the suit as an enum. 
+
+Cards also have a method **ToString**, which can be used to print the value and the suit in a readable form. 
+
+Fix the ToString to include special returns for the face cards (J, Q, K and A).
+
 
 New cards can be created like this:
 
@@ -124,7 +129,7 @@ Spade A
 Heart Q
 ```
 
-<Note>In the ToString, make sure you have special returns for values 11 to 14 (J, Q, K and A).</Note>
+<Note>In the ToString, make sure you have special returns for values 11 to 14 (J, Q, K and A respectively).</Note>
 
 * Section 2
 
