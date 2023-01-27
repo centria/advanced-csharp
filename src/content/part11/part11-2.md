@@ -346,6 +346,9 @@ Exceptions which must be handled are exceptions which are checked for during com
 
 Some exceptions are not checked for during compilation. They can be thrown during execution. These kinds of exceptions do not have to be handled with a try-catch block. For example **ArgumentException** and **NullReferenceException** are this kind of exceptions.
 
+<Note>
+Now we are able to throw our own custom exceptions, which can be caught just like any other exception.
+</Note>
 
 ## Details of the exception
 
@@ -368,6 +371,8 @@ Unhandled exception. System.ArgumentException: Grade must be between 0 and 5.
 ```
 
 We read a stack trace from the bottom up. At the bottom is the first call, so the execution of the program has begun from the **Main()** method for the **Program** class. Line 14 of the Main method was used to create the new Grade object, with illegal parameters. Line 14 of the Grade class is the constructor, and it has now thrown and **ArgumentException**. The details of an exception are very useful when trying to pinpoint where an error happens.
+
+
 
 # Exercises
 
