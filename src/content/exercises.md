@@ -4,7 +4,7 @@ nav_order: 99
 hidden: false
 ---
 
-The course is divided into six parts, all of which contain may exercises. To pass the course, the student must pass at least 50 % of the course exercises and the exam at the end of the course.
+The course is divided into six parts, all of which contain may exercises. To pass the course, the student must pass at least 50 % of the course points and the exam at the end of the course.
 
 ## Deadlines
 
