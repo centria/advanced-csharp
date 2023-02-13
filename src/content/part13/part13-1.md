@@ -775,7 +775,7 @@ else
 
 Graphical interfaces require quite much code to achieve even a simple program. The applications get quite complicated quite fast. This part was meant to demonstrate the possibilities of GUI, not be an exhaustive guide.
 
-There are easier ways of doing GUI for C#, such as [**using Visual Basic**](https://docs.microsoft.com/en-us/visualstudio/ide/create-a-visual-basic-winform-in-visual-studio?view=vs-2019). Learning these is left for you.
+There are easier ways of doing GUI for C#, such as [**using Visual Studio**](https://docs.microsoft.com/en-us/visualstudio/ide/create-a-visual-basic-winform-in-visual-studio?view=vs-2019). Learning these is left for you.
 
 # Exercises
 
