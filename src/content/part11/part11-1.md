@@ -238,7 +238,7 @@ Your assignment is to complete the class **LotteryRow**, which is used to draw t
 We wish to implement the following functions in the class:
 
 * the constructor **LotteryRow** creates a new LotteryRow object that contains new randomized numbers.
-* the method **Numbers** returns the drawn lottery numbers of this lottery row
+* the property **numbers** contains the drawn lottery numbers of this lottery row
 * the method **ContainsNumber** tells whether the given number is included in the drawn numbers
 * the method **RandomizeNumbers** randomizes new numbers for the lottery row.  
 
@@ -252,16 +252,11 @@ namespace Exercise
 
   public class LotteryRow
   {
-    private List<int> numbers;
+    public List<int> numbers { get; set; }
 
     public LotteryRow()
     {
       this.RandomizeNumbers();
-    }
-
-    public List<int> Numbers()
-    {
-      return this.numbers;
     }
 
     public bool ContainsNumber(int number)
@@ -285,10 +280,8 @@ The following Main program is supplied in the exercise base:
 
 ```cpp
 LotteryRow row = new LotteryRow();
-List<int> lotteryNumbers = row.Numbers();
-
 Console.WriteLine("Lottery numbers:");
-foreach (int number in lotteryNumbers)
+foreach (int number in row.numbers)
 {
   Console.Write(number + " ");
 }
