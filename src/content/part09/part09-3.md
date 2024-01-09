@@ -120,7 +120,7 @@ In this exercise you'll demonstrate how to use both inheritance and interfaces.
 
 * First implement an **abstract class** called **Animal**. The class should have a constructor that takes the animal's name as a parameter. The Animal class also has non-parameterized methods **Eat** and **Sleep** that return nothing (void).
 
-* The Sleep method should print "(name) sleeps", and the Eat method should print "(name) Eats". Here (name) is the name of the animal in question.
+* The Sleep method should print "(name) sleeps", and the Eat method should print "(name) eats". Here (name) is the name of the animal in question.
 
 * Implement a class called **Dog** that inherits from Animal. Dog should have a **parameterized constructor** that can be used to name it. The class should also have a **non-parameterized constructor**, which gives the dog the name "Dog". Another method that Dog must have is the non-parameterized **Bark**, and it should not return any value (void). Like all animals, Dog needs to have the methods Eat and Sleep.
 
