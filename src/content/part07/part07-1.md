@@ -171,7 +171,7 @@ We'll create our tests now a bit manually. Navigate back to the root folder and 
 The test project cannot currently test the types in NewTypes and requires a project reference to the NewTypes project. To add a project reference, use the dotnet add reference command:
 
 ```console
-dotnet add reference ../../src/NewTypes/NewTypes.csproj
+dotnet add reference ../src/NewTypes/NewTypes.csproj
 ```
 
 If you get an error, or if you just want to do it manually, you can also add this to the **NewTypeTest.csproj** yourself:
