@@ -366,7 +366,7 @@ To run **dotnet run** from the same folder, we have to tell where the **NewTypes
 
 ```console
 dotnet test
-dotnet run -p ../../src/NewTypes/NewTypes.csproj
+dotnet run -p ../src/NewTypes/NewTypes.csproj
 ```
 
 On the other hand, we could be in the **NewTypes** folder and be able to run the **dotnet run** as such.
