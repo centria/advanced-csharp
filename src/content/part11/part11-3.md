@@ -6,10 +6,10 @@ hidden: false
 
 # Processing files
 
-We have already learned some strategies to read text files. If your memories of the subject are hazy, take a look at the relevant parts of the [**fourth part of the Basic course material**](https://centria.github.io/basic-csharp/part4/part4-3). In that material, we used **ReadAllLines** and **ReadAllText** methods. They have writing versions as well, [**you can read more about those in here**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file). In this section how ever, we concentrate on **StreamReader and StreamWriter**.
+We have already learned some strategies to read text files. If your memories of the subject are hazy, take a look at the relevant parts of the [**fourth part of the Basic course material**](https://centria.github.io/basic-csharp/part4/part4-3). In that material, we used **ReadAllLines** and **ReadAllText** methods. They have writing versions as well, [**you can read more about those in here**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file). In this section how ever, we concentrate on **StreamWriter** for writing into files.
 
 
-## StreamReader and StreamWriter
+## StreamWriter
 
 Next, let's take a look at writing data to files. The [**StreamWriter**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-5.0) class offers the functionality to write to files. The constructor of the StreamWriter class receives as its parameter a string that represents the location of the target file.
 
