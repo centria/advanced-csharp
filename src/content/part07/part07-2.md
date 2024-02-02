@@ -20,7 +20,7 @@ The bug in the software was caused by the fact that the program in question expe
 
 The satellite was destroyed.
 
-As programs grow in their complexity, finding errors becomes even more challenging. The debugger integrated into NetBeans can help you find errors. The use of the debugger is introduced with videos embedded in the course material; going over them is always an option.
+As programs grow in their complexity, finding errors becomes even more challenging. The debugger integrated into Visual Studio Code, and you can find clear instructions from here: https://code.visualstudio.com/docs/editor/debugging.
 
 ## Stack Trace
 
