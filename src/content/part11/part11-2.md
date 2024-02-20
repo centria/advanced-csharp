@@ -384,6 +384,10 @@ Let's practise a little parameter validation with the **ArgumentException** exce
 
 The constructor of the class **Person** should ensure that the name given as the parameter is not null, empty, or over 40 characters in length. If these conditions are not met, the constructor should throw an **ArgumentException**.
 
+<Note>
+Empty or null value comparison should be done first, otherwise we might get a NullReferenceException instead of our own exception.
+</Note>
+
 * Section 2
 
 In the contsructor, the age should between 0 and 120. If these conditions are not met, the constructor should throw an **ArgumentException**.
