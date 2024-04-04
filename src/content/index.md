@@ -16,7 +16,7 @@ To attend the course, you do not have to be a student in Centria University of A
 
 ## Registering to Open University course
 
-You can register to the course from [HERE](https://koulutus.centria.fi/koulutukset/software-development/).
+You can register to the course from [HERE](https://ella.eduplan.fi/centria).
 
 <Note>Centria students don't have to enroll to Open University, but enroll from Peppi!</Note>
 

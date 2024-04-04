@@ -25,7 +25,7 @@ The exam will be held in Centria's Itslearning platform.
 
 ### Open university exam
 
-To access the exam, you have to register to the Open University course from this page: https://koulutus.centria.fi/koulutukset/software-development/.
+To access the exam, you have to register to the Open University course from this page: https://ella.eduplan.fi/centria.
 
 Those who want to get ECTS credits, must enroll in open university. The registrees will get the credentials in Centria’s Itslearning-environment. The final exam in Itslearning must be finished by deadline (set per course basis).
 
