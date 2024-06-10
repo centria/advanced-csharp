@@ -4,6 +4,9 @@ nav_order: 1
 hidden: false
 ---
 
+<Note><h2>Dotnet 6.0 support ends.
+In the fall dotnet8.0! will be in use!</h2></Note>
+
 Welcome to the Advanced Programming with C# course!
 
 This is the second part of the two part course. You can find the first part, Basics of Programming with C#, from here: [https://centria.github.io/basic-csharp/](https://centria.github.io/basic-csharp/).

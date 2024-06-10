@@ -12,7 +12,7 @@ To do the exercises for this course, you need to install a few software to your 
 ## .NET
 You need to have `.NET` (also called `Dotnet`) installed. You can install it from here: [https://dotnet.microsoft.com/download](https://dotnet.microsoft.com/download). 
 
-<Note>Dotnet 5.0 has met its End of Life. Course with dotnet 6.0 online now!</Note>
+<Note>Dotnet 6.0 has met its End of Life, and we will use 8.0 in the fall.</Note>
 
 ## Visual Studio Code
 
