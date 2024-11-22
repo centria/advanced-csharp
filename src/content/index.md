@@ -4,8 +4,6 @@ nav_order: 1
 hidden: false
 ---
 
-<Note><h2>Dotnet 6.0 support ends.
-In the fall dotnet8.0! will be in use!</h2></Note>
 
 Welcome to the Advanced Programming with C# course!
 
