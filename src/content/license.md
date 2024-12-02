@@ -6,7 +6,7 @@ hidden: true
 
 The course structure and materials are based on the [**Introductory programming course in Java**](https://ohjelmointi-19.mooc.fi) by [**Agile Education Research Group**](https://www.helsinki.fi/en/researchgroups/data-driven-education) from the [**University of Helsinki**](https://www.helsinki.fi/en/). 
 
-This material has been adapted from the said material by [**Heikki Ahonen**](https://github.com/heikkihei); the adaptation is licensed using [**CC BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed). More information about the original material and its license can be found [**here**](https://ohjelmointi-19.mooc.fi/credits/).
+This material has been adapted from the said material by [**Heikki Ahonen**](https://github.com/heikkihei) 2020-2024; since 2025 Tero Niemi; the adaptation is licensed using [**CC BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed). More information about the original material and its license can be found [**here**](https://ohjelmointi-19.mooc.fi/credits/).
 
 ### Acknowledgements
 
